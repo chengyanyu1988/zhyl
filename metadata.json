@@ -1,0 +1,6 @@
+{
+  "name": "智慧养老管理系统",
+  "description": "智慧养老综合服务运营管理平台，涵盖工作台、预约看板、长者档案、护工照护、关怀工单、视频告警监测、消费结算与运营统计报表。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
