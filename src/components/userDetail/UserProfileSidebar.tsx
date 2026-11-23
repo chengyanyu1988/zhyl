@@ -22,13 +22,13 @@ export const UserProfileSidebar: React.FC<UserProfileSidebarProps> = ({ user }) 
       id: 'op-01',
       action: '修改 民族 汉族 为 回族',
       operator: '李明明',
-      time: '2026-09-19 11:09:09',
+      time: '2026-10-19 11:09:09',
     },
     {
       id: 'op-02',
       action: '新增用户信息',
       operator: '李明明',
-      time: '2026-09-17 10:09:09',
+      time: '2026-10-17 10:09:09',
     },
   ];
 

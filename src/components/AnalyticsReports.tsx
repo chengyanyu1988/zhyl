@@ -20,10 +20,10 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
   onNotice,
   subPage,
 }) => {
-  // Daily operational summary for 2026年9月: 2026-09-18 down to 2026-09-01
+  // Daily operational summary for 2026年10月: 2026-10-18 down to 2026-10-01
   const dailyReports = [
     {
-      date: '2026-09-18',
+      date: '2026-10-18',
       isYesterday: true,
       newOrders: 148,
       completedOrders: 142,
@@ -33,7 +33,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '99.5%',
     },
     {
-      date: '2026-09-17',
+      date: '2026-10-17',
       isYesterday: false,
       newOrders: 152,
       completedOrders: 149,
@@ -43,7 +43,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '99.2%',
     },
     {
-      date: '2026-09-16',
+      date: '2026-10-16',
       isYesterday: false,
       newOrders: 139,
       completedOrders: 136,
@@ -53,7 +53,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '99.4%',
     },
     {
-      date: '2026-09-15',
+      date: '2026-10-15',
       isYesterday: false,
       newOrders: 160,
       completedOrders: 155,
@@ -63,7 +63,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '99.6%',
     },
     {
-      date: '2026-09-14',
+      date: '2026-10-14',
       isYesterday: false,
       newOrders: 145,
       completedOrders: 141,
@@ -73,7 +73,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '98.9%',
     },
     {
-      date: '2026-09-12',
+      date: '2026-10-12',
       isYesterday: false,
       newOrders: 158,
       completedOrders: 153,
@@ -83,7 +83,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '99.1%',
     },
     {
-      date: '2026-09-10',
+      date: '2026-10-10',
       isYesterday: false,
       newOrders: 142,
       completedOrders: 139,
@@ -93,7 +93,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '99.0%',
     },
     {
-      date: '2026-09-08',
+      date: '2026-10-08',
       isYesterday: false,
       newOrders: 135,
       completedOrders: 131,
@@ -103,7 +103,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '99.3%',
     },
     {
-      date: '2026-09-05',
+      date: '2026-10-05',
       isYesterday: false,
       newOrders: 128,
       completedOrders: 125,
@@ -113,7 +113,7 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
       satisfactionRate: '98.8%',
     },
     {
-      date: '2026-09-01',
+      date: '2026-10-01',
       isYesterday: false,
       newOrders: 120,
       completedOrders: 118,
@@ -162,18 +162,18 @@ export const AnalyticsReports: React.FC<AnalyticsReportsProps> = ({
           <div className="flex items-center space-x-3">
             <span className="w-1.5 h-4 bg-[#10b981] rounded-full"></span>
             <h1 className="text-base font-semibold text-gray-800 tracking-tight">
-              {subPage === 'elderly_portrait' ? '长者健康画像与慢病分布分析' : '报表统计 - 2026年9月运营日报表'}
+              {subPage === 'elderly_portrait' ? '长者健康画像与慢病分布分析' : '报表统计 - 2026年10月运营日报表'}
             </h1>
-            <span className="text-xs text-gray-400">统计周期：2026-09-01 至 2026-09-18</span>
+            <span className="text-xs text-gray-400">统计周期：2026-10-01 至 2026-10-18</span>
           </div>
 
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center space-x-1.5 text-xs text-emerald-700 bg-emerald-50/80 px-2.5 py-1 rounded-md border border-emerald-200">
               <ArrowUpDown className="w-3 h-3" />
-              <span>按统计日期降序 (2026-09-18 至 2026-09-01)</span>
+              <span>按统计日期降序 (2026-10-18 至 2026-10-01)</span>
             </div>
             <button
-              onClick={() => onNotice('已导出2026年9月运营统计分析报表')}
+              onClick={() => onNotice('已导出2026年10月运营统计分析报表')}
               className="px-3.5 py-1.5 text-xs bg-[#10b981] hover:bg-[#059669] text-white rounded-lg flex items-center space-x-1.5 font-medium transition-colors"
             >
               <Download className="w-3.5 h-3.5" />

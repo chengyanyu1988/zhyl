@@ -117,10 +117,10 @@ export const UserManagement: React.FC<UserManagementProps> = ({
         <div className="py-10 text-center text-gray-500 space-y-3">
           <CheckCircle2 className="w-10 h-10 mx-auto text-emerald-500" />
           <div className="text-sm font-semibold text-gray-800">
-            功能模块已就绪并载入2026年9月运营规则
+            功能模块已就绪并载入2026年10月运营规则
           </div>
           <p className="max-w-md mx-auto text-gray-400 leading-relaxed text-xs">
-            当前系统已接入长护险定点补贴清算、健康随访打卡增值及适老化智能推送，所有记录严格遵照2026年9月的时间降序归档。
+            当前系统已接入长护险定点补贴清算、健康随访打卡增值及适老化智能推送，所有记录严格遵照2026年10月的时间降序归档。
           </p>
           <div className="pt-2">
             <button

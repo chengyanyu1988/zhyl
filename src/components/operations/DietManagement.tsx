@@ -2,18 +2,10 @@ import React, { useState, useMemo } from 'react';
 import {
   Search,
   RotateCcw,
+  Calendar,
+  Clock,
   Plus,
   X,
-  Calendar,
-  Image as ImageIcon,
-  CheckCircle2,
-  XCircle,
-  Clock,
-  Eye,
-  Trash2,
-  Edit3,
-  Share2,
-  Bookmark,
 } from 'lucide-react';
 import { SubPageId, RecipeItem, DietTagItem } from '../../types';
 
@@ -33,9 +25,10 @@ const INITIAL_RECIPES: RecipeItem[] = [
     collectsCount: 35,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-19 10:09:09',
+    lastUpdateTime: '2026-10-19 10:09:09',
     coverImage: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&auto=format&fit=crop&q=80',
     detailHtml: '<p>软嫩可口，高蛋白低胆固醇，适合中老年人日常食用。</p>',
+    publishType: '立即发布',
   },
   {
     id: 'REC_002',
@@ -46,9 +39,10 @@ const INITIAL_RECIPES: RecipeItem[] = [
     collectsCount: 52,
     status: '已发布',
     updater: '张建国',
-    lastUpdateTime: '2026-09-18 15:30:00',
+    lastUpdateTime: '2026-10-18 15:30:00',
     coverImage: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=200&auto=format&fit=crop&q=80',
     detailHtml: '<p>滋阴润肺，小火慢炖出胶，软糯香甜。</p>',
+    publishType: '立即发布',
   },
   {
     id: 'REC_003',
@@ -59,9 +53,10 @@ const INITIAL_RECIPES: RecipeItem[] = [
     collectsCount: 29,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-17 09:12:34',
+    lastUpdateTime: '2026-10-17 09:12:34',
     coverImage: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=200&auto=format&fit=crop&q=80',
     detailHtml: '<p>肉质细腻，富含不饱和脂肪酸，助益心血管健康。</p>',
+    publishType: '立即发布',
   },
   {
     id: 'REC_004',
@@ -72,9 +67,10 @@ const INITIAL_RECIPES: RecipeItem[] = [
     collectsCount: 81,
     status: '已发布',
     updater: '王芳',
-    lastUpdateTime: '2026-09-15 14:20:10',
+    lastUpdateTime: '2026-10-15 14:20:10',
     coverImage: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&auto=format&fit=crop&q=80',
     detailHtml: '<p>健脾养胃，文火炖煮2小时，汤浓肉烂。</p>',
+    publishType: '立即发布',
   },
   {
     id: 'REC_005',
@@ -85,9 +81,10 @@ const INITIAL_RECIPES: RecipeItem[] = [
     collectsCount: 19,
     status: '已发布',
     updater: '陈主任',
-    lastUpdateTime: '2026-09-12 11:05:22',
+    lastUpdateTime: '2026-10-12 11:05:22',
     coverImage: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&auto=format&fit=crop&q=80',
     detailHtml: '<p>富含膳食纤维与芹菜素，清爽利口。</p>',
+    publishType: '立即发布',
   },
   {
     id: 'REC_006',
@@ -98,9 +95,10 @@ const INITIAL_RECIPES: RecipeItem[] = [
     collectsCount: 64,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-08 16:00:00',
+    lastUpdateTime: '2026-10-08 16:00:00',
     coverImage: 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=200&auto=format&fit=crop&q=80',
     detailHtml: '<p>粗细搭配，稳定血糖，促进肠道蠕动。</p>',
+    publishType: '立即发布',
   },
   {
     id: 'REC_007',
@@ -111,9 +109,10 @@ const INITIAL_RECIPES: RecipeItem[] = [
     collectsCount: 40,
     status: '草稿',
     updater: '张建国',
-    lastUpdateTime: '2026-09-03 08:45:11',
+    lastUpdateTime: '2026-10-03 08:45:11',
     coverImage: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=200&auto=format&fit=crop&q=80',
     detailHtml: '<p>药食同源，补气养血，温和不燥。</p>',
+    publishType: '立即发布',
   },
 ];
 
@@ -123,7 +122,7 @@ const INITIAL_TAGS: DietTagItem[] = [
     name: '低糖',
     recipeCount: 200,
     updater: '李明明',
-    lastUpdateTime: '2026-09-18 10:09:09',
+    lastUpdateTime: '2026-10-18 10:09:09',
     status: '启用',
   },
   {
@@ -131,7 +130,7 @@ const INITIAL_TAGS: DietTagItem[] = [
     name: '低盐',
     recipeCount: 185,
     updater: '王芳',
-    lastUpdateTime: '2026-09-17 14:20:00',
+    lastUpdateTime: '2026-10-17 14:20:00',
     status: '启用',
   },
   {
@@ -139,7 +138,7 @@ const INITIAL_TAGS: DietTagItem[] = [
     name: '高蛋白',
     recipeCount: 142,
     updater: '张建国',
-    lastUpdateTime: '2026-09-16 11:30:15',
+    lastUpdateTime: '2026-10-16 11:30:15',
     status: '启用',
   },
   {
@@ -147,7 +146,7 @@ const INITIAL_TAGS: DietTagItem[] = [
     name: '易消化',
     recipeCount: 98,
     updater: '李明明',
-    lastUpdateTime: '2026-09-14 09:10:00',
+    lastUpdateTime: '2026-10-14 09:10:00',
     status: '启用',
   },
   {
@@ -155,7 +154,7 @@ const INITIAL_TAGS: DietTagItem[] = [
     name: '高钙',
     recipeCount: 120,
     updater: '陈主任',
-    lastUpdateTime: '2026-09-10 16:00:00',
+    lastUpdateTime: '2026-10-10 16:00:00',
     status: '启用',
   },
   {
@@ -163,7 +162,7 @@ const INITIAL_TAGS: DietTagItem[] = [
     name: '低脂',
     recipeCount: 76,
     updater: '王芳',
-    lastUpdateTime: '2026-09-06 15:12:00',
+    lastUpdateTime: '2026-10-06 15:12:00',
     status: '启用',
   },
   {
@@ -171,7 +170,7 @@ const INITIAL_TAGS: DietTagItem[] = [
     name: '降压膳食',
     recipeCount: 64,
     updater: '张建国',
-    lastUpdateTime: '2026-09-02 08:30:00',
+    lastUpdateTime: '2026-10-02 08:30:00',
     status: '禁用',
   },
 ];
@@ -191,7 +190,7 @@ export const DietManagement: React.FC<DietManagementProps> = ({
   const [dateStart, setDateStart] = useState('');
   const [dateEnd, setDateEnd] = useState('');
 
-  // Modals
+  // Modals / Forms
   const [recipeModal, setRecipeModal] = useState<{
     isOpen: boolean;
     item: RecipeItem | null;
@@ -200,11 +199,14 @@ export const DietManagement: React.FC<DietManagementProps> = ({
 
   const [recipeForm, setRecipeForm] = useState<Partial<RecipeItem>>({
     title: '',
-    category: '午餐',
-    tags: ['低盐'],
+    category: '',
+    tags: [],
     status: '已发布',
-    coverImage: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&auto=format&fit=crop&q=80',
+    coverImage: '',
     detailHtml: '',
+    publishType: '立即发布',
+    scheduledDate: '',
+    scheduledTime: '12 : 00',
   });
 
   const [tagModal, setTagModal] = useState<{
@@ -257,17 +259,20 @@ export const DietManagement: React.FC<DietManagementProps> = ({
         collectsCount: 0,
         status: (recipeForm.status as any) || '已发布',
         updater: '管理员',
-        lastUpdateTime: '2026-09-19 16:30:00',
-        coverImage: recipeForm.coverImage,
+        lastUpdateTime: '2026-10-21 16:30:00',
+        coverImage: recipeForm.coverImage || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&auto=format&fit=crop&q=80',
         detailHtml: recipeForm.detailHtml,
+        publishType: recipeForm.publishType as any,
+        scheduledDate: recipeForm.scheduledDate,
+        scheduledTime: recipeForm.scheduledTime,
       };
       setRecipes([newItem, ...recipes]);
-      onNotice('成功新增食谱');
+      onNotice('成功新增菜谱');
     } else if (recipeModal.item) {
       setRecipes(
         recipes.map((r) =>
           r.id === recipeModal.item!.id
-            ? { ...r, ...recipeForm, lastUpdateTime: '2026-09-19 16:30:00' }
+            ? { ...r, ...recipeForm, lastUpdateTime: '2026-10-21 16:30:00' }
             : r
         )
       );
@@ -278,16 +283,26 @@ export const DietManagement: React.FC<DietManagementProps> = ({
 
   const handleOpenRecipeModal = (item?: RecipeItem) => {
     if (item) {
-      setRecipeForm({ ...item });
+      // Edit mode: populate existing item data
+      setRecipeForm({
+        ...item,
+        publishType: item.publishType || '立即发布',
+        scheduledDate: item.scheduledDate || '',
+        scheduledTime: item.scheduledTime || '12 : 00',
+      });
       setRecipeModal({ isOpen: true, item, isCreate: false });
     } else {
+      // Add mode: completely cleared data
       setRecipeForm({
         title: '',
-        category: '午餐',
-        tags: ['低盐', '低糖'],
+        category: '',
+        tags: [],
         status: '已发布',
-        coverImage: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&auto=format&fit=crop&q=80',
+        coverImage: '',
         detailHtml: '',
+        publishType: '立即发布',
+        scheduledDate: '',
+        scheduledTime: '12 : 00',
       });
       setRecipeModal({ isOpen: true, item: null, isCreate: true });
     }
@@ -312,7 +327,7 @@ export const DietManagement: React.FC<DietManagementProps> = ({
         name: tagForm.name,
         recipeCount: 0,
         updater: '管理员',
-        lastUpdateTime: '2026-09-19 16:00:00',
+        lastUpdateTime: '2026-10-19 16:00:00',
         status: tagForm.status,
       };
       setTags([newT, ...tags]);
@@ -321,7 +336,7 @@ export const DietManagement: React.FC<DietManagementProps> = ({
       setTags(
         tags.map((t) =>
           t.id === tagModal.item!.id
-            ? { ...t, name: tagForm.name, status: tagForm.status, lastUpdateTime: '2026-09-19 16:00:00' }
+            ? { ...t, name: tagForm.name, status: tagForm.status, lastUpdateTime: '2026-10-19 16:00:00' }
             : t
         )
       );
@@ -345,8 +360,8 @@ export const DietManagement: React.FC<DietManagementProps> = ({
 
   const renderHeaderTitle = (title: string) => (
     <div className="flex items-center space-x-2.5 pb-2">
-      <span className="w-1 h-4 bg-[#10b981] rounded-full"></span>
-      <h1 className="text-sm font-semibold text-gray-800">{title}</h1>
+      <span className="w-1.5 h-5 bg-[#10b981] rounded-full"></span>
+      <h1 className="text-sm font-bold text-gray-800">{title}</h1>
     </div>
   );
 
@@ -480,7 +495,7 @@ export const DietManagement: React.FC<DietManagementProps> = ({
                   <tr key={item.id} className="hover:bg-gray-50/60 transition-colors">
                     <td className="py-3.5 px-4">
                       <img
-                        src={item.coverImage}
+                        src={item.coverImage || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&auto=format&fit=crop&q=80'}
                         alt={item.title}
                         className="w-12 h-12 object-cover rounded-lg border border-gray-100"
                       />
@@ -531,43 +546,104 @@ export const DietManagement: React.FC<DietManagementProps> = ({
           </div>
         </div>
 
-        {/* Modal for Recipe Form */}
+        {/* Modal for Recipe Form matching Screenshot */}
         {recipeModal.isOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs">
-            <div className="bg-white rounded-xl w-full max-w-lg overflow-hidden shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-150">
-              <div className="px-6 py-4 flex items-center justify-between border-b border-gray-100">
-                <h3 className="text-sm font-semibold text-gray-800">
-                  {recipeModal.isCreate ? '新增食谱' : '编辑食谱'}
-                </h3>
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs p-4">
+            <div className="bg-white rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-150">
+              {/* Top Header matching screenshot */}
+              <div className="px-8 py-5 flex items-center justify-between border-b border-gray-100">
+                <div className="flex items-center space-x-2.5">
+                  <span className="w-1.5 h-5 bg-[#10b981] rounded-full"></span>
+                  <h3 className="text-base font-bold text-gray-800">
+                    {recipeModal.isCreate ? '新增菜谱' : '编辑菜谱'}
+                  </h3>
+                </div>
                 <button
                   onClick={() => setRecipeModal({ isOpen: false, item: null, isCreate: false })}
-                  className="text-gray-400 hover:text-gray-600 p-1"
+                  className="text-gray-400 hover:text-gray-600 p-1 rounded-lg hover:bg-gray-100 transition-colors"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <form onSubmit={handleSaveRecipe} className="p-6 space-y-4 text-xs">
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">菜谱标题 <span className="text-red-500">*</span></label>
-                  <input
-                    type="text"
-                    required
-                    value={recipeForm.title || ''}
-                    onChange={(e) => setRecipeForm({ ...recipeForm, title: e.target.value })}
-                    placeholder="请输入菜谱标题"
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
+              <form onSubmit={handleSaveRecipe} className="p-8 space-y-6 text-xs max-h-[75vh] overflow-y-auto">
+                {/* Recipe Title */}
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  <label className="col-span-2 text-right text-gray-700 font-medium">
+                    菜谱标题 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10">
+                    <input
+                      type="text"
+                      required
+                      value={recipeForm.title || ''}
+                      onChange={(e) => setRecipeForm({ ...recipeForm, title: e.target.value })}
+                      placeholder="请输入"
+                      className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:border-[#10b981] text-xs"
+                    />
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <label className="text-gray-600 font-medium">餐次分类</label>
+                {/* Recipe Cover */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right text-gray-700 font-medium pt-2">
+                    菜谱封面 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10 space-y-2">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-36 h-28 border-2 border-dashed border-gray-200 rounded-xl flex flex-col items-center justify-center text-gray-400 bg-gray-50/50 hover:bg-gray-50 cursor-pointer transition-colors relative group overflow-hidden">
+                        {recipeForm.coverImage ? (
+                          <img src={recipeForm.coverImage} alt="Cover" className="w-full h-full object-cover" />
+                        ) : (
+                          <>
+                            <Plus className="w-5 h-5 mb-1 text-gray-400 group-hover:text-[#10b981]" />
+                            <span className="text-xs text-gray-500 group-hover:text-[#10b981] font-medium">+ 上传图片</span>
+                          </>
+                        )}
+                        <input
+                          type="text"
+                          value={recipeForm.coverImage || ''}
+                          onChange={(e) => setRecipeForm({ ...recipeForm, coverImage: e.target.value })}
+                          placeholder="输入图片URL"
+                          className="absolute inset-0 opacity-0 cursor-pointer"
+                          title="点击输入图片链接"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-[11px] text-gray-400">
+                      支持jpg, png等格式文件上传，文件大小不超过10MB
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tags & Category */}
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  <label className="col-span-2 text-right text-gray-700 font-medium">
+                    标签 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-4">
                     <select
-                      value={recipeForm.category || '午餐'}
-                      onChange={(e) => setRecipeForm({ ...recipeForm, category: e.target.value })}
-                      className="w-full px-3 py-1.5 border border-gray-200 rounded-md bg-white focus:outline-none focus:border-[#10b981]"
+                      value={recipeForm.tags?.[0] || ''}
+                      onChange={(e) => setRecipeForm({ ...recipeForm, tags: [e.target.value] })}
+                      className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg bg-white focus:outline-none focus:border-[#10b981] text-xs text-gray-700"
                     >
+                      <option value="">请选择</option>
+                      {tags.map((t) => (
+                        <option key={t.id} value={t.name}>{t.name}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <label className="col-span-2 text-right text-gray-700 font-medium">
+                    分类 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-4">
+                    <select
+                      value={recipeForm.category || ''}
+                      onChange={(e) => setRecipeForm({ ...recipeForm, category: e.target.value })}
+                      className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg bg-white focus:outline-none focus:border-[#10b981] text-xs text-gray-700"
+                    >
+                      <option value="">请选择</option>
                       <option value="早餐">早餐</option>
                       <option value="午餐">午餐</option>
                       <option value="晚餐">晚餐</option>
@@ -575,55 +651,115 @@ export const DietManagement: React.FC<DietManagementProps> = ({
                       <option value="减脂餐">减脂餐</option>
                     </select>
                   </div>
+                </div>
 
-                  <div className="space-y-1">
-                    <label className="text-gray-600 font-medium">状态</label>
-                    <select
-                      value={recipeForm.status || '已发布'}
-                      onChange={(e) => setRecipeForm({ ...recipeForm, status: e.target.value as any })}
-                      className="w-full px-3 py-1.5 border border-gray-200 rounded-md bg-white focus:outline-none focus:border-[#10b981]"
-                    >
-                      <option value="已发布">已发布</option>
-                      <option value="草稿">草稿</option>
-                      <option value="已下架">已下架</option>
-                    </select>
+                {/* Publish Time */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right text-gray-700 font-medium pt-1">
+                    发布时间
+                  </label>
+                  <div className="col-span-10 space-y-3">
+                    <div className="flex items-center space-x-6">
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="publishType"
+                          checked={recipeForm.publishType === '立即发布' || !recipeForm.publishType}
+                          onChange={() => setRecipeForm({ ...recipeForm, publishType: '立即发布' })}
+                          className="text-[#10b981] focus:ring-[#10b981] accent-[#10b981]"
+                        />
+                        <span className="text-gray-700 font-medium">立即发布</span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="publishType"
+                          checked={recipeForm.publishType === '定时发布'}
+                          onChange={() => setRecipeForm({ ...recipeForm, publishType: '定时发布' })}
+                          className="text-[#10b981] focus:ring-[#10b981] accent-[#10b981]"
+                        />
+                        <span className="text-gray-700 font-medium">定时发布</span>
+                      </label>
+                    </div>
+
+                    {recipeForm.publishType === '定时发布' && (
+                      <div className="flex items-center space-x-3">
+                        <div className="flex items-center space-x-2 border border-gray-200 rounded-lg px-3 py-2 bg-white w-56">
+                          <input
+                            type="date"
+                            value={recipeForm.scheduledDate || ''}
+                            onChange={(e) => setRecipeForm({ ...recipeForm, scheduledDate: e.target.value })}
+                            className="w-full focus:outline-none text-xs text-gray-700"
+                          />
+                          <Calendar className="w-4 h-4 text-gray-400 shrink-0" />
+                        </div>
+                        <div className="flex items-center space-x-2 border border-gray-200 rounded-lg px-3 py-2 bg-white w-32">
+                          <input
+                            type="text"
+                            value={recipeForm.scheduledTime || '12 : 00'}
+                            onChange={(e) => setRecipeForm({ ...recipeForm, scheduledTime: e.target.value })}
+                            className="w-full focus:outline-none text-xs text-gray-700 font-mono text-center"
+                          />
+                          <Clock className="w-4 h-4 text-gray-400 shrink-0" />
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">封面图片 URL</label>
-                  <input
-                    type="text"
-                    value={recipeForm.coverImage || ''}
-                    onChange={(e) => setRecipeForm({ ...recipeForm, coverImage: e.target.value })}
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
+                {/* Recipe Details (Rich Text Editor Simulation matching screenshot) */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right text-gray-700 font-medium pt-2">
+                    菜谱详情 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10 border border-gray-200 rounded-xl overflow-hidden bg-white shadow-xs">
+                    {/* Toolbar */}
+                    <div className="flex flex-wrap items-center gap-1.5 bg-gray-50/80 border-b border-gray-200 px-3 py-2.5 text-gray-600 text-sm">
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded font-bold" title="标题">H</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded font-bold" title="加粗">B</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded font-bold" title="字号">T</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded line-through" title="删除线">S</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded italic" title="斜体">I</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded underline" title="下划线">U</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="文本颜色">A</button>
+                      <span className="w-px h-4 bg-gray-300 mx-1"></span>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="超链接">🔗</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="列表">≡</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="对齐">≣</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="引用">“</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="表情">☺</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="插入图片">🖼</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="表格">⊞</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="视频">▶</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="源码">&gt;_</button>
+                      <span className="w-px h-4 bg-gray-300 mx-1"></span>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="撤销">↩</button>
+                      <button type="button" className="p-1 hover:bg-gray-200 rounded" title="重做">↪</button>
+                    </div>
+                    <textarea
+                      rows={8}
+                      value={recipeForm.detailHtml || ''}
+                      onChange={(e) => setRecipeForm({ ...recipeForm, detailHtml: e.target.value })}
+                      placeholder="请输入菜谱详情及营养说明..."
+                      className="w-full p-4 focus:outline-none text-xs text-gray-800 leading-relaxed resize-y"
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">详细描述/烹饪方法</label>
-                  <textarea
-                    rows={3}
-                    value={recipeForm.detailHtml || ''}
-                    onChange={(e) => setRecipeForm({ ...recipeForm, detailHtml: e.target.value })}
-                    placeholder="输入烹饪步骤及营养分析"
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
-                </div>
-
-                <div className="pt-4 flex items-center justify-end space-x-3 border-t border-gray-100">
+                {/* Form Buttons */}
+                <div className="pt-5 flex items-center justify-end space-x-3 border-t border-gray-100">
                   <button
                     type="button"
                     onClick={() => setRecipeModal({ isOpen: false, item: null, isCreate: false })}
-                    className="px-4 py-1.5 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-md"
+                    className="px-5 py-2 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-lg text-xs font-medium"
                   >
                     取消
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-1.5 bg-[#10b981] hover:bg-[#059669] text-white rounded-md font-medium"
+                    className="px-6 py-2 bg-[#10b981] hover:bg-[#059669] text-white rounded-lg text-xs font-medium shadow-sm transition-colors"
                   >
-                    确定
+                    保存
                   </button>
                 </div>
               </form>

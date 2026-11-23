@@ -45,7 +45,7 @@ export const INITIAL_CATEGORIES: ProductCategoryItem[] = [
     icon: 'Accessibility',
     productCount: 100,
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-19 14:20:00',
+    lastUpdateTime: '2026-10-19 14:20:00',
     status: '启用',
   },
   {
@@ -55,7 +55,7 @@ export const INITIAL_CATEGORIES: ProductCategoryItem[] = [
     icon: 'Stethoscope',
     productCount: 88,
     lastUpdater: '王强',
-    lastUpdateTime: '2026-09-18 16:10:00',
+    lastUpdateTime: '2026-10-18 16:10:00',
     status: '启用',
   },
   {
@@ -65,7 +65,7 @@ export const INITIAL_CATEGORIES: ProductCategoryItem[] = [
     icon: 'HeartPulse',
     productCount: 95,
     lastUpdater: '陈主任',
-    lastUpdateTime: '2026-09-17 11:30:00',
+    lastUpdateTime: '2026-10-17 11:30:00',
     status: '启用',
   },
   {
@@ -75,7 +75,7 @@ export const INITIAL_CATEGORIES: ProductCategoryItem[] = [
     icon: 'Smile',
     productCount: 42,
     lastUpdater: '院办李生',
-    lastUpdateTime: '2026-09-16 09:45:00',
+    lastUpdateTime: '2026-10-16 09:45:00',
     status: '启用',
   },
   {
@@ -85,7 +85,7 @@ export const INITIAL_CATEGORIES: ProductCategoryItem[] = [
     icon: 'Utensils',
     productCount: 76,
     lastUpdater: '廖主管',
-    lastUpdateTime: '2026-09-14 17:00:00',
+    lastUpdateTime: '2026-10-14 17:00:00',
     status: '启用',
   },
   {
@@ -95,7 +95,7 @@ export const INITIAL_CATEGORIES: ProductCategoryItem[] = [
     icon: 'Activity',
     productCount: 110,
     lastUpdater: '孙经理',
-    lastUpdateTime: '2026-09-11 10:15:00',
+    lastUpdateTime: '2026-10-11 10:15:00',
     status: '启用',
   },
   {
@@ -105,7 +105,7 @@ export const INITIAL_CATEGORIES: ProductCategoryItem[] = [
     icon: 'UserCheck',
     productCount: 64,
     lastUpdater: '张管理员',
-    lastUpdateTime: '2026-09-08 15:30:00',
+    lastUpdateTime: '2026-10-08 15:30:00',
     status: '启用',
   },
   {
@@ -115,7 +115,7 @@ export const INITIAL_CATEGORIES: ProductCategoryItem[] = [
     icon: 'Sparkles',
     productCount: 130,
     lastUpdater: '钱工',
-    lastUpdateTime: '2026-09-03 08:20:00',
+    lastUpdateTime: '2026-10-03 08:20:00',
     status: '启用',
   },
 ];
@@ -215,7 +215,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: true,
     placeholder: '请填写具体体检或检测项目名称',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-19 15:30:00',
+    lastUpdateTime: '2026-10-19 15:30:00',
     status: '启用',
   },
   {
@@ -227,7 +227,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: false,
     placeholder: '请输入适用的年龄段范围',
     lastUpdater: '王强',
-    lastUpdateTime: '2026-09-18 16:45:12',
+    lastUpdateTime: '2026-10-18 16:45:12',
     status: '启用',
   },
   {
@@ -239,7 +239,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: true,
     placeholder: '请输入服务覆盖建筑面积',
     lastUpdater: '陈主任',
-    lastUpdateTime: '2026-09-17 11:20:00',
+    lastUpdateTime: '2026-10-17 11:20:00',
     status: '启用',
   },
   {
@@ -251,7 +251,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: true,
     placeholder: '请选择使用场景',
     lastUpdater: '院办李生',
-    lastUpdateTime: '2026-09-16 09:10:05',
+    lastUpdateTime: '2026-10-16 09:10:05',
     status: '启用',
   },
   {
@@ -263,7 +263,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: true,
     placeholder: '请选择具体服务范围',
     lastUpdater: '廖主管',
-    lastUpdateTime: '2026-09-14 14:00:00',
+    lastUpdateTime: '2026-10-14 14:00:00',
     status: '启用',
   },
   {
@@ -275,7 +275,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: false,
     placeholder: '超时每小时加收费用（元）',
     lastUpdater: '孙经理',
-    lastUpdateTime: '2026-09-12 10:25:30',
+    lastUpdateTime: '2026-10-12 10:25:30',
     status: '启用',
   },
   {
@@ -287,7 +287,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: true,
     placeholder: '请选择理疗或治疗手段',
     lastUpdater: '张管理员',
-    lastUpdateTime: '2026-09-09 16:15:00',
+    lastUpdateTime: '2026-10-09 16:15:00',
     status: '启用',
   },
   {
@@ -299,7 +299,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: true,
     placeholder: '请输入建议疗程次数',
     lastUpdater: '钱工',
-    lastUpdateTime: '2026-09-06 11:00:00',
+    lastUpdateTime: '2026-10-06 11:00:00',
     status: '启用',
   },
   {
@@ -311,7 +311,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: true,
     placeholder: '请输入适宜接诊的长者健康状况',
     lastUpdater: '赵医生',
-    lastUpdateTime: '2026-09-04 09:30:00',
+    lastUpdateTime: '2026-10-04 09:30:00',
     status: '启用',
   },
   {
@@ -323,7 +323,7 @@ export const INITIAL_PARAMS: ProductParamItem[] = [
     isRequired: false,
     placeholder: '请输入服务禁忌症及特殊照护提示',
     lastUpdater: '管理员',
-    lastUpdateTime: '2026-09-02 08:15:00',
+    lastUpdateTime: '2026-10-02 08:15:00',
     status: '启用',
   },
 ];
@@ -337,7 +337,7 @@ export const INITIAL_GENERAL_SETTINGS: GeneralSettingsData = {
   enableProductSales: true,
 };
 
-// Initial Products Data (Matching Screenshots 3 - 6, Sorted strictly descending by date 2026-09-01 to 2026-09-19)
+// Initial Products Data (Matching Screenshots 3 - 6, Sorted strictly descending by date 2026-10-01 to 2026-10-19)
 export const INITIAL_PRODUCTS: ProductItem[] = [
   {
     id: 'PROD_323009000',
@@ -355,7 +355,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     servicePeopleCount: 2,
     status: '已上架',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-19 10:09:09',
+    lastUpdateTime: '2026-10-19 10:09:09',
     remarks: '由持有执业医师/物理治疗师资格证书人员上门一对一操作。',
     scene: '上门居家',
     area: '不限',
@@ -381,7 +381,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     servicePeopleCount: 1,
     status: '已上架',
     lastUpdater: '王强',
-    lastUpdateTime: '2026-09-18 16:30:22',
+    lastUpdateTime: '2026-10-18 16:30:22',
     remarks: '适用居家日常深度保洁及长者房间整理消毒。',
     scene: '居家室内',
     area: '80平米以内',
@@ -407,7 +407,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     servicePeopleCount: 2,
     status: '已上架',
     lastUpdater: '陈主任',
-    lastUpdateTime: '2026-09-17 14:15:10',
+    lastUpdateTime: '2026-10-17 14:15:10',
     remarks: '双人携充气浴缸上门，配备防滑与生命体征监测仪。',
     scene: '卧床长者房间',
     area: '床边空间2平米',
@@ -433,7 +433,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     servicePeopleCount: 1,
     status: '已上架',
     lastUpdater: '院办李生',
-    lastUpdateTime: '2026-09-15 09:20:45',
+    lastUpdateTime: '2026-10-15 09:20:45',
     remarks: '包含静脉采血（血常规/生化/血糖）及便携心电图监测。',
     scene: '居家室内',
     area: '不限',
@@ -459,7 +459,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     servicePeopleCount: 1,
     status: '已上架',
     lastUpdater: '廖主管',
-    lastUpdateTime: '2026-09-12 17:10:00',
+    lastUpdateTime: '2026-10-12 17:10:00',
     remarks: '资深护工一对一全程跟进，详细记录护理日志。',
     scene: '居家/医院病房',
     area: '不限',
@@ -485,7 +485,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     servicePeopleCount: 1,
     status: '已下架',
     lastUpdater: '孙经理',
-    lastUpdateTime: '2026-09-08 11:05:30',
+    lastUpdateTime: '2026-10-08 11:05:30',
     remarks: '结合音乐疗法与怀旧训练延缓认知退化。',
     scene: '居家活动室',
     area: '不限',
@@ -511,7 +511,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     servicePeopleCount: 1,
     status: '已上架',
     lastUpdater: '赵医生',
-    lastUpdateTime: '2026-09-03 08:30:00',
+    lastUpdateTime: '2026-10-03 08:30:00',
     remarks: '无烟温针拔罐，舒筋通络改善气血。',
     scene: '居家床榻',
     area: '不限',
@@ -677,7 +677,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
         isRequired: paramForm.isRequired ?? true,
         placeholder: paramForm.placeholder || '',
         lastUpdater: '系统管理员',
-        lastUpdateTime: '2026-09-19 15:45:00',
+        lastUpdateTime: '2026-10-19 15:45:00',
         status: (paramForm.status as '启用' | '禁用') || '启用',
       };
       setParams([newP, ...params]);
@@ -690,7 +690,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
                 ...p,
                 ...paramForm,
                 sortOrder: Number(paramForm.sortOrder),
-                lastUpdateTime: '2026-09-19 15:50:00',
+                lastUpdateTime: '2026-10-19 15:50:00',
                 lastUpdater: '编辑管理员',
               }
             : p
@@ -703,7 +703,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
 
   const handleToggleParamStatus = (param: ProductParamItem) => {
     const next = param.status === '启用' ? '禁用' : '启用';
-    setParams(params.map((p) => (p.id === param.id ? { ...p, status: next, lastUpdateTime: '2026-09-19 15:55:00' } : p)));
+    setParams(params.map((p) => (p.id === param.id ? { ...p, status: next, lastUpdateTime: '2026-10-19 15:55:00' } : p)));
     onNotice(`已将参数“${param.name}”状态设为：${next}`);
   };
 
@@ -776,7 +776,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
         icon: 'Accessibility',
         productCount: 0,
         lastUpdater: '系统管理员',
-        lastUpdateTime: '2026-09-19 15:00:00',
+        lastUpdateTime: '2026-10-19 15:00:00',
         status: (categoryForm.status as '启用' | '禁用') || '启用',
       };
       setCategories([newCat, ...categories]);
@@ -789,7 +789,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
                 ...c,
                 ...categoryForm,
                 sortOrder: Number(categoryForm.sortOrder),
-                lastUpdateTime: '2026-09-19 15:05:00',
+                lastUpdateTime: '2026-10-19 15:05:00',
                 lastUpdater: '编辑管理员',
               }
             : c
@@ -804,7 +804,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
   const handleToggleCategoryStatus = (cat: ProductCategoryItem) => {
     const next = cat.status === '启用' ? '禁用' : '启用';
     setCategories(
-      categories.map((c) => (c.id === cat.id ? { ...c, status: next, lastUpdateTime: '2026-09-19 15:10:00' } : c))
+      categories.map((c) => (c.id === cat.id ? { ...c, status: next, lastUpdateTime: '2026-10-19 15:10:00' } : c))
     );
     onNotice(`已更新分类“${cat.name}”状态为：${next}`);
   };
@@ -945,7 +945,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
       code: '323009' + Math.floor(1000 + Math.random() * 9000),
       title: prod.title + ' (副本)',
       lastUpdater: '系统管理员',
-      lastUpdateTime: '2026-09-19 15:20:00',
+      lastUpdateTime: '2026-10-19 15:20:00',
     };
     setProducts([copied, ...products]);
     onNotice(`已成功复制创建商品：“${copied.title}”`);
@@ -962,7 +962,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
         const next = isOff ? '已上架' : '已下架';
         setProducts(
           products.map((p) =>
-            p.id === prod.id ? { ...p, status: next, lastUpdateTime: '2026-09-19 15:25:00' } : p
+            p.id === prod.id ? { ...p, status: next, lastUpdateTime: '2026-10-19 15:25:00' } : p
           )
         );
         onNotice(`商品“${prod.title}”已${next}`);
@@ -1010,7 +1010,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
         servicePeopleCount: Number(productForm.servicePeopleCount) || 2,
         status: (productForm.status as '已上架' | '已下架') || '已上架',
         lastUpdater: '新增人员',
-        lastUpdateTime: '2026-09-19 15:30:00',
+        lastUpdateTime: '2026-10-19 15:30:00',
         remarks: productForm.remarks,
         scene: productForm.scene,
         area: productForm.area,
@@ -1034,7 +1034,7 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
                 durationHours: Number(productForm.durationHours),
                 servicePeopleCount: Number(productForm.servicePeopleCount),
                 lastUpdater: '编辑管理员',
-                lastUpdateTime: '2026-09-19 15:35:00',
+                lastUpdateTime: '2026-10-19 15:35:00',
               } as ProductItem)
             : p
         )
@@ -2492,8 +2492,8 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
             <div className="flex items-center space-x-2 flex-1">
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -2501,8 +2501,8 @@ export const ProductManagement: React.FC<ProductManagementProps> = ({ subPageId,
               <span className="text-gray-400">~</span>
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"

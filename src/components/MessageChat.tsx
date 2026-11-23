@@ -26,7 +26,7 @@ interface ChatContact {
     id: string;
     status: string;
     title: string;
-    orderTime: string; // 2026-09-15 14:12:07 (descending)
+    orderTime: string; // 2026-10-15 14:12:07 (descending)
     amount: string;
     image: string;
   }[];
@@ -61,7 +61,7 @@ const INITIAL_CONTACTS: ChatContact[] = [
         id: 'ord-01',
         status: '已完成',
         title: '日常清洁 2小时1人急速清洁全...',
-        orderTime: '2026-09-15 14:12:07',
+        orderTime: '2026-10-15 14:12:07',
         amount: '300.00',
         image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=120&q=80',
       },
@@ -69,7 +69,7 @@ const INITIAL_CONTACTS: ChatContact[] = [
         id: 'ord-02',
         status: '已完成',
         title: '居家助浴 适老专业洗护防滑指导...',
-        orderTime: '2026-09-12 14:12:07',
+        orderTime: '2026-10-12 14:12:07',
         amount: '300.00',
         image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=120&q=80',
       },
@@ -77,7 +77,7 @@ const INITIAL_CONTACTS: ChatContact[] = [
         id: 'ord-03',
         status: '已完成',
         title: '慢病随访 血糖血压多导监测服务...',
-        orderTime: '2026-09-08 10:20:15',
+        orderTime: '2026-10-08 10:20:15',
         amount: '404.00',
         image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=120&q=80',
       },
@@ -98,7 +98,7 @@ const INITIAL_CONTACTS: ChatContact[] = [
         id: 'ord-04',
         status: '已完成',
         title: '防跌倒评估 卫生间安全扶手安装...',
-        orderTime: '2026-09-17 11:30:00',
+        orderTime: '2026-10-17 11:30:00',
         amount: '299.00',
         image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=120&q=80',
       },
@@ -106,7 +106,7 @@ const INITIAL_CONTACTS: ChatContact[] = [
         id: 'ord-05',
         status: '已完成',
         title: '长者骨密度超声筛查上门服务...',
-        orderTime: '2026-09-10 16:00:00',
+        orderTime: '2026-10-10 16:00:00',
         amount: '299.00',
         image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=120&q=80',
       },
@@ -127,7 +127,7 @@ const INITIAL_CONTACTS: ChatContact[] = [
         id: 'ord-06',
         status: '已完成',
         title: '动态心电图监测 48小时居家佩戴...',
-        orderTime: '2026-09-16 09:45:10',
+        orderTime: '2026-10-16 09:45:10',
         amount: '299.00',
         image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=120&q=80',
       },
@@ -148,7 +148,7 @@ const INITIAL_CONTACTS: ChatContact[] = [
         id: 'ord-07',
         status: '已完成',
         title: '偏瘫肢体被动康复理疗上门指导...',
-        orderTime: '2026-09-18 15:20:00',
+        orderTime: '2026-10-18 15:20:00',
         amount: '450.00',
         image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=120&q=80',
       },
@@ -156,7 +156,7 @@ const INITIAL_CONTACTS: ChatContact[] = [
         id: 'ord-08',
         status: '已完成',
         title: '智能防走失定位手环配置与绑定...',
-        orderTime: '2026-09-13 10:15:00',
+        orderTime: '2026-10-13 10:15:00',
         amount: '380.00',
         image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=120&q=80',
       },
@@ -556,7 +556,7 @@ export const MessageChat: React.FC<MessageChatProps> = ({ onNotice }) => {
                   </div>
                 </div>
 
-                {/* 订单列表 (Strictly descending dates within 2026-09 to 2026-09-19) */}
+                {/* 订单列表 (Strictly descending dates within 2026-10 to 2026-10-19) */}
                 <div className="space-y-3">
                   <div className="text-xs font-semibold text-gray-800">
                     订单列表 ({currentContact.orders.length})

@@ -15,7 +15,7 @@ import {
 
 export interface BroadcastMessage {
   id: string;
-  sendTime: string; // 2026-09-19 15:30:00 (descending)
+  sendTime: string; // 2026-10-19 15:30:00 (descending)
   title: string;
   status: '待发送' | '已发送' | '发送中';
   content: string; // 报告类型/消息内容
@@ -26,7 +26,7 @@ export interface BroadcastMessage {
 const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   {
     id: 'msg-01',
-    sendTime: '2026-09-19 16:40',
+    sendTime: '2026-10-19 16:40',
     title: '重阳节敬老义诊与慢病筛查活动安排',
     status: '待发送',
     content: '尊敬的长者及家属：社区卫生中心将于本周六开展免费心电、骨密度与眼底筛查，请按时前往或预约上门。',
@@ -35,7 +35,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-02',
-    sendTime: '2026-09-19 11:15',
+    sendTime: '2026-10-19 11:15',
     title: '秋季流感疫苗及肺炎球菌疫苗接种通知',
     status: '待发送',
     content: '亲爱的长者：秋季呼吸道疾病高发，针对65岁以上长者的免费流感疫苗接种已开放预约，点击查看预约网点。',
@@ -44,16 +44,16 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-03',
-    sendTime: '2026-09-18 17:20',
+    sendTime: '2026-10-18 17:20',
     title: '长护险定点居家上门助浴服务补贴公示',
     status: '已发送',
-    content: '长护险定点参保家庭请注意，9月份失能等级评定及助浴、康复护理自负抵扣账单已同步更新，请核对。',
+    content: '长护险定点参保家庭请注意，10月份失能等级评定及助浴、康复护理自负抵扣账单已同步更新，请核对。',
     recipient: '所有用户',
     sendMethod: '系统消息',
   },
   {
     id: 'msg-04',
-    sendTime: '2026-09-18 10:30',
+    sendTime: '2026-10-18 10:30',
     title: '适老化智能居家监护设备在线巡检提示',
     status: '已发送',
     content: '平台已对辖区内跌倒雷达与SOS紧急呼叫器完成常规无线链路自检，设备运行状态良好，请安心使用。',
@@ -62,7 +62,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-05',
-    sendTime: '2026-09-17 15:45',
+    sendTime: '2026-10-17 15:45',
     title: '协议修订通知',
     status: '待发送',
     content: '亲爱的用户，我们最近更新了隐私协议与长者健康数据委托管理规则，点击查看全部内容。',
@@ -71,7 +71,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-06',
-    sendTime: '2026-09-17 09:20',
+    sendTime: '2026-10-17 09:20',
     title: '高血压长者降压药物规范服用温馨指引',
     status: '已发送',
     content: '近期气温波动较大，清晨血压易出现高峰。请遵医嘱按时服药，避免剧烈起卧，每日早晚定时打卡记录。',
@@ -80,7 +80,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-07',
-    sendTime: '2026-09-16 14:10',
+    sendTime: '2026-10-16 14:10',
     title: '社区银发助餐配送中秋特色软糯营养餐食',
     status: '已发送',
     content: '中秋节营养助餐菜单已上线，低糖控脂适老菜品包含清蒸鲈鱼与杂粮米饭，支持子女代下单配餐。',
@@ -89,7 +89,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-08',
-    sendTime: '2026-09-15 16:30',
+    sendTime: '2026-10-15 16:30',
     title: '跌倒高危预警长者防滑设施巡回检查通知',
     status: '已发送',
     content: '防跌倒评估得分低于70分的长者家庭，网格护理员将于本周内上门复查扶手稳固度并赠送防滑袜。',
@@ -98,7 +98,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-09',
-    sendTime: '2026-09-14 10:00',
+    sendTime: '2026-10-14 10:00',
     title: '糖尿病足早期自查要点与皮肤护理科普',
     status: '已发送',
     content: '每日洗脚水温不宜超过37℃，洗后擦干脚趾缝，如出现麻木、发凉或皲裂请及时联系家庭医生。',
@@ -107,7 +107,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-10',
-    sendTime: '2026-09-12 11:25',
+    sendTime: '2026-10-12 11:25',
     title: '九月中旬智能手环与血糖仪耗材申领提醒',
     status: '已发送',
     content: '慢病管理签约长者可凭敬老积分免费兑换血糖试纸与采血针50套，支持社区网点自提或顺丰包邮。',
@@ -116,7 +116,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-11',
-    sendTime: '2026-09-09 14:00',
+    sendTime: '2026-10-09 14:00',
     title: '家庭医生签约服务第三季度履约报告出炉',
     status: '已发送',
     content: '您所在网格的家庭医生团队已完成季度健康档案归集，包含血常规、生化及心肺功能评估综述。',
@@ -125,7 +125,7 @@ const INITIAL_BROADCAST_MESSAGES: BroadcastMessage[] = [
   },
   {
     id: 'msg-12',
-    sendTime: '2026-09-05 09:30',
+    sendTime: '2026-10-05 09:30',
     title: '银发学堂秋季老年心理关怀交流会开课',
     status: '已发送',
     content: '本周三下午开展《老有所乐·笑看夕阳》心理沙龙与书画茶艺交流，欢迎社区长者携家属共同参与。',
@@ -158,7 +158,7 @@ export const MessageBroadcast: React.FC<MessageBroadcastProps> = ({ onNotice }) 
   const [insertProduct, setInsertProduct] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
   const [sendTimeType, setSendTimeType] = useState<'now' | 'scheduled'>('now');
-  const [scheduledDate, setScheduledDate] = useState('2026-09-19');
+  const [scheduledDate, setScheduledDate] = useState('2026-10-19');
   const [scheduledHour, setScheduledHour] = useState('12');
   const [scheduledMinute, setScheduledMinute] = useState('00');
   const [formContent, setFormContent] = useState('');
@@ -223,7 +223,7 @@ export const MessageBroadcast: React.FC<MessageBroadcastProps> = ({ onNotice }) 
     setInsertProduct(false);
     setSelectedProducts([]);
     setSendTimeType('now');
-    setScheduledDate('2026-09-19');
+    setScheduledDate('2026-10-19');
     setScheduledHour('12');
     setScheduledMinute('00');
     setFormContent('');
@@ -255,7 +255,7 @@ export const MessageBroadcast: React.FC<MessageBroadcastProps> = ({ onNotice }) 
 
     const calculatedTime =
       sendTimeType === 'now'
-        ? '2026-09-19 17:15'
+        ? '2026-10-19 17:15'
         : `${scheduledDate} ${scheduledHour.padStart(2, '0')}:${scheduledMinute.padStart(2, '0')}`;
 
     if (editingMessage) {

@@ -31,8 +31,8 @@ export const UserListView: React.FC<UserListViewProps> = ({
 
   // Filters
   const [selectedTag, setSelectedTag] = useState<string>('all');
-  const [startDate, setStartDate] = useState<string>('2026-09-01');
-  const [endDate, setEndDate] = useState<string>('2026-09-18');
+  const [startDate, setStartDate] = useState<string>('2026-10-01');
+  const [endDate, setEndDate] = useState<string>('2026-10-20');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Modals
@@ -46,7 +46,7 @@ export const UserListView: React.FC<UserListViewProps> = ({
   const [newUserPhone, setNewUserPhone] = useState('13955667788');
   const [newUserGender, setNewGender] = useState<'男' | '女'>('女');
   const [newUserTags, setNewUserTags] = useState('高血压, 骨质疏松');
-  const [newUserDate, setNewUserDate] = useState('2026-09-18');
+  const [newUserDate, setNewUserDate] = useState('2026-10-20');
   const [newUserAddress, setNewUserAddress] = useState('金桂名邸 2栋 1单元 302室');
 
   // Available tag options
@@ -89,8 +89,8 @@ export const UserListView: React.FC<UserListViewProps> = ({
 
   const handleResetFilters = () => {
     setSelectedTag('all');
-    setStartDate('2026-09-01');
-    setEndDate('2026-09-18');
+    setStartDate('2026-10-01');
+    setEndDate('2026-10-20');
     setSearchQuery('');
     onNotice('已重置所有筛选条件');
   };
@@ -124,7 +124,7 @@ export const UserListView: React.FC<UserListViewProps> = ({
     e.preventDefault();
     const newUser: AppUser = {
       id: `usr-${Date.now()}`,
-      userNo: `2026090000${Math.floor(10 + Math.random() * 89)}`,
+      userNo: `2026100000${Math.floor(10 + Math.random() * 89)}`,
       name: newUserName,
       avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80',
       gender: newUserGender,
@@ -204,7 +204,7 @@ export const UserListView: React.FC<UserListViewProps> = ({
             全部用户
           </h1>
           <span className="text-xs text-gray-400">
-            共 {filteredUsers.length} 位长者记录 (2026年9月)
+            共 {filteredUsers.length} 位长者记录 (2026年10月)
           </span>
         </div>
 
@@ -453,7 +453,7 @@ export const UserListView: React.FC<UserListViewProps> = ({
               </thead>
               <tbody className="divide-y divide-gray-50">
                 {filteredUsers.map((user) => {
-                  const isYesterday = user.registerTime.startsWith('2026-09-18');
+                  const isYesterday = user.registerTime.startsWith('2026-10-18');
 
                   return (
                     <tr key={user.id} className="hover:bg-gray-50/70 transition-colors">
@@ -673,7 +673,7 @@ export const UserListView: React.FC<UserListViewProps> = ({
             <div className="px-6 py-4 bg-gray-50/80 border-b border-gray-100 flex items-center justify-between">
               <div className="flex items-center space-x-2 font-bold text-gray-800">
                 <span className="w-1.5 h-4 bg-[#10b981] rounded-full"></span>
-                <span>新增建档长者 (2026年9月)</span>
+                <span>新增建档长者 (2026年10月)</span>
               </div>
               <button
                 type="button"
@@ -721,15 +721,15 @@ export const UserListView: React.FC<UserListViewProps> = ({
               </div>
 
               <div>
-                <label className="block text-gray-500 font-medium mb-1">注册建档日期 (2026-09-01 至 2026-09-18)</label>
+                <label className="block text-gray-500 font-medium mb-1">注册建档日期 (2026-10-01 至 2026-10-20)</label>
                 <select
                   value={newUserDate}
                   onChange={(e) => setNewUserDate(e.target.value)}
                   className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#10b981]"
                 >
-                  {Array.from({ length: 18 }, (_, i) => {
+                  {Array.from({ length: 20 }, (_, i) => {
                     const day = 18 - i;
-                    const d = `2026-09-${day < 10 ? '0' + day : day}`;
+                    const d = `2026-10-${day < 10 ? '0' + day : day}`;
                     return (
                       <option key={d} value={d}>
                         {d}

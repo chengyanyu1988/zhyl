@@ -125,7 +125,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
   // 改单 Modal 状态
   const [changeOrderModalOrder, setChangeOrderModalOrder] = useState<TradeOrder | null>(null);
   const [changeOrderStaff, setChangeOrderStaff] = useState<string>('王小倩');
-  const [changeOrderDate, setChangeOrderDate] = useState<string>('2026-09-20');
+  const [changeOrderDate, setChangeOrderDate] = useState<string>('2026-10-20');
   const [changeOrderTime, setChangeOrderTime] = useState<string>('14:00');
   const [changeOrderRemark, setChangeOrderRemark] = useState<string>('');
 
@@ -274,7 +274,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
     setOrders((prev) =>
       prev.map((o) =>
         o.id === closeModalOrder.id
-          ? { ...o, status: '支付超时，订单关闭', closeTime: '2026-09-19 18:40:00' }
+          ? { ...o, status: '支付超时，订单关闭', closeTime: '2026-10-19 18:40:00' }
           : o
       )
     );
@@ -291,7 +291,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
               ...o,
               status: '待服务',
               assignedStaff: selectedStaff,
-              dispatchTime: '2026-09-19 18:45:00',
+              dispatchTime: '2026-10-19 18:45:00',
             }
           : o
       )
@@ -318,15 +318,15 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
           ? {
               ...o,
               status: '退款完成，订单关闭',
-              closeTime: '2026-09-19 18:50:00',
+              closeTime: '2026-10-19 18:50:00',
               afterSalesNo: `24001${Math.floor(100000 + Math.random() * 900000)}`,
               refundAmount: refAmt,
               refundReason: refundReasonSelect,
               refundExplanation: refundExpInput || '用户申请退款成功',
-              refundApplyTime: '2026-09-19 18:48:00',
+              refundApplyTime: '2026-10-19 18:48:00',
               refundStatus: '退款成功',
               refundChannel: '原支付退回',
-              refundOperatorTime: '2026-09-19 18:50:00',
+              refundOperatorTime: '2026-10-19 18:50:00',
               refundOperator: '平台管理员',
             }
           : o
@@ -356,7 +356,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
           ? {
               ...r,
               replyContent: reviewReplyText,
-              replyTime: '2026-09-19 18:55:00',
+              replyTime: '2026-10-19 18:55:00',
             }
           : r
       )
@@ -374,7 +374,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
       reasonText: newReasonText.trim(),
       relatedOrderCount: 0,
       updater: '李明明',
-      lastUpdateTime: '2026-09-19 19:00:00',
+      lastUpdateTime: '2026-10-19 19:00:00',
       status: newReasonStatus,
     };
     setRefundReasons((prev) => [newReason, ...prev]);
@@ -392,7 +392,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
         r.id === editingReason.id
           ? {
               ...editingReason,
-              lastUpdateTime: '2026-09-19 19:05:00',
+              lastUpdateTime: '2026-10-19 19:05:00',
               updater: '李明明',
             }
           : r
@@ -1066,7 +1066,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
                             paymentMethod: '支付宝',
                             orderSource: '平台系统',
                             address: '上海市杨浦区',
-                            reservationTime: '2026-09-20 08:30 - 10:00',
+                            reservationTime: '2026-10-20 08:30 - 10:00',
                             estimatedDuration: '1.5小时',
                             contactPhone: selectedAfterSalesDetail.buyerPhone,
                           });
@@ -1081,10 +1081,10 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
                 <div className="space-y-1.5 pt-2 text-gray-600 border-t border-gray-100">
                   <div className="flex justify-between"><span className="text-gray-400">用户ID:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.buyerId || '202409000001'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">手机号码:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.buyerPhone}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">注册时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.buyerRegisterTime || '2025-12-16 10:33:24'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">注册时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.buyerRegisterTime || '2026-10-01 10:33:24'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">注册方式:</span> <span className="text-gray-700">{selectedAfterSalesDetail.buyerRegisterType || '平台系统注册'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">最近登录时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.buyerLastLogin || '2026-09-18 10:33:24'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">最近购买时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.buyerLastBuy || '2026-09-17 11:33:24'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">最近登录时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.buyerLastLogin || '2026-10-18 10:33:24'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">最近购买时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.buyerLastBuy || '2026-10-17 11:33:24'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">备注:</span> <span className="text-gray-700">{selectedAfterSalesDetail.remark || '-'}</span></div>
                 </div>
               </div>
@@ -1157,10 +1157,10 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
                       </button>
                     </div>
                   </div>
-                  <div className="flex justify-between"><span className="text-gray-400">下单时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.orderTime || '2026-09-17 14:12:07'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">付款时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.payTime || '2026-09-17 15:12:07'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">接单时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.acceptTime || '2026-09-17 16:12:07'}</span></div>
-                  <div className="flex justify-between"><span className="text-gray-400">成交时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.dealTime || '2026-09-17 16:12:07'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">下单时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.orderTime || '2026-10-17 14:12:07'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">付款时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.payTime || '2026-10-17 15:12:07'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">接单时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.acceptTime || '2026-10-17 16:12:07'}</span></div>
+                  <div className="flex justify-between"><span className="text-gray-400">成交时间:</span> <span className="font-mono text-gray-700">{selectedAfterSalesDetail.dealTime || '2026-10-17 16:12:07'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">订单状态:</span> <span className="text-gray-800 font-semibold">{selectedAfterSalesDetail.orderStatus || '订单完成'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">核销人员:</span> <span className="text-gray-800">{selectedAfterSalesDetail.assignedStaff || '王小倩'}</span></div>
                   <div className="flex justify-between"><span className="text-gray-400">支付方式:</span> <span className="text-gray-800">{selectedAfterSalesDetail.payMethod || '支付宝'}</span></div>
@@ -1231,7 +1231,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
                 <h1 className="text-base font-bold text-gray-800">售后管理</h1>
               </div>
               <div className="text-xs text-gray-500 font-mono">
-                2026-09-01 至 2026-09-19
+                2026-10-01 至 2026-10-19
               </div>
             </div>
 
@@ -1623,7 +1623,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
                 共 {reviewsList.length} 条客户评价
               </span>
             </div>
-            <div className="text-xs text-gray-500 font-mono">2026-09-01 至 2026-09-19</div>
+            <div className="text-xs text-gray-500 font-mono">2026-10-01 至 2026-10-19</div>
           </div>
 
           <div className="mt-5 space-y-4">
@@ -1953,7 +1953,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
                 </div>
                 <div className="space-y-1">
                   <span className="text-gray-400">完成时间</span>
-                  <div className="font-mono text-gray-800">{withdrawalDetailModal.finishTime || '2026-09-19 10:35:10'}</div>
+                  <div className="font-mono text-gray-800">{withdrawalDetailModal.finishTime || '2026-10-19 10:35:10'}</div>
                 </div>
 
                 <div className="space-y-1 col-span-2">
@@ -2697,7 +2697,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
                   onClick={() => {
                     setChangeOrderModalOrder(ord);
                     setChangeOrderStaff('王小倩');
-                    setChangeOrderDate(ord.reservationTime ? ord.reservationTime.split(' ')[0] : '2026-09-20');
+                    setChangeOrderDate(ord.reservationTime ? ord.reservationTime.split(' ')[0] : '2026-10-20');
                     setChangeOrderTime(ord.reservationTime ? ord.reservationTime.split(' ')[1] || '14:00' : '14:00');
                     setChangeOrderRemark('');
                   }}
@@ -2950,7 +2950,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
           </div>
 
           <div className="flex items-center space-x-2 text-xs text-gray-500 font-mono">
-            <span>数据更新: 2026-09-19 18:30 (降序排列)</span>
+            <span>数据更新: 2026-10-19 18:30 (降序排列)</span>
           </div>
         </div>
 
@@ -3240,7 +3240,7 @@ export const TradeManagement: React.FC<TradeManagementProps> = ({
                         onClick={() => {
                           setChangeOrderModalOrder(ord);
                           setChangeOrderStaff('王小倩');
-                          setChangeOrderDate(ord.reservationTime ? ord.reservationTime.split(' ')[0] : '2026-09-20');
+                          setChangeOrderDate(ord.reservationTime ? ord.reservationTime.split(' ')[0] : '2026-10-20');
                           setChangeOrderTime(ord.reservationTime ? ord.reservationTime.split(' ')[1] || '14:00' : '14:00');
                           setChangeOrderRemark('');
                         }}

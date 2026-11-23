@@ -9,6 +9,33 @@ import {
   Star,
   Send,
   Settings,
+  UserPlus,
+  ShoppingBag,
+  Activity,
+  TrendingUp,
+  TrendingDown,
+  PieChart as PieIcon,
+  BarChart2,
+  BarChart3,
+  LineChart,
+  Layers,
+  Compass,
+  Tag as TagIcon,
+  LayoutGrid,
+  Trophy,
+  Crown,
+  Medal,
+  Award,
+  Sparkles,
+  CheckCircle2,
+  Grid,
+  List,
+  Columns,
+  Maximize2,
+  ArrowUpRight,
+  ChevronRight,
+  SlidersHorizontal,
+  Palette,
 } from 'lucide-react';
 import {
   KPI_STATS,
@@ -19,6 +46,14 @@ import {
   TOP_PRODUCTS,
   TOP_STAFF,
 } from '../data/mockData';
+import {
+  UserTrendSection,
+  QuickEntranceSection,
+  ServiceRatioSection,
+  UserTagSection,
+  ProductRankSection,
+  StaffRankSection,
+} from './workbench/WorkbenchSections';
 
 import { ActivePage } from '../types';
 
@@ -33,8 +68,28 @@ export const Workbench: React.FC<WorkbenchProps> = ({
   onNavigateToAppointment,
   onNavigateToPage,
 }) => {
-  // Tooltip date for the user trend chart; default to 2026-09-12 (which shows 1520 in screenshot) or hovered index
+  // Layout arrangement preset: 'balanced' (standard split 8:4 / 6:6 / 6:6) vs 'panorama' (full width focus)
+  const [layoutPreset, setLayoutPreset] = useState<'balanced' | 'panorama'>('balanced');
+  const [quickEntranceView, setQuickEntranceView] = useState<'grid' | 'list'>('grid');
+  // Background tone preset matching the overall deep green header tone
+  const [bgTone, setBgTone] = useState<'emerald' | 'sage' | 'cyan' | 'slate'>('emerald');
+
+  const bgToneClasses: Record<string, string> = {
+    emerald: 'bg-gradient-to-b from-[#e8f5ee] via-[#f1f7f4] to-[#f5f9f7]',
+    sage: 'bg-gradient-to-b from-[#e2efe8] via-[#ecf5f0] to-[#f4f8f6]',
+    cyan: 'bg-gradient-to-b from-[#e4f3f2] via-[#eef7f6] to-[#f5faf9]',
+    slate: 'bg-gradient-to-b from-[#ecf2ef] via-[#f3f6f5] to-[#f8faf9]',
+  };
+
+  // Tooltip date for the user trend chart; default to 2026-10-12 (which shows 1520 in screenshot) or hovered index
   const [hoveredPointIndex, setHoveredPointIndex] = useState<number>(3);
+  const [trendChartMode, setTrendChartMode] = useState<'column' | 'area' | 'step'>('column');
+  const [hoveredRatioIdx, setHoveredRatioIdx] = useState<number | null>(null);
+  const [ratioChartMode, setRatioChartMode] = useState<'ring' | 'bar'>('ring');
+  const [userTagChartMode, setUserTagChartMode] = useState<'radar' | 'grid'>('radar');
+  const [hoveredTagIdx, setHoveredTagIdx] = useState<number | null>(null);
+  const [productRankMode, setProductRankMode] = useState<'leaderboard' | 'card'>('leaderboard');
+  const [staffRankMode, setStaffRankMode] = useState<'leaderboard' | 'card'>('leaderboard');
 
   // Icon map for Quick Entrance items
   const getQuickIcon = (iconName: string) => {
@@ -62,6 +117,7 @@ export const Workbench: React.FC<WorkbenchProps> = ({
 
   const handleQuickEntranceClick = (itemTitle: string) => {
     const routeMap: Record<string, ActivePage> = {
+      '全部用户': 'user_list',
       '用户列表': 'user_list',
       '报告管理': 'user_reports',
       '会话': 'msg_chat',
@@ -85,7 +141,7 @@ export const Workbench: React.FC<WorkbenchProps> = ({
         return;
       }
     }
-    onNotice(`快捷入口：${itemTitle}（已汇总2026年9月数据）`);
+    onNotice(`快捷入口：${itemTitle}（已汇总2026年10月数据）`);
   };
 
   // Coordinates for the trend chart
@@ -132,521 +188,476 @@ export const Workbench: React.FC<WorkbenchProps> = ({
     paddingTop + plotHeight
   } L ${points[0].x} ${paddingTop + plotHeight} Z`;
 
+  // Step path generator for Step Chart mode
+  const generateStepPath = (pts: { x: number; y: number }[]) => {
+    if (pts.length === 0) return '';
+    let d = `M ${pts[0].x} ${pts[0].y}`;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const nextX = pts[i + 1].x;
+      const nextY = pts[i + 1].y;
+      d += ` H ${nextX} V ${nextY}`;
+    }
+    return d;
+  };
+
+  const stepLinePath = generateStepPath(points);
+  const stepAreaPath = `${stepLinePath} L ${points[points.length - 1].x} ${
+    paddingTop + plotHeight
+  } L ${points[0].x} ${paddingTop + plotHeight} Z`;
+
   const activePoint = points[hoveredPointIndex] || points[3];
 
   return (
-    <div className="p-6 space-y-6 max-w-[1600px] mx-auto">
-      {/* Greeting Header */}
-      <div className="flex items-center space-x-2">
-        <span className="text-xl">👋</span>
-        <h1 className="text-base font-semibold text-gray-800 tracking-tight">
-          早上好！admin
-        </h1>
+    <div className={`min-h-full p-6 space-y-6 max-w-[1600px] mx-auto ${bgToneClasses[bgTone]} transition-colors duration-300 rounded-3xl my-2 shadow-[0_1px_4px_rgba(0,0,0,0.02)]`}>
+      {/* Greeting Header & Layout Preset Controls */}
+      <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-slate-100 shadow-xs">
+        <div className="flex items-center space-x-3">
+          <span className="text-2xl p-2 bg-emerald-50 rounded-xl">👋</span>
+          <div>
+            <div className="flex items-center space-x-2">
+              <h1 className="text-base font-bold text-gray-800 tracking-tight">
+                早上好！admin
+              </h1>
+              <span className="text-xs text-emerald-700 bg-emerald-50/80 px-2 py-0.5 rounded-full font-medium border border-emerald-100">
+                平台运行平稳
+              </span>
+            </div>
+            <p className="text-xs text-gray-400 mt-0.5">
+              智慧养老服务中枢 · 今日待办与核心运营指标已全面更新（2026年10月）
+            </p>
+          </div>
+        </div>
+
+        {/* Controls: Background Tone & Layout Preset Switcher */}
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Tone Selector */}
+          <div className="flex items-center space-x-1 bg-gray-100/90 p-1 rounded-xl border border-gray-200/60">
+            <span className="text-[11px] text-gray-500 font-medium px-1 flex items-center gap-1">
+              <Palette className="w-3 h-3 text-emerald-600" />
+              <span>底色:</span>
+            </span>
+            <button
+              onClick={() => {
+                setBgTone('emerald');
+                onNotice('已切换为【温润翡翠色调】：柔和玉色，完美契合顶部墨绿色系');
+              }}
+              className={`text-xs px-2.5 py-1 rounded-lg font-medium transition-all ${
+                bgTone === 'emerald'
+                  ? 'bg-white text-emerald-700 shadow-xs font-semibold'
+                  : 'text-gray-500 hover:text-gray-800'
+              }`}
+              title="温润翡翠玉色"
+            >
+              翡翠玉色
+            </button>
+            <button
+              onClick={() => {
+                setBgTone('sage');
+                onNotice('已切换为【清雅竹青色调】：自然草木青色，宁静舒缓');
+              }}
+              className={`text-xs px-2.5 py-1 rounded-lg font-medium transition-all ${
+                bgTone === 'sage'
+                  ? 'bg-white text-emerald-700 shadow-xs font-semibold'
+                  : 'text-gray-500 hover:text-gray-800'
+              }`}
+              title="清雅竹青绿"
+            >
+              竹青雅韵
+            </button>
+            <button
+              onClick={() => {
+                setBgTone('cyan');
+                onNotice('已切换为【天青水碧色调】：清澈灵动天青色');
+              }}
+              className={`text-xs px-2.5 py-1 rounded-lg font-medium transition-all ${
+                bgTone === 'cyan'
+                  ? 'bg-white text-emerald-700 shadow-xs font-semibold'
+                  : 'text-gray-500 hover:text-gray-800'
+              }`}
+              title="天青水碧"
+            >
+              天青水碧
+            </button>
+            <button
+              onClick={() => {
+                setBgTone('slate');
+                onNotice('已切换为【远山黛灰调】：低饱和灰绿，沉稳内敛');
+              }}
+              className={`text-xs px-2.5 py-1 rounded-lg font-medium transition-all ${
+                bgTone === 'slate'
+                  ? 'bg-white text-emerald-700 shadow-xs font-semibold'
+                  : 'text-gray-500 hover:text-gray-800'
+              }`}
+              title="黛峰素灰"
+            >
+              远山黛青
+            </button>
+          </div>
+
+          {/* Layout Switcher */}
+          <div className="flex items-center space-x-1.5">
+            <span className="text-xs text-gray-400 font-medium hidden md:inline">版面:</span>
+            <div className="flex items-center bg-gray-100/90 p-1 rounded-xl border border-gray-200/60">
+              <button
+                onClick={() => {
+                  setLayoutPreset('balanced');
+                  onNotice('已切换为【黄金分栏模式】：核心趋势与快捷调度并列，画像与双榜均衡分布');
+                }}
+                className={`flex items-center space-x-1.5 text-xs px-3 py-1.5 rounded-lg font-medium transition-all ${
+                  layoutPreset === 'balanced'
+                    ? 'bg-white text-emerald-700 shadow-xs font-semibold'
+                    : 'text-gray-500 hover:text-gray-800'
+                }`}
+                title="趋势8列+快捷4列，画像与双榜各6列"
+              >
+                <Columns className="w-3.5 h-3.5" />
+                <span>黄金分栏</span>
+              </button>
+              <button
+                onClick={() => {
+                  setLayoutPreset('panorama');
+                  onNotice('已切换为【全景聚焦模式】：大图表全宽拉伸，双榜平铺展开');
+                }}
+                className={`flex items-center space-x-1.5 text-xs px-3 py-1.5 rounded-lg font-medium transition-all ${
+                  layoutPreset === 'panorama'
+                    ? 'bg-white text-emerald-700 shadow-xs font-semibold'
+                    : 'text-gray-500 hover:text-gray-800'
+                }`}
+                title="大图全宽展开"
+              >
+                <Maximize2 className="w-3.5 h-3.5" />
+                <span>全景聚焦</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 4 KPI Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {KPI_STATS.map((kpi, idx) => (
-          <div
-            key={idx}
-            id={`kpi-card-${idx}`}
-            className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-center justify-between"
-          >
-            <div className="flex flex-col space-y-2">
-              <span className="text-xs text-gray-400 font-normal">
-                {kpi.title}
-              </span>
-              <span className="text-2xl font-bold text-gray-800 tracking-tight">
-                {kpi.value.toLocaleString()}
-              </span>
-              <div className="flex items-center">
-                <span
-                  className={`text-[11px] px-2 py-0.5 rounded-full font-medium ${
-                    kpi.isPositive
-                      ? 'bg-emerald-50 text-emerald-600'
-                      : 'bg-red-50 text-red-500'
-                  }`}
-                >
-                  {kpi.changeText}
-                </span>
-              </div>
-            </div>
+        {KPI_STATS.map((kpi, idx) => {
+          const styles = [
+            {
+              accent: 'bg-gradient-to-r from-emerald-500 to-teal-400',
+              border: 'border-emerald-100 hover:border-emerald-300',
+              shadow: 'shadow-[0_4px_20px_rgba(16,185,129,0.06)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.15)]',
+              iconBg: 'bg-emerald-50 text-emerald-600 border-emerald-100/80',
+              icon: <UserPlus className="w-4 h-4" />,
+              badgeBg: 'bg-emerald-50/90 text-emerald-700 border-emerald-200/60',
+            },
+            {
+              accent: 'bg-gradient-to-r from-amber-500 to-orange-400',
+              border: 'border-amber-100 hover:border-amber-300',
+              shadow: 'shadow-[0_4px_20px_rgba(245,158,11,0.06)] hover:shadow-[0_8px_25px_rgba(245,158,11,0.15)]',
+              iconBg: 'bg-amber-50 text-amber-600 border-amber-100/80',
+              icon: <ClipboardList className="w-4 h-4" />,
+              badgeBg: 'bg-amber-50/90 text-amber-700 border-amber-200/60',
+            },
+            {
+              accent: 'bg-gradient-to-r from-rose-500 to-pink-400',
+              border: 'border-rose-100 hover:border-rose-300',
+              shadow: 'shadow-[0_4px_20px_rgba(244,63,94,0.06)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.15)]',
+              iconBg: 'bg-rose-50 text-rose-600 border-rose-100/80',
+              icon: <ShoppingBag className="w-4 h-4" />,
+              badgeBg: 'bg-rose-50/90 text-rose-700 border-rose-200/60',
+            },
+            {
+              accent: 'bg-gradient-to-r from-indigo-500 to-purple-400',
+              border: 'border-indigo-100 hover:border-indigo-300',
+              shadow: 'shadow-[0_4px_20px_rgba(99,102,241,0.06)] hover:shadow-[0_8px_25px_rgba(99,102,241,0.15)]',
+              iconBg: 'bg-indigo-50 text-indigo-600 border-indigo-100/80',
+              icon: <Activity className="w-4 h-4" />,
+              badgeBg: 'bg-indigo-50/90 text-indigo-700 border-indigo-200/60',
+            },
+          ][idx % 4];
 
-            {/* Mini Visual Chart */}
-            <div className="w-24 h-14 flex items-end justify-end">
-              {kpi.type === 'green-line' && (
-                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 45">
-                  <defs>
-                    <linearGradient id="greenGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#10b981" stopOpacity="0.35" />
-                      <stop offset="100%" stopColor="#10b981" stopOpacity="0.0" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M0 35 Q 25 10, 45 28 T 80 8 T 100 25 L 100 45 L 0 45 Z"
-                    fill="url(#greenGrad)"
-                  />
-                  <path
-                    d="M0 35 Q 25 10, 45 28 T 80 8 T 100 25"
-                    fill="none"
-                    stroke="#10b981"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              )}
-
-              {kpi.type === 'yellow-bar' && (
-                <div className="flex items-end justify-between w-full h-10 space-x-1.5 px-2">
-                  <div className="w-2.5 h-6 bg-[#fed7aa] rounded-t-sm"></div>
-                  <div className="w-2.5 h-10 bg-[#f59e0b] rounded-t-sm"></div>
-                  <div className="w-2.5 h-8 bg-[#fbbf24] rounded-t-sm"></div>
-                  <div className="w-2.5 h-5 bg-[#fde68a] rounded-t-sm"></div>
-                  <div className="w-2.5 h-4 bg-[#fef3c7] rounded-t-sm"></div>
-                </div>
-              )}
-
-              {kpi.type === 'red-line' && (
-                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 45">
-                  <defs>
-                    <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#ef4444" stopOpacity="0.35" />
-                      <stop offset="100%" stopColor="#ef4444" stopOpacity="0.0" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M0 38 Q 25 30, 40 10 T 75 32 T 100 30 L 100 45 L 0 45 Z"
-                    fill="url(#redGrad)"
-                  />
-                  <path
-                    d="M0 38 Q 25 30, 40 10 T 75 32 T 100 30"
-                    fill="none"
-                    stroke="#ef4444"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              )}
-
-              {kpi.type === 'purple-bar' && (
-                <div className="flex items-end justify-between w-full h-10 space-x-1.5 px-2">
-                  <div className="w-2.5 h-3 bg-[#e0e7ff] rounded-t-sm"></div>
-                  <div className="w-2.5 h-5 bg-[#c7d2fe] rounded-t-sm"></div>
-                  <div className="w-2.5 h-7 bg-[#a5b4fc] rounded-t-sm"></div>
-                  <div className="w-2.5 h-10 bg-[#6366f1] rounded-t-sm"></div>
-                  <div className="w-2.5 h-9 bg-[#818cf8] rounded-t-sm"></div>
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Middle Row: 3 Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-        {/* Card 1: 快捷入口 */}
-        <div className="lg:col-span-4 bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center space-x-2">
-              <span className="w-1.5 h-4 bg-[#10b981] rounded-full"></span>
-              <h2 className="text-sm font-semibold text-gray-800">快捷入口</h2>
-            </div>
-            <button
-              onClick={() => onNotice('快捷入口配置：当前已展示常用养老管理模块')}
-              className="text-gray-300 hover:text-gray-500 transition-colors"
-              title="配置入口"
-            >
-              <Settings className="w-4 h-4" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-4 gap-y-4 gap-x-2 my-auto">
-            {QUICK_ENTRANCES.map((item) => (
-              <button
-                key={item.id}
-                id={`quick-entrance-${item.id}`}
-                onClick={() => handleQuickEntranceClick(item.title)}
-                className="flex flex-col items-center group cursor-pointer transition-transform hover:-translate-y-0.5"
-              >
-                <div
-                  className={`w-11 h-11 rounded-full ${item.bgColor} ${item.textColor} flex items-center justify-center mb-1.5 transition-shadow group-hover:shadow-sm`}
-                >
-                  {getQuickIcon(item.iconName)}
-                </div>
-                <span className="text-[11px] text-gray-600 group-hover:text-[#10b981] transition-colors whitespace-nowrap">
-                  {item.title}
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Card 2: 用户标签分布 */}
-        <div className="lg:col-span-4 bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col">
-          <div className="flex items-center space-x-2 mb-4">
-            <span className="w-1.5 h-4 bg-[#10b981] rounded-full"></span>
-            <h2 className="text-sm font-semibold text-gray-800">用户标签分布</h2>
-          </div>
-
-          <div className="flex flex-col justify-between flex-1 space-y-3 py-1">
-            {USER_TAGS.map((tag, idx) => (
-              <div key={idx} className="flex items-center text-xs">
-                <span className="w-16 text-gray-500 shrink-0 text-left">
-                  {tag.name}
-                </span>
-                <div className="flex-1 mx-3 bg-gray-100/90 h-2 rounded-full overflow-hidden">
-                  <div
-                    className="bg-[#10b981] h-full rounded-full transition-all duration-500"
-                    style={{ width: `${tag.percentage}%` }}
-                  ></div>
-                </div>
-                <span className="w-8 text-right font-medium text-gray-700">
-                  {tag.count}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Card 3: 各服务类型商品订单量占比 */}
-        <div className="lg:col-span-4 bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col">
-          <div className="flex items-center space-x-2 mb-2">
-            <span className="w-1.5 h-4 bg-[#10b981] rounded-full"></span>
-            <h2 className="text-sm font-semibold text-gray-800">
-              各服务类型商品订单量占比
-            </h2>
-          </div>
-
-          <div className="flex items-center justify-around flex-1 py-3">
-            {/* SVG Donut / Pie Chart */}
-            <div className="relative w-36 h-36 shrink-0">
-              <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
-                {/* 康复理疗 55% -> yellow (#fbbf24) */}
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="35"
-                  fill="transparent"
-                  stroke="#fbbf24"
-                  strokeWidth="30"
-                  strokeDasharray="120.95 219.91"
-                  strokeDashoffset="0"
-                />
-                {/* 家政护理 28% -> teal/mint (#2dd4bf) */}
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="35"
-                  fill="transparent"
-                  stroke="#2dd4bf"
-                  strokeWidth="30"
-                  strokeDasharray="61.57 219.91"
-                  strokeDashoffset="-120.95"
-                />
-                {/* 上门体检 17% -> coral red (#f87171) */}
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="35"
-                  fill="transparent"
-                  stroke="#f87171"
-                  strokeWidth="30"
-                  strokeDasharray="37.38 219.91"
-                  strokeDashoffset="-182.52"
-                />
-              </svg>
-            </div>
-
-            {/* Legend */}
-            <div className="flex flex-col space-y-3 pl-2">
-              {SERVICE_RATIOS.map((item, i) => (
-                <div key={i} className="flex items-center space-x-2 text-xs">
-                  <span
-                    className="w-2.5 h-2.5 rounded-full shrink-0"
-                    style={{ backgroundColor: item.color }}
-                  ></span>
-                  <span className="text-gray-600">{item.name}</span>
-                  <span className="font-semibold text-gray-800 ml-1">
-                    {item.ratio}%
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* User Trend Statistics (用户趋势统计) */}
-      <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center space-x-2">
-            <span className="w-1.5 h-4 bg-[#10b981] rounded-full"></span>
-            <h2 className="text-sm font-semibold text-gray-800">用户趋势统计</h2>
-          </div>
-          <div className="text-xs text-gray-400 font-mono">
-            统计周期: 2026-09-01 ~ 2026-09-18
-          </div>
-        </div>
-
-        {/* Legend Indicator */}
-        <div className="flex items-center justify-center space-x-2 mb-1">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
-          <span className="text-xs text-gray-600 font-medium">新增用户数量</span>
-        </div>
-
-        {/* Chart SVG */}
-        <div className="relative w-full overflow-hidden">
-          <svg
-            className="w-full h-56 select-none"
-            viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient id="trendAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#10b981" stopOpacity="0.45" />
-                <stop offset="50%" stopColor="#10b981" stopOpacity="0.20" />
-                <stop offset="100%" stopColor="#10b981" stopOpacity="0.03" />
-              </linearGradient>
-            </defs>
-
-            {/* Horizontal Grid lines & Y Axis Labels */}
-            {[3500, 3000, 2500, 2000, 1500].map((val) => {
-              const normalizedY = (val - minY) / (maxY - minY);
-              const y = paddingTop + (1 - normalizedY) * plotHeight;
-              return (
-                <g key={val}>
-                  <line
-                    x1={paddingX}
-                    y1={y}
-                    x2={chartWidth - paddingX}
-                    y2={y}
-                    stroke="#f3f4f6"
-                    strokeWidth="1"
-                  />
-                  <text
-                    x={paddingX - 14}
-                    y={y + 4}
-                    textAnchor="end"
-                    fill="#9ca3af"
-                    fontSize="11"
-                    fontFamily="sans-serif"
-                  >
-                    {val}
-                  </text>
-                </g>
-              );
-            })}
-
-            {/* Area Fill */}
-            <path d={areaPath} fill="url(#trendAreaGrad)" />
-
-            {/* Trend Spline Curve */}
-            <path
-              d={linePath}
-              fill="none"
-              stroke="#10b981"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-
-            {/* Active Vertical Guideline and Dot */}
-            {activePoint && (
-              <g>
-                <line
-                  x1={activePoint.x}
-                  y1={paddingTop}
-                  x2={activePoint.x}
-                  y2={paddingTop + plotHeight}
-                  stroke="#10b981"
-                  strokeWidth="1.5"
-                  strokeDasharray="4 4"
-                />
-                <circle
-                  cx={activePoint.x}
-                  cy={activePoint.y}
-                  r="6"
-                  fill="#ffffff"
-                  stroke="#10b981"
-                  strokeWidth="3"
-                />
-              </g>
-            )}
-
-            {/* Interactive Data Dots & Hover zones */}
-            {points.map((pt, idx) => (
-              <g
-                key={idx}
-                className="cursor-pointer"
-                onMouseEnter={() => setHoveredPointIndex(idx)}
-              >
-                <circle
-                  cx={pt.x}
-                  cy={pt.y}
-                  r="4"
-                  fill="#10b981"
-                  stroke="#ffffff"
-                  strokeWidth="2"
-                />
-                {/* Hit area */}
-                <rect
-                  x={pt.x - 30}
-                  y={paddingTop}
-                  width="60"
-                  height={plotHeight + 20}
-                  fill="transparent"
-                />
-              </g>
-            ))}
-          </svg>
-
-          {/* Active Tooltip Pill (matching screenshot style e.g. "1520") */}
-          {activePoint && (
+          return (
             <div
-              className="absolute pointer-events-none transform -translate-x-1/2"
-              style={{
-                left: `${(activePoint.x / chartWidth) * 100}%`,
-                top: `${(activePoint.y / chartHeight) * 100 - 16}%`,
-              }}
+              key={idx}
+              id={`kpi-card-${idx}`}
+              className={`theme-card rounded-2xl p-5 border transition-all duration-300 relative overflow-hidden group hover:-translate-y-1 ${styles.border} ${styles.shadow}`}
             >
-              <div className="bg-white/95 border border-emerald-400 text-emerald-700 font-bold text-xs px-2.5 py-0.5 rounded-full shadow-sm">
-                {activePoint.value}
+              {/* Top Gradient Accent Line */}
+              <div className={`absolute top-0 left-0 right-0 h-1 ${styles.accent}`} />
+
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-medium text-slate-500 tracking-wide">
+                  {kpi.title}
+                </span>
+                <div
+                  className={`w-8 h-8 rounded-xl flex items-center justify-center border group-hover:scale-110 transition-transform duration-300 ${styles.iconBg}`}
+                >
+                  {styles.icon}
+                </div>
+              </div>
+
+              <div className="flex items-end justify-between">
+                <div className="space-y-2">
+                  <div className="text-3xl font-extrabold text-slate-800 tracking-tight font-mono">
+                    {kpi.value.toLocaleString()}
+                  </div>
+                  <div className="flex items-center">
+                    <span
+                      className={`inline-flex items-center gap-1 text-[11px] px-2.5 py-0.5 rounded-full font-semibold border ${
+                        kpi.isPositive
+                          ? styles.badgeBg
+                          : 'bg-rose-50/90 text-rose-600 border-rose-200/60'
+                      }`}
+                    >
+                      {kpi.isPositive ? (
+                        <TrendingUp className="w-3 h-3" />
+                      ) : (
+                        <TrendingDown className="w-3 h-3" />
+                      )}
+                      {kpi.changeText}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Mini Visual Chart */}
+                <div className="w-20 h-12 flex items-end justify-end">
+                  {kpi.type === 'green-line' && (
+                    <svg className="w-full h-full overflow-visible" viewBox="0 0 100 45">
+                      <defs>
+                        <linearGradient id={`greenGrad-${idx}`} x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                          <stop offset="100%" stopColor="#10b981" stopOpacity="0.0" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M0 35 Q 25 10, 45 28 T 80 8 T 100 22 L 100 45 L 0 45 Z"
+                        fill={`url(#greenGrad-${idx})`}
+                      />
+                      <path
+                        d="M0 35 Q 25 10, 45 28 T 80 8 T 100 22"
+                        fill="none"
+                        stroke="#10b981"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                      />
+                      <circle cx="100" cy="22" r="3.5" fill="#10b981" className="animate-pulse" />
+                    </svg>
+                  )}
+
+                  {kpi.type === 'yellow-bar' && (
+                    <div className="flex items-end justify-between w-full h-10 space-x-1 px-1">
+                      <div className="w-2 h-5 bg-amber-200 rounded-t-md transition-all group-hover:h-6"></div>
+                      <div className="w-2 h-9 bg-amber-500 rounded-t-md transition-all group-hover:h-10"></div>
+                      <div className="w-2 h-7 bg-amber-400 rounded-t-md transition-all group-hover:h-8"></div>
+                      <div className="w-2 h-4 bg-amber-300 rounded-t-md transition-all group-hover:h-5"></div>
+                      <div className="w-2 h-3 bg-amber-200 rounded-t-md transition-all group-hover:h-4"></div>
+                    </div>
+                  )}
+
+                  {kpi.type === 'red-line' && (
+                    <svg className="w-full h-full overflow-visible" viewBox="0 0 100 45">
+                      <defs>
+                        <linearGradient id={`redGrad-${idx}`} x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.4" />
+                          <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.0" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M0 38 Q 25 30, 40 10 T 75 32 T 100 28 L 100 45 L 0 45 Z"
+                        fill={`url(#redGrad-${idx})`}
+                      />
+                      <path
+                        d="M0 38 Q 25 30, 40 10 T 75 32 T 100 28"
+                        fill="none"
+                        stroke="#f43f5e"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                      />
+                      <circle cx="100" cy="28" r="3.5" fill="#f43f5e" className="animate-pulse" />
+                    </svg>
+                  )}
+
+                  {kpi.type === 'purple-bar' && (
+                    <div className="flex items-end justify-between w-full h-10 space-x-1 px-1">
+                      <div className="w-2 h-3 bg-indigo-200 rounded-t-md transition-all group-hover:h-4"></div>
+                      <div className="w-2 h-5 bg-indigo-300 rounded-t-md transition-all group-hover:h-6"></div>
+                      <div className="w-2 h-7 bg-indigo-400 rounded-t-md transition-all group-hover:h-8"></div>
+                      <div className="w-2 h-10 bg-indigo-600 rounded-t-md transition-all group-hover:h-10"></div>
+                      <div className="w-2 h-8 bg-purple-500 rounded-t-md transition-all group-hover:h-9"></div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          )}
-
-          {/* X Axis Date Labels (2026-09-01 ~ 2026-09-18) */}
-          <div className="flex justify-between px-14 pt-1 text-[11px] text-gray-400">
-            {USER_TREND_DATA.map((d, i) => (
-              <span
-                key={i}
-                className={`transition-colors cursor-pointer ${
-                  hoveredPointIndex === i
-                    ? 'text-emerald-600 font-semibold'
-                    : 'hover:text-gray-600'
-                }`}
-                onClick={() => setHoveredPointIndex(i)}
-              >
-                {d.date.slice(5)}
-              </span>
-            ))}
-          </div>
-        </div>
+          );
+        })}
       </div>
 
-      {/* Lower Row: 2 Ranking Tables (Image 2) */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        {/* Left: 支付榜TOP5商品排行 */}
-        <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-          <div className="flex items-center space-x-2 mb-4">
-            <span className="w-1.5 h-4 bg-[#10b981] rounded-full"></span>
-            <h2 className="text-sm font-semibold text-gray-800">
-              支付榜TOP5商品排行
-            </h2>
+      {/* Re-architected 6 Modules Layout with Presets */}
+      {layoutPreset === "balanced" ? (
+        /* Preset 1: 黄金分栏模式 (Balanced 8:4 + 6:6 + 6:6) */
+        <div className="space-y-6">
+          {/* Row 1: 核心运营大盘 (Trend 8 + Quick 4) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            <div className="lg:col-span-8 flex flex-col h-full">
+              <UserTrendSection
+                trendChartMode={trendChartMode}
+                setTrendChartMode={setTrendChartMode}
+                hoveredPointIndex={hoveredPointIndex}
+                setHoveredPointIndex={setHoveredPointIndex}
+                points={points}
+                activePoint={activePoint}
+                chartWidth={chartWidth}
+                chartHeight={chartHeight}
+                paddingX={paddingX}
+                paddingTop={paddingTop}
+                plotHeight={plotHeight}
+                minY={minY}
+                maxY={maxY}
+                linePath={linePath}
+                areaPath={areaPath}
+                stepLinePath={stepLinePath}
+                stepAreaPath={stepAreaPath}
+                onViewAll={() => onNavigateToPage && onNavigateToPage("user_list")}
+              />
+            </div>
+            <div className="lg:col-span-4 flex flex-col h-full">
+              <QuickEntranceSection
+                isFullWidth={false}
+                quickEntranceView={quickEntranceView}
+                setQuickEntranceView={setQuickEntranceView}
+                onItemClick={handleQuickEntranceClick}
+                onConfig={() => onNotice("快捷入口配置：当前已展示常用养老管理模块")}
+                onScheduleKanban={() => {
+                  if (onNavigateToAppointment) {
+                    onNotice("进入【预约看板】查看业务排班与工单详情");
+                    onNavigateToAppointment();
+                  }
+                }}
+              />
+            </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="text-gray-400 border-b border-gray-50">
-                  <th className="py-2.5 px-3 text-left font-normal w-16">序号</th>
-                  <th className="py-2.5 px-3 text-left font-normal">商品信息</th>
-                  <th className="py-2.5 px-3 text-right font-normal w-28">
-                    支付订单数
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {TOP_PRODUCTS.map((prod) => (
-                  <tr
-                    key={prod.rank}
-                    className="hover:bg-gray-50/60 transition-colors"
-                  >
-                    <td className="py-3 px-3">
-                      <span className="font-semibold text-[#f59e0b]">
-                        {prod.rank}
-                      </span>
-                    </td>
-                    <td className="py-3 px-3">
-                      <div className="flex items-center space-x-3">
-                        <img
-                          src={prod.image}
-                          alt={prod.title}
-                          className="w-14 h-10 object-cover rounded-md bg-gray-100 shrink-0"
-                          loading="lazy"
-                        />
-                        <span className="text-gray-700 font-medium line-clamp-1">
-                          {prod.title}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="py-3 px-3 text-right font-medium text-gray-700">
-                      {prod.orderCount}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Row 2: 业务结构与客群画像 (Service 6 + Tag 6) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <ServiceRatioSection
+                ratioChartMode={ratioChartMode}
+                setRatioChartMode={setRatioChartMode}
+                hoveredRatioIdx={hoveredRatioIdx}
+                setHoveredRatioIdx={setHoveredRatioIdx}
+                onViewOrders={() => onNavigateToPage && onNavigateToPage("trade_all_orders")}
+              />
+            </div>
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <UserTagSection
+                userTagChartMode={userTagChartMode}
+                setUserTagChartMode={setUserTagChartMode}
+                hoveredTagIdx={hoveredTagIdx}
+                setHoveredTagIdx={setHoveredTagIdx}
+                onViewTagSystem={() => onNavigateToPage && onNavigateToPage("user_tags")}
+              />
+            </div>
+          </div>
+
+          {/* Row 3: 双榜领航与绩效先锋 (Products 6 + Staff 6) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <ProductRankSection
+                productRankMode={productRankMode}
+                setProductRankMode={setProductRankMode}
+                onViewAll={() => onNavigateToPage && onNavigateToPage("trade_all_orders")}
+              />
+            </div>
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <StaffRankSection
+                staffRankMode={staffRankMode}
+                setStaffRankMode={setStaffRankMode}
+                onViewAll={() => onNavigateToPage && onNavigateToPage("service_staff_list")}
+              />
+            </div>
           </div>
         </div>
-
-        {/* Right: 服务人员业绩TOP5排行 */}
-        <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-          <div className="flex items-center space-x-2 mb-4">
-            <span className="w-1.5 h-4 bg-[#10b981] rounded-full"></span>
-            <h2 className="text-sm font-semibold text-gray-800">
-              服务人员业绩TOP5排行
-            </h2>
+      ) : (
+        /* Preset 2: 全景聚焦模式 (Panorama 12 + 12 + 6:6 + 6:6) */
+        <div className="space-y-6">
+          {/* Top Full Strip: 快捷入口全局横幅 */}
+          <div>
+            <QuickEntranceSection
+              isFullWidth={true}
+              quickEntranceView={quickEntranceView}
+              setQuickEntranceView={setQuickEntranceView}
+              onItemClick={handleQuickEntranceClick}
+              onConfig={() => onNotice("快捷入口配置：当前已展示常用养老管理模块")}
+              onScheduleKanban={() => {
+                if (onNavigateToAppointment) {
+                  onNotice("进入【预约看板】查看业务排班与工单详情");
+                  onNavigateToAppointment();
+                }
+              }}
+            />
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="text-gray-400 border-b border-gray-50">
-                  <th className="py-2.5 px-3 text-left font-normal w-16">序号</th>
-                  <th className="py-2.5 px-3 text-left font-normal">个人信息</th>
-                  <th className="py-2.5 px-3 text-center font-normal">服务类型</th>
-                  <th className="py-2.5 px-3 text-right font-normal w-28">
-                    服务工单数
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {TOP_STAFF.map((staff) => (
-                  <tr
-                    key={staff.rank}
-                    className="hover:bg-gray-50/60 transition-colors"
-                  >
-                    <td className="py-3 px-3">
-                      <span className="font-semibold text-[#f59e0b]">
-                        {staff.rank}
-                      </span>
-                    </td>
-                    <td className="py-3 px-3">
-                      <div className="flex items-center space-x-3">
-                        <img
-                          src={staff.avatar}
-                          alt={staff.name}
-                          className="w-8 h-8 object-cover rounded-full bg-gray-100 shrink-0 ring-1 ring-gray-200"
-                          loading="lazy"
-                        />
-                        <span className="text-gray-700 font-medium">
-                          {staff.name}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="py-3 px-3 text-center text-gray-500">
-                      {staff.serviceType}
-                    </td>
-                    <td className="py-3 px-3 text-right font-medium text-gray-700">
-                      {staff.workOrderCount}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Core Full Width Chart: 用户趋势大盘 */}
+          <div>
+            <UserTrendSection
+              trendChartMode={trendChartMode}
+              setTrendChartMode={setTrendChartMode}
+              hoveredPointIndex={hoveredPointIndex}
+              setHoveredPointIndex={setHoveredPointIndex}
+              points={points}
+              activePoint={activePoint}
+              chartWidth={chartWidth}
+              chartHeight={chartHeight}
+              paddingX={paddingX}
+              paddingTop={paddingTop}
+              plotHeight={plotHeight}
+              minY={minY}
+              maxY={maxY}
+              linePath={linePath}
+              areaPath={areaPath}
+              stepLinePath={stepLinePath}
+              stepAreaPath={stepAreaPath}
+              onViewAll={() => onNavigateToPage && onNavigateToPage("user_list")}
+            />
+          </div>
+
+          {/* Row 3: 业务结构与画像 (6:6) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <ServiceRatioSection
+                ratioChartMode={ratioChartMode}
+                setRatioChartMode={setRatioChartMode}
+                hoveredRatioIdx={hoveredRatioIdx}
+                setHoveredRatioIdx={setHoveredRatioIdx}
+                onViewOrders={() => onNavigateToPage && onNavigateToPage("trade_all_orders")}
+              />
+            </div>
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <UserTagSection
+                userTagChartMode={userTagChartMode}
+                setUserTagChartMode={setUserTagChartMode}
+                hoveredTagIdx={hoveredTagIdx}
+                setHoveredTagIdx={setHoveredTagIdx}
+                onViewTagSystem={() => onNavigateToPage && onNavigateToPage("user_tags")}
+              />
+            </div>
+          </div>
+
+          {/* Row 4: 双榜先锋 (6:6) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <ProductRankSection
+                productRankMode={productRankMode}
+                setProductRankMode={setProductRankMode}
+                onViewAll={() => onNavigateToPage && onNavigateToPage("trade_all_orders")}
+              />
+            </div>
+            <div className="lg:col-span-6 flex flex-col h-full">
+              <StaffRankSection
+                staffRankMode={staffRankMode}
+                setStaffRankMode={setStaffRankMode}
+                onViewAll={() => onNavigateToPage && onNavigateToPage("service_staff_list")}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

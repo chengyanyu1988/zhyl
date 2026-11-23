@@ -98,7 +98,7 @@ export const AssetInfoTab: React.FC<AssetInfoTabProps> = ({ user, onNotice }) =>
       reason: '管理员人工赠送关怀积分',
       remark: givePointsRemark || '客服专员李明明人工录入',
       operator: '李明明',
-      time: '2026-09-19 16:45:00',
+      time: '2026-10-19 16:45:00',
     };
     setPoints((prev) => [newPt, ...prev]);
     setIsGivePointsOpen(false);
@@ -122,7 +122,7 @@ export const AssetInfoTab: React.FC<AssetInfoTabProps> = ({ user, onNotice }) =>
       reason: '管理员关怀赋能成长奖励',
       remark: giveGrowthRemark || '平台运营关怀',
       operator: '李明明',
-      time: '2026-09-19 16:50:00',
+      time: '2026-10-19 16:50:00',
     };
     setGrowth((prev) => [newGw, ...prev]);
     setIsGiveGrowthOpen(false);

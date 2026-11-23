@@ -1,18 +1,18 @@
 export interface ReportRecord {
   id: string;
-  uploadTime: string; // 2026-09-19 14:20
+  uploadTime: string; // 2026-10-19 14:20
   name: string;
   type: string; // 体检报告 | 随访报告 | 检验报告 | 影像检查 | 专科筛查
   source: string; // 后台上传 | 合作医院推送 | 智能设备同步 | 门诊就诊导入
   uploader: string; // 李明明 | 张玉婷 | 系统自动同步 | 赵全科
-  workOrderNo: string; // GD2026091900018
-  reportDate: string; // 2026-09-19
+  workOrderNo: string; // GD2026101900018
+  reportDate: string; // 2026-10-19
 }
 
 export interface OrderItem {
   id: string;
   orderNo: string;
-  orderTime: string; // 2026-09-19 15:30:10
+  orderTime: string; // 2026-10-19 15:30:10
   closeTime?: string;
   serviceType: string;
   productName: string;
@@ -143,96 +143,96 @@ export interface ServiceRecordItem {
   estimatedCommission: number;
 }
 
-// 报告信息列表（严格从 2026-09-19 降序至 2026-09-02，每条内容各不相同）
+// 报告信息列表（严格从 2026-10-19 降序至 2026-10-02，每条内容各不相同）
 export const INITIAL_REPORTS: ReportRecord[] = [
   {
     id: 'rep-01',
-    uploadTime: '2026-09-19 14:20',
+    uploadTime: '2026-10-19 14:20',
     name: '颈动脉彩色多普勒超声检查',
     type: '影像检查',
     source: '后台上传',
     uploader: '李明明',
-    workOrderNo: 'GD2026091900018',
-    reportDate: '2026-09-19',
+    workOrderNo: 'GD2026101900018',
+    reportDate: '2026-10-19',
   },
   {
     id: 'rep-02',
-    uploadTime: '2026-09-18 10:23',
+    uploadTime: '2026-10-18 10:23',
     name: '常规血脂生化四项检查',
     type: '体检报告',
     source: '后台上传',
     uploader: '李明明',
-    workOrderNo: 'GD2026091800013',
-    reportDate: '2026-09-18',
+    workOrderNo: 'GD2026101800013',
+    reportDate: '2026-10-18',
   },
   {
     id: 'rep-03',
-    uploadTime: '2026-09-17 15:45',
+    uploadTime: '2026-10-17 15:45',
     name: '糖化血红蛋白与空腹血糖检测',
     type: '化验报告',
     source: '合作医院推送',
     uploader: '张玉婷',
-    workOrderNo: 'GD2026091700022',
-    reportDate: '2026-09-17',
+    workOrderNo: 'GD2026101700022',
+    reportDate: '2026-10-17',
   },
   {
     id: 'rep-04',
-    uploadTime: '2026-09-16 09:30',
+    uploadTime: '2026-10-16 09:30',
     name: '24小时动态心电图监测分析报告',
     type: '专科筛查',
     source: '智能设备同步',
     uploader: '系统自动同步',
-    workOrderNo: 'GD2026091600007',
-    reportDate: '2026-09-16',
+    workOrderNo: 'GD2026101600007',
+    reportDate: '2026-10-16',
   },
   {
     id: 'rep-05',
-    uploadTime: '2026-09-14 16:10',
+    uploadTime: '2026-10-14 16:10',
     name: '长者骨密度与跌倒风险综合评估',
     type: '随访报告',
     source: '后台上传',
     uploader: '赵全科',
-    workOrderNo: 'GD2026091400035',
-    reportDate: '2026-09-14',
+    workOrderNo: 'GD2026101400035',
+    reportDate: '2026-10-14',
   },
   {
     id: 'rep-06',
-    uploadTime: '2026-09-11 11:15',
+    uploadTime: '2026-10-11 11:15',
     name: '肝功能与电解质生化全套',
     type: '检验报告',
     source: '门诊就诊导入',
     uploader: '李明明',
-    workOrderNo: 'GD2026091100012',
-    reportDate: '2026-09-11',
+    workOrderNo: 'GD2026101100012',
+    reportDate: '2026-10-11',
   },
   {
     id: 'rep-07',
-    uploadTime: '2026-09-08 08:50',
+    uploadTime: '2026-10-08 08:50',
     name: '慢病月度全面随访健康报告',
     type: '随访报告',
     source: '后台上传',
     uploader: '张玉婷',
-    workOrderNo: 'GD2026090800004',
-    reportDate: '2026-09-08',
+    workOrderNo: 'GD2026100800004',
+    reportDate: '2026-10-08',
   },
   {
     id: 'rep-08',
-    uploadTime: '2026-09-03 14:05',
+    uploadTime: '2026-10-03 14:05',
     name: '头部头颅CT平扫检查报告',
     type: '影像检查',
     source: '合作医院推送',
     uploader: '刘伟',
-    workOrderNo: 'GD2026090300019',
-    reportDate: '2026-09-03',
+    workOrderNo: 'GD2026100300019',
+    reportDate: '2026-10-03',
   },
 ];
 
-// 订单信息列表（严格从 2026-09-19 降序至 2026-09-03，每条服务各不相同）
+// 订单信息列表（严格从 2026-10-19 降序至 2026-10-03，每条服务各不相同）
 export const INITIAL_ORDERS: OrderItem[] = [
   {
     id: 'ord-01',
     orderNo: '2400126679',
-    orderTime: '2026-09-19 15:30:10',
+    orderTime: '2026-10-19 15:30:10',
     serviceType: '康复理疗',
     productName: '脑中风术后肢体运动功能康复松动训练套餐',
     productImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=240&q=80',
@@ -247,10 +247,10 @@ export const INITIAL_ORDERS: OrderItem[] = [
       maskedPhone: '192****4486',
       idCard: '36909919470520289X',
       userNo: '202409000001',
-      registerTime: '2026-09-01 10:33:24',
+      registerTime: '2026-10-01 10:33:24',
       registerType: '平台系统注册',
-      lastLoginTime: '2026-09-19 10:33:24',
-      lastBuyTime: '2026-09-19 15:30:10',
+      lastLoginTime: '2026-10-19 10:33:24',
+      lastBuyTime: '2026-10-19 15:30:10',
       remarks: '术后恢复良好，需协助肌力渐进抗阻与平衡练习。',
     },
     status: '服务中',
@@ -258,7 +258,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
     orderSource: '平台系统',
     appointment: {
       address: '徐汇区黎梅花园88栋3单元101',
-      time: '2026-09-19 16:00:00',
+      time: '2026-10-19 16:00:00',
       duration: '2小时',
       phone: '19256784886',
     },
@@ -266,7 +266,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
   {
     id: 'ord-02',
     orderNo: '2400126675',
-    orderTime: '2026-09-18 14:12:07',
+    orderTime: '2026-10-18 14:12:07',
     serviceType: '日常保洁',
     productName: '日常清洁 2小时1人急速清洁全程质保',
     productImage: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=240&q=80',
@@ -281,10 +281,10 @@ export const INITIAL_ORDERS: OrderItem[] = [
       maskedPhone: '192****4486',
       idCard: '36909919470520289X',
       userNo: '202409000001',
-      registerTime: '2026-09-01 10:33:24',
+      registerTime: '2026-10-01 10:33:24',
       registerType: '平台系统注册',
-      lastLoginTime: '2026-09-19 10:33:24',
-      lastBuyTime: '2026-09-18 14:12:07',
+      lastLoginTime: '2026-10-19 10:33:24',
+      lastBuyTime: '2026-10-18 14:12:07',
       remarks: '重点打扫卫生间与卧室，注意保持地面防滑干爽。',
     },
     status: '已完成',
@@ -292,7 +292,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
     orderSource: '平台系统',
     appointment: {
       address: '徐汇区黎梅花园88栋3单元101',
-      time: '2026-09-18 15:00:00',
+      time: '2026-10-18 15:00:00',
       duration: '2小时',
       phone: '19256784886',
     },
@@ -300,8 +300,8 @@ export const INITIAL_ORDERS: OrderItem[] = [
   {
     id: 'ord-03',
     orderNo: '2400126670',
-    orderTime: '2026-09-16 14:12:07',
-    closeTime: '2026-09-16 15:12:07',
+    orderTime: '2026-10-16 14:12:07',
+    closeTime: '2026-10-16 15:12:07',
     serviceType: '日常保洁',
     productName: '日常清洁 2小时1人急速清洁全程质保',
     productImage: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=240&q=80',
@@ -316,10 +316,10 @@ export const INITIAL_ORDERS: OrderItem[] = [
       maskedPhone: '192****4486',
       idCard: '36909919470520289X',
       userNo: '202409000001',
-      registerTime: '2026-09-01 10:33:24',
+      registerTime: '2026-10-01 10:33:24',
       registerType: '平台系统注册',
-      lastLoginTime: '2026-09-19 10:33:24',
-      lastBuyTime: '2026-09-18 14:12:07',
+      lastLoginTime: '2026-10-19 10:33:24',
+      lastBuyTime: '2026-10-18 14:12:07',
       remarks: '超时未付款自动取消，长者后续改由家属协助代订。',
     },
     status: '已关闭',
@@ -328,7 +328,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
     orderSource: '平台系统',
     appointment: {
       address: '徐汇区黎梅花园88栋3单元101',
-      time: '2026-09-17 14:12:07',
+      time: '2026-10-17 14:12:07',
       duration: '2小时',
       phone: '19256784886',
     },
@@ -336,7 +336,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
   {
     id: 'ord-04',
     orderNo: '2400126662',
-    orderTime: '2026-09-14 09:25:40',
+    orderTime: '2026-10-14 09:25:40',
     serviceType: '上门助浴',
     productName: '专业上门助浴与全身防褥疮温水擦拭护理',
     productImage: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=240&q=80',
@@ -351,10 +351,10 @@ export const INITIAL_ORDERS: OrderItem[] = [
       maskedPhone: '192****4486',
       idCard: '36909919470520289X',
       userNo: '202409000001',
-      registerTime: '2026-09-01 10:33:24',
+      registerTime: '2026-10-01 10:33:24',
       registerType: '平台系统注册',
-      lastLoginTime: '2026-09-19 10:33:24',
-      lastBuyTime: '2026-09-18 14:12:07',
+      lastLoginTime: '2026-10-19 10:33:24',
+      lastBuyTime: '2026-10-18 14:12:07',
       remarks: '注意保暖防滑，洗浴过程全程监测心率血氧。',
     },
     status: '已完成',
@@ -362,7 +362,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
     orderSource: '平台系统',
     appointment: {
       address: '徐汇区黎梅花园88栋3单元101',
-      time: '2026-09-14 10:00:00',
+      time: '2026-10-14 10:00:00',
       duration: '1.5小时',
       phone: '19256784886',
     },
@@ -370,7 +370,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
   {
     id: 'ord-05',
     orderNo: '2400126658',
-    orderTime: '2026-09-11 16:40:12',
+    orderTime: '2026-10-11 16:40:12',
     serviceType: '适老改造',
     productName: '独居长者居室卫生间防滑地垫与安全扶手改造',
     productImage: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=240&q=80',
@@ -385,10 +385,10 @@ export const INITIAL_ORDERS: OrderItem[] = [
       maskedPhone: '192****4486',
       idCard: '36909919470520289X',
       userNo: '202409000001',
-      registerTime: '2026-09-01 10:33:24',
+      registerTime: '2026-10-01 10:33:24',
       registerType: '平台系统注册',
-      lastLoginTime: '2026-09-19 10:33:24',
-      lastBuyTime: '2026-09-18 14:12:07',
+      lastLoginTime: '2026-10-19 10:33:24',
+      lastBuyTime: '2026-10-18 14:12:07',
       remarks: '马桶旁加装折叠扶手，淋浴区增设一字型不锈钢防滑扶手。',
     },
     status: '已完成',
@@ -396,7 +396,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
     orderSource: '平台系统',
     appointment: {
       address: '徐汇区黎梅花园88栋3单元101',
-      time: '2026-09-12 09:30:00',
+      time: '2026-10-12 09:30:00',
       duration: '2.5小时',
       phone: '19256784886',
     },
@@ -404,7 +404,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
   {
     id: 'ord-06',
     orderNo: '2400126649',
-    orderTime: '2026-09-08 11:15:30',
+    orderTime: '2026-10-08 11:15:30',
     serviceType: '慢病护理',
     productName: '慢病专属上门采血与健康建档全面评估套餐',
     productImage: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=240&q=80',
@@ -419,10 +419,10 @@ export const INITIAL_ORDERS: OrderItem[] = [
       maskedPhone: '192****4486',
       idCard: '36909919470520289X',
       userNo: '202409000001',
-      registerTime: '2026-09-01 10:33:24',
+      registerTime: '2026-10-01 10:33:24',
       registerType: '平台系统注册',
-      lastLoginTime: '2026-09-19 10:33:24',
-      lastBuyTime: '2026-09-18 14:12:07',
+      lastLoginTime: '2026-10-19 10:33:24',
+      lastBuyTime: '2026-10-18 14:12:07',
       remarks: '采血化验空腹血糖与甘油三酯指标。',
     },
     status: '已完成',
@@ -430,7 +430,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
     orderSource: '平台系统',
     appointment: {
       address: '徐汇区黎梅花园88栋3单元101',
-      time: '2026-09-08 14:00:00',
+      time: '2026-10-08 14:00:00',
       duration: '1小时',
       phone: '19256784886',
     },
@@ -438,7 +438,7 @@ export const INITIAL_ORDERS: OrderItem[] = [
   {
     id: 'ord-07',
     orderNo: '2400126631',
-    orderTime: '2026-09-03 14:20:00',
+    orderTime: '2026-10-03 14:20:00',
     serviceType: '日常保洁',
     productName: '长者居室厨房油烟重垢深度保洁保养',
     productImage: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=240&q=80',
@@ -453,10 +453,10 @@ export const INITIAL_ORDERS: OrderItem[] = [
       maskedPhone: '192****4486',
       idCard: '36909919470520289X',
       userNo: '202409000001',
-      registerTime: '2026-09-01 10:33:24',
+      registerTime: '2026-10-01 10:33:24',
       registerType: '平台系统注册',
-      lastLoginTime: '2026-09-19 10:33:24',
-      lastBuyTime: '2026-09-18 14:12:07',
+      lastLoginTime: '2026-10-19 10:33:24',
+      lastBuyTime: '2026-10-18 14:12:07',
       remarks: '灶台油烟机彻底拆洗，消除安全隐患。',
     },
     status: '已完成',
@@ -464,14 +464,14 @@ export const INITIAL_ORDERS: OrderItem[] = [
     orderSource: '平台系统',
     appointment: {
       address: '徐汇区黎梅花园88栋3单元101',
-      time: '2026-09-04 09:00:00',
+      time: '2026-10-04 09:00:00',
       duration: '2小时',
       phone: '19256784886',
     },
   },
 ];
 
-// 优惠券列表（严格从 2026-09-19 降序至 2026-09-02，每条不同）
+// 优惠券列表（严格从 2026-10-19 降序至 2026-10-02，每条不同）
 export const INITIAL_COUPONS: CouponItem[] = [
   {
     id: 'cp-01',
@@ -479,8 +479,8 @@ export const INITIAL_COUPONS: CouponItem[] = [
     status: '未使用',
     content: '¥30 满150元可用',
     scope: '慢病护理',
-    receiveTime: '2026-09-19 09:15:00',
-    expireTime: '2026-09-29 23:59:59',
+    receiveTime: '2026-10-19 09:15:00',
+    expireTime: '2026-10-29 23:59:59',
   },
   {
     id: 'cp-02',
@@ -488,8 +488,8 @@ export const INITIAL_COUPONS: CouponItem[] = [
     status: '未使用',
     content: '¥20 满200元可用',
     scope: '全部商品',
-    receiveTime: '2026-09-18 10:09:09',
-    expireTime: '2026-09-28 10:09:09',
+    receiveTime: '2026-10-18 10:09:09',
+    expireTime: '2026-10-28 10:09:09',
   },
   {
     id: 'cp-03',
@@ -497,8 +497,8 @@ export const INITIAL_COUPONS: CouponItem[] = [
     status: '未使用',
     content: '¥40 满180元可用',
     scope: '护理服务',
-    receiveTime: '2026-09-16 14:20:00',
-    expireTime: '2026-09-26 14:20:00',
+    receiveTime: '2026-10-16 14:20:00',
+    expireTime: '2026-10-26 14:20:00',
   },
   {
     id: 'cp-04',
@@ -506,8 +506,8 @@ export const INITIAL_COUPONS: CouponItem[] = [
     status: '已使用',
     content: '¥50 满300元可用',
     scope: '康复理疗',
-    receiveTime: '2026-09-15 10:09:09',
-    expireTime: '2026-09-25 10:09:09',
+    receiveTime: '2026-10-15 10:09:09',
+    expireTime: '2026-10-25 10:09:09',
   },
   {
     id: 'cp-05',
@@ -515,8 +515,8 @@ export const INITIAL_COUPONS: CouponItem[] = [
     status: '已使用',
     content: '¥90 满350元可用',
     scope: '适老改造',
-    receiveTime: '2026-09-12 11:30:00',
-    expireTime: '2026-09-22 11:30:00',
+    receiveTime: '2026-10-12 11:30:00',
+    expireTime: '2026-10-22 11:30:00',
   },
   {
     id: 'cp-06',
@@ -524,8 +524,8 @@ export const INITIAL_COUPONS: CouponItem[] = [
     status: '未使用',
     content: '¥60 满300元可用',
     scope: '健康硬件',
-    receiveTime: '2026-09-08 16:40:00',
-    expireTime: '2026-09-20 16:40:00',
+    receiveTime: '2026-10-08 16:40:00',
+    expireTime: '2026-10-20 16:40:00',
   },
   {
     id: 'cp-07',
@@ -533,12 +533,12 @@ export const INITIAL_COUPONS: CouponItem[] = [
     status: '已过期',
     content: '¥15 无门槛可用',
     scope: '全部商品',
-    receiveTime: '2026-09-02 08:30:00',
-    expireTime: '2026-09-12 23:59:59',
+    receiveTime: '2026-10-02 08:30:00',
+    expireTime: '2026-10-12 23:59:59',
   },
 ];
 
-// 积分列表（严格从 2026-09-19 降序至 2026-09-01，每条不同）
+// 积分列表（严格从 2026-10-19 降序至 2026-10-01，每条不同）
 export const INITIAL_POINTS: PointsItem[] = [
   {
     id: 'pt-01',
@@ -547,7 +547,7 @@ export const INITIAL_POINTS: PointsItem[] = [
     reason: '每日早间血压打卡奖励',
     remark: '-',
     operator: '系统',
-    time: '2026-09-19 16:20:00',
+    time: '2026-10-19 16:20:00',
   },
   {
     id: 'pt-02',
@@ -556,7 +556,7 @@ export const INITIAL_POINTS: PointsItem[] = [
     reason: '订单完成积分',
     remark: '-',
     operator: '系统',
-    time: '2026-09-18 14:10:00',
+    time: '2026-10-18 14:10:00',
   },
   {
     id: 'pt-03',
@@ -565,7 +565,7 @@ export const INITIAL_POINTS: PointsItem[] = [
     reason: '兑换上门助浴满减券',
     remark: '用户在商城积分中心自主兑换',
     operator: '王强',
-    time: '2026-09-16 10:09:09',
+    time: '2026-10-16 10:09:09',
   },
   {
     id: 'pt-04',
@@ -574,7 +574,7 @@ export const INITIAL_POINTS: PointsItem[] = [
     reason: '连续7日用药按时打卡',
     remark: '-',
     operator: '系统',
-    time: '2026-09-15 08:30:00',
+    time: '2026-10-15 08:30:00',
   },
   {
     id: 'pt-05',
@@ -583,7 +583,7 @@ export const INITIAL_POINTS: PointsItem[] = [
     reason: '季度慢病随访复核达标',
     remark: '责任护师李明明审核合格',
     operator: '李明明',
-    time: '2026-09-12 15:45:00',
+    time: '2026-10-12 15:45:00',
   },
   {
     id: 'pt-06',
@@ -592,7 +592,7 @@ export const INITIAL_POINTS: PointsItem[] = [
     reason: '兑换防跌倒安全袜',
     remark: '-',
     operator: '系统',
-    time: '2026-09-08 11:20:00',
+    time: '2026-10-08 11:20:00',
   },
   {
     id: 'pt-07',
@@ -601,11 +601,11 @@ export const INITIAL_POINTS: PointsItem[] = [
     reason: '新客完善健康档案奖励',
     remark: '-',
     operator: '系统',
-    time: '2026-09-01 09:15:00',
+    time: '2026-10-01 09:15:00',
   },
 ];
 
-// 成长值列表（严格从 2026-09-19 降序至 2026-09-02，每条不同）
+// 成长值列表（严格从 2026-10-19 降序至 2026-10-02，每条不同）
 export const INITIAL_GROWTH: GrowthItem[] = [
   {
     id: 'gw-01',
@@ -614,7 +614,7 @@ export const INITIAL_GROWTH: GrowthItem[] = [
     reason: '每日健康签到',
     remark: '-',
     operator: '系统',
-    time: '2026-09-19 14:10:00',
+    time: '2026-10-19 14:10:00',
   },
   {
     id: 'gw-02',
@@ -623,7 +623,7 @@ export const INITIAL_GROWTH: GrowthItem[] = [
     reason: '每日健康签到',
     remark: '-',
     operator: '系统',
-    time: '2026-09-18 10:09:09',
+    time: '2026-10-18 10:09:09',
   },
   {
     id: 'gw-03',
@@ -632,7 +632,7 @@ export const INITIAL_GROWTH: GrowthItem[] = [
     reason: '完成上门日常清洁订单',
     remark: '订单编号 2400126675 交易完成',
     operator: '系统',
-    time: '2026-09-16 09:20:00',
+    time: '2026-10-16 09:20:00',
   },
   {
     id: 'gw-04',
@@ -641,7 +641,7 @@ export const INITIAL_GROWTH: GrowthItem[] = [
     reason: '参与社区健康宣教打卡',
     remark: '阅读高血压防治指南',
     operator: '系统',
-    time: '2026-09-14 15:30:00',
+    time: '2026-10-14 15:30:00',
   },
   {
     id: 'gw-05',
@@ -650,7 +650,7 @@ export const INITIAL_GROWTH: GrowthItem[] = [
     reason: '绑定智能毫米波雷达设备',
     remark: '-',
     operator: '李明明',
-    time: '2026-09-11 11:10:00',
+    time: '2026-10-11 11:10:00',
   },
   {
     id: 'gw-06',
@@ -659,7 +659,7 @@ export const INITIAL_GROWTH: GrowthItem[] = [
     reason: '每日健康签到',
     remark: '-',
     operator: '系统',
-    time: '2026-09-07 16:05:00',
+    time: '2026-10-07 16:05:00',
   },
   {
     id: 'gw-07',
@@ -668,11 +668,11 @@ export const INITIAL_GROWTH: GrowthItem[] = [
     reason: '长者实名制认证建档',
     remark: '首次认证奖励',
     operator: '系统',
-    time: '2026-09-02 08:45:00',
+    time: '2026-10-02 08:45:00',
   },
 ];
 
-// 内容信息列表（严格从 2026-09-19 降序至 2026-09-02，每条动态文字与话题各不相同）
+// 内容信息列表（严格从 2026-10-19 降序至 2026-10-02，每条动态文字与话题各不相同）
 export const INITIAL_CONTENTS: ContentItem[] = [
   {
     id: 'cnt-01',
@@ -683,7 +683,7 @@ export const INITIAL_CONTENTS: ContentItem[] = [
     favorites: 210,
     shares: 100,
     comments: 6,
-    publishTime: '2026-09-19 15:20:00',
+    publishTime: '2026-10-19 15:20:00',
     status: true,
   },
   {
@@ -695,7 +695,7 @@ export const INITIAL_CONTENTS: ContentItem[] = [
     favorites: 185,
     shares: 88,
     comments: 12,
-    publishTime: '2026-09-18 09:30:00',
+    publishTime: '2026-10-18 09:30:00',
     status: true,
   },
   {
@@ -707,7 +707,7 @@ export const INITIAL_CONTENTS: ContentItem[] = [
     favorites: 142,
     shares: 64,
     comments: 8,
-    publishTime: '2026-09-17 14:10:00',
+    publishTime: '2026-10-17 14:10:00',
     status: true,
   },
   {
@@ -719,7 +719,7 @@ export const INITIAL_CONTENTS: ContentItem[] = [
     favorites: 98,
     shares: 45,
     comments: 15,
-    publishTime: '2026-09-15 10:09:09',
+    publishTime: '2026-10-15 10:09:09',
     status: true,
   },
   {
@@ -731,7 +731,7 @@ export const INITIAL_CONTENTS: ContentItem[] = [
     favorites: 86,
     shares: 38,
     comments: 4,
-    publishTime: '2026-09-13 16:45:00',
+    publishTime: '2026-10-13 16:45:00',
     status: true,
   },
   {
@@ -743,7 +743,7 @@ export const INITIAL_CONTENTS: ContentItem[] = [
     favorites: 75,
     shares: 26,
     comments: 9,
-    publishTime: '2026-09-10 11:20:00',
+    publishTime: '2026-10-10 11:20:00',
     status: true,
   },
   {
@@ -755,7 +755,7 @@ export const INITIAL_CONTENTS: ContentItem[] = [
     favorites: 60,
     shares: 18,
     comments: 3,
-    publishTime: '2026-09-05 08:30:00',
+    publishTime: '2026-10-05 08:30:00',
     status: true,
   },
 ];
@@ -800,11 +800,11 @@ export const AVAILABLE_STAFF: ServiceStaff[] = [
   },
 ];
 
-// 服务记录列表（严格从 2026-09-19 降序至 2026-09-03，每条不同）
+// 服务记录列表（严格从 2026-10-19 降序至 2026-10-03，每条不同）
 export const INITIAL_SERVICES: ServiceRecordItem[] = [
   {
     id: 'srv-01',
-    workOrderNo: 'GD2026091900018',
+    workOrderNo: 'GD2026101900018',
     orderNo: '2400126679',
     orderInfo: {
       title: '脑中风术后康复理疗套餐',
@@ -812,23 +812,23 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
       discount: 99.00,
       actualAmount: 300.00,
       payMethod: '支付宝',
-      orderTime: '2026-09-19 11:09:09',
+      orderTime: '2026-10-19 11:09:09',
       image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=240&q=80',
     },
     serviceItem: '肌力增强训练',
     status: '服务中',
     actualAmount: 300.00,
     staff: '王小倩; 王伟',
-    dispatchTime: '2026-09-19 14:12:07',
+    dispatchTime: '2026-10-19 14:12:07',
     customer: {
       name: '王强',
-      userNo: '202609000001',
+      userNo: '202610000001',
       phone: '19233664486',
       maskedPhone: '192****4486',
       registerTime: '2026-08-30 10:09:09',
       registerType: '注册',
-      lastLoginTime: '2026-09-19 10:09:09',
-      lastBuyTime: '2026-09-19 11:09:09',
+      lastLoginTime: '2026-10-19 10:09:09',
+      lastBuyTime: '2026-10-19 11:09:09',
       remarks: '遵医嘱被动活动各关节，配合阻抗练习。',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80',
     },
@@ -836,9 +836,9 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
     address: '上海市徐汇区黎梅花园88栋3单元101',
     source: '后台派单',
     dispatcher: '李明明',
-    appointmentTime: '2026-09-19 14:30',
+    appointmentTime: '2026-10-19 14:30',
     duration: '2h',
-    actualServiceTime: '2026-09-19 14:30',
+    actualServiceTime: '2026-10-19 14:30',
     staffDetail: {
       name: '王小倩',
       phone: '156****4488',
@@ -847,7 +847,7 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
   },
   {
     id: 'srv-02',
-    workOrderNo: 'GD2026091800013',
+    workOrderNo: 'GD2026101800013',
     orderNo: '2400126675',
     orderInfo: {
       title: '日常清洁 2小时1人急速清洁全程质保',
@@ -855,23 +855,23 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
       discount: 0.00,
       actualAmount: 300.00,
       payMethod: '支付宝',
-      orderTime: '2026-09-18 10:09:09',
+      orderTime: '2026-10-18 10:09:09',
       image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=240&q=80',
     },
     serviceItem: '日常保洁与卫生间消毒',
     status: '已完成',
     actualAmount: 300.00,
     staff: '李明明; 张华',
-    dispatchTime: '2026-09-18 10:09:09',
+    dispatchTime: '2026-10-18 10:09:09',
     customer: {
       name: '王强',
-      userNo: '202609000001',
+      userNo: '202610000001',
       phone: '19233664486',
       maskedPhone: '192****4486',
       registerTime: '2026-08-30 10:09:09',
       registerType: '注册',
-      lastLoginTime: '2026-09-19 10:09:09',
-      lastBuyTime: '2026-09-18 10:09:09',
+      lastLoginTime: '2026-10-19 10:09:09',
+      lastBuyTime: '2026-10-18 10:09:09',
       remarks: '长者居家行动注意保持走道清空无阻碍。',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80',
     },
@@ -879,9 +879,9 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
     address: '上海市徐汇区黎梅花园88栋3单元101',
     source: '后台派单',
     dispatcher: '李明明',
-    appointmentTime: '2026-09-18 14:00',
+    appointmentTime: '2026-10-18 14:00',
     duration: '2h',
-    actualServiceTime: '2026-09-18 14:00',
+    actualServiceTime: '2026-10-18 14:00',
     staffDetail: {
       name: '李明明',
       phone: '138****9921',
@@ -890,7 +890,7 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
   },
   {
     id: 'srv-03',
-    workOrderNo: 'GD2026091600025',
+    workOrderNo: 'GD2026101600025',
     orderNo: '2400126668',
     orderInfo: {
       title: '专业上门助浴与全身防褥疮护理',
@@ -898,23 +898,23 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
       discount: 40.00,
       actualAmount: 180.00,
       payMethod: '微信支付',
-      orderTime: '2026-09-16 09:10:00',
+      orderTime: '2026-10-16 09:10:00',
       image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=240&q=80',
     },
     serviceItem: '温水助浴与皮肤完整性护理',
     status: '已完成',
     actualAmount: 180.00,
     staff: '王小倩; 陈护师',
-    dispatchTime: '2026-09-16 09:30:00',
+    dispatchTime: '2026-10-16 09:30:00',
     customer: {
       name: '王强',
-      userNo: '202609000001',
+      userNo: '202610000001',
       phone: '19233664486',
       maskedPhone: '192****4486',
       registerTime: '2026-08-30 10:09:09',
       registerType: '注册',
-      lastLoginTime: '2026-09-19 10:09:09',
-      lastBuyTime: '2026-09-18 10:09:09',
+      lastLoginTime: '2026-10-19 10:09:09',
+      lastBuyTime: '2026-10-18 10:09:09',
       remarks: '浴前浴后监测血压血氧，注意防着凉。',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80',
     },
@@ -922,9 +922,9 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
     address: '上海市徐汇区黎梅花园88栋3单元101',
     source: '后台派单',
     dispatcher: '李明明',
-    appointmentTime: '2026-09-16 10:30',
+    appointmentTime: '2026-10-16 10:30',
     duration: '1.5h',
-    actualServiceTime: '2026-09-16 10:30',
+    actualServiceTime: '2026-10-16 10:30',
     staffDetail: {
       name: '王小倩',
       phone: '156****4488',
@@ -933,7 +933,7 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
   },
   {
     id: 'srv-04',
-    workOrderNo: 'GD2026091400031',
+    workOrderNo: 'GD2026101400031',
     orderNo: '2400126658',
     orderInfo: {
       title: '居室卫生间防滑扶手安全改造套餐',
@@ -941,23 +941,23 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
       discount: 90.00,
       actualAmount: 360.00,
       payMethod: '微信支付',
-      orderTime: '2026-09-14 15:10:00',
+      orderTime: '2026-10-14 15:10:00',
       image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=240&q=80',
     },
     serviceItem: '适老安全改造与扶手打孔安装',
     status: '已完成',
     actualAmount: 360.00,
     staff: '陈工匠; 赵师傅',
-    dispatchTime: '2026-09-14 15:40:00',
+    dispatchTime: '2026-10-14 15:40:00',
     customer: {
       name: '王强',
-      userNo: '202609000001',
+      userNo: '202610000001',
       phone: '19233664486',
       maskedPhone: '192****4486',
       registerTime: '2026-08-30 10:09:09',
       registerType: '注册',
-      lastLoginTime: '2026-09-19 10:09:09',
-      lastBuyTime: '2026-09-18 10:09:09',
+      lastLoginTime: '2026-10-19 10:09:09',
+      lastBuyTime: '2026-10-18 10:09:09',
       remarks: '安装承重实测合格，完成拉力测试验收。',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80',
     },
@@ -965,9 +965,9 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
     address: '上海市徐汇区黎梅花园88栋3单元101',
     source: '后台派单',
     dispatcher: '李明明',
-    appointmentTime: '2026-09-15 09:30',
+    appointmentTime: '2026-10-15 09:30',
     duration: '2h',
-    actualServiceTime: '2026-09-15 09:30',
+    actualServiceTime: '2026-10-15 09:30',
     staffDetail: {
       name: '陈工匠',
       phone: '139****1123',
@@ -976,7 +976,7 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
   },
   {
     id: 'srv-05',
-    workOrderNo: 'GD2026091100008',
+    workOrderNo: 'GD2026101100008',
     orderNo: '2400126649',
     orderInfo: {
       title: '慢病专属上门采血与健康建档全面评估套餐',
@@ -984,23 +984,23 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
       discount: 30.00,
       actualAmount: 120.00,
       payMethod: '余额支付',
-      orderTime: '2026-09-11 10:50:00',
+      orderTime: '2026-10-11 10:50:00',
       image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=240&q=80',
     },
     serviceItem: '常规静脉采血与慢病建档评估',
     status: '已完成',
     actualAmount: 120.00,
     staff: '张玉婷; 刘医生',
-    dispatchTime: '2026-09-11 11:20:00',
+    dispatchTime: '2026-10-11 11:20:00',
     customer: {
       name: '王强',
-      userNo: '202609000001',
+      userNo: '202610000001',
       phone: '19233664486',
       maskedPhone: '192****4486',
       registerTime: '2026-08-30 10:09:09',
       registerType: '注册',
-      lastLoginTime: '2026-09-19 10:09:09',
-      lastBuyTime: '2026-09-18 10:09:09',
+      lastLoginTime: '2026-10-19 10:09:09',
+      lastBuyTime: '2026-10-18 10:09:09',
       remarks: '采血化验空腹血糖、血脂及糖化血红蛋白。',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80',
     },
@@ -1008,9 +1008,9 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
     address: '上海市徐汇区黎梅花园88栋3单元101',
     source: '后台派单',
     dispatcher: '李明明',
-    appointmentTime: '2026-09-11 14:00',
+    appointmentTime: '2026-10-11 14:00',
     duration: '1h',
-    actualServiceTime: '2026-09-11 14:00',
+    actualServiceTime: '2026-10-11 14:00',
     staffDetail: {
       name: '张玉婷',
       phone: '137****8890',
@@ -1019,7 +1019,7 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
   },
   {
     id: 'srv-06',
-    workOrderNo: 'GD2026090700019',
+    workOrderNo: 'GD2026100700019',
     orderNo: '2400126639',
     orderInfo: {
       title: '三甲医院专科门诊专业陪同就医服务',
@@ -1027,23 +1027,23 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
       discount: 30.00,
       actualAmount: 150.00,
       payMethod: '微信支付',
-      orderTime: '2026-09-07 08:15:00',
+      orderTime: '2026-10-07 08:15:00',
       image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=240&q=80',
     },
     serviceItem: '门诊陪同与代取检查化验单',
     status: '已完成',
     actualAmount: 150.00,
     staff: '钱护士; 周专员',
-    dispatchTime: '2026-09-07 08:50:00',
+    dispatchTime: '2026-10-07 08:50:00',
     customer: {
       name: '王强',
-      userNo: '202609000001',
+      userNo: '202610000001',
       phone: '19233664486',
       maskedPhone: '192****4486',
       registerTime: '2026-08-30 10:09:09',
       registerType: '注册',
-      lastLoginTime: '2026-09-19 10:09:09',
-      lastBuyTime: '2026-09-18 10:09:09',
+      lastLoginTime: '2026-10-19 10:09:09',
+      lastBuyTime: '2026-10-18 10:09:09',
       remarks: '陪同至徐汇区中心医院心血管专科复诊取药。',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80',
     },
@@ -1051,9 +1051,9 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
     address: '上海市徐汇区淮海中路966号',
     source: '后台派单',
     dispatcher: '李明明',
-    appointmentTime: '2026-09-07 09:30',
+    appointmentTime: '2026-10-07 09:30',
     duration: '3h',
-    actualServiceTime: '2026-09-07 09:30',
+    actualServiceTime: '2026-10-07 09:30',
     staffDetail: {
       name: '钱护士',
       phone: '136****5567',
@@ -1062,7 +1062,7 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
   },
   {
     id: 'srv-07',
-    workOrderNo: 'GD2026090300042',
+    workOrderNo: 'GD2026100300042',
     orderNo: '2400126631',
     orderInfo: {
       title: '长者居室厨房油烟深度保洁保养套餐',
@@ -1070,23 +1070,23 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
       discount: 60.00,
       actualAmount: 200.00,
       payMethod: '微信支付',
-      orderTime: '2026-09-03 13:30:00',
+      orderTime: '2026-10-03 13:30:00',
       image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=240&q=80',
     },
     serviceItem: '居室厨卫深度保洁',
     status: '已完成',
     actualAmount: 200.00,
     staff: '孙阿姨; 郑主管',
-    dispatchTime: '2026-09-03 14:00:00',
+    dispatchTime: '2026-10-03 14:00:00',
     customer: {
       name: '王强',
-      userNo: '202609000001',
+      userNo: '202610000001',
       phone: '19233664486',
       maskedPhone: '192****4486',
       registerTime: '2026-08-30 10:09:09',
       registerType: '注册',
-      lastLoginTime: '2026-09-19 10:09:09',
-      lastBuyTime: '2026-09-18 10:09:09',
+      lastLoginTime: '2026-10-19 10:09:09',
+      lastBuyTime: '2026-10-18 10:09:09',
       remarks: '油烟机滤网清洗与燃气阀安全巡检。',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80',
     },
@@ -1094,9 +1094,9 @@ export const INITIAL_SERVICES: ServiceRecordItem[] = [
     address: '上海市徐汇区黎梅花园88栋3单元101',
     source: '后台派单',
     dispatcher: '李明明',
-    appointmentTime: '2026-09-04 09:00',
+    appointmentTime: '2026-10-04 09:00',
     duration: '2h',
-    actualServiceTime: '2026-09-04 09:00',
+    actualServiceTime: '2026-10-04 09:00',
     staffDetail: {
       name: '孙阿姨',
       phone: '135****4432',

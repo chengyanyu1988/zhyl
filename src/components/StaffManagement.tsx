@@ -78,7 +78,7 @@ export const StaffManagement: React.FC<StaffManagementProps> = ({
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center space-x-1.5 text-xs text-emerald-700 bg-emerald-50/80 px-2.5 py-1 rounded-md border border-emerald-200">
               <ArrowUpDown className="w-3 h-3" />
-              <span>按最新履约时间降序 (2026-09-18 至 2026-09-01)</span>
+              <span>按最新履约时间降序 (2026-10-18 至 2026-10-01)</span>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ export const StaffManagement: React.FC<StaffManagementProps> = ({
                 <th className="py-3 px-3.5 text-left font-semibold w-48">人员基本信息</th>
                 <th className="py-3 px-3.5 text-left font-semibold w-28">专业服务类别</th>
                 <th className="py-3 px-3.5 text-left font-semibold">国家认证资质与职称</th>
-                <th className="py-3 px-3.5 text-center font-semibold w-28">9月累计工单</th>
+                <th className="py-3 px-3.5 text-center font-semibold w-28">10月累计工单</th>
                 <th className="py-3 px-3.5 text-center font-semibold w-24">长者好评率</th>
                 <th className="py-3 px-3.5 text-left font-semibold w-36">
                   <div className="flex items-center space-x-1">
@@ -159,7 +159,7 @@ export const StaffManagement: React.FC<StaffManagementProps> = ({
             </thead>
             <tbody className="divide-y divide-gray-50">
               {filteredStaff.map((staff) => {
-                const isYesterday = staff.latestServiceDate === '2026-09-18';
+                const isYesterday = staff.latestServiceDate === '2026-10-18';
 
                 return (
                   <tr key={staff.id} className="hover:bg-gray-50/70 transition-colors">

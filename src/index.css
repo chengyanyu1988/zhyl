@@ -1,1 +1,217 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root, [data-theme="teal"], [data-theme="emerald"], [data-theme="blue"] {
+  --app-bg: #eaf4ef;
+  --sidebar-bg: #041c14;
+  --header-bg: #041c14;
+  --card-bg: #ffffff;
+  --card-bg-hover: #f0fdf4;
+  --border-color: #cbd5e1;
+  --text-main: #062419;
+  --text-muted: #526c61;
+  --input-bg: #ffffff;
+  --accent-color: #00b074;
+}
+
+[data-theme="dark"] {
+  --app-bg: #0b0f19;
+  --sidebar-bg: #111827;
+  --header-bg: #0b0f19;
+  --card-bg: #1e293b;
+  --card-bg-hover: #334155;
+  --border-color: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --input-bg: #0f172a;
+  --accent-color: #3b82f6;
+}
+
+[data-theme="sand"] {
+  --app-bg: #f5f2eb;
+  --sidebar-bg: #ffffff;
+  --header-bg: #292524;
+  --card-bg: #ffffff;
+  --card-bg-hover: #faf8f5;
+  --border-color: #e5ded3;
+  --text-main: #292524;
+  --text-muted: #78716c;
+  --input-bg: #ffffff;
+  --accent-color: #d97706;
+}
+
+[data-theme="teal"], [data-theme="mint"] {
+  --app-bg: #f0fdfa;
+  --sidebar-bg: #ffffff;
+  --header-bg: #042f2e;
+  --card-bg: #ffffff;
+  --card-bg-hover: #f0fdf4;
+  --border-color: #ccfbf1;
+  --text-main: #0f172a;
+  --text-muted: #0f766e;
+  --input-bg: #ffffff;
+  --accent-color: #0d9488;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--app-bg);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.theme-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main);
+}
+
+.theme-sidebar {
+  background-color: var(--sidebar-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-header {
+  background-color: var(--header-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-input {
+  background-color: var(--input-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Ensure all white elements across all pages utilize theme card background color */
+.bg-white,
+.bg-white\/90,
+.bg-white\/95,
+.bg-white\/80,
+.bg-white\/70,
+.bg-white\/50,
+.bg-white\/60,
+.bg-white\/40,
+.bg-\[\#ffffff\],
+.bg-\[\#fff\],
+.bg-slate-50,
+.bg-gray-50,
+.bg-neutral-50,
+.bg-zinc-50 {
+  background-color: var(--card-bg) !important;
+}
+
+/* Ensure secondary light backgrounds utilize input-bg or app-bg */
+.bg-gray-100,
+.bg-slate-100,
+.bg-neutral-100,
+.bg-zinc-100,
+.bg-\[\#f8fafc\],
+.bg-\[\#f1f5f9\],
+.bg-\[\#fbfcfd\] {
+  background-color: var(--input-bg) !important;
+}
+
+/* Ensure borders adapt to theme border color */
+.border-gray-100,
+.border-gray-200,
+.border-slate-100,
+.border-slate-200,
+.border-gray-200\/60,
+.border-gray-200\/80,
+.border-gray-100\/60,
+.border-gray-100\/80 {
+  border-color: var(--border-color) !important;
+}
+
+/* Form inputs & controls */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  background-color: var(--input-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+/* Dark mode typography and accent highlights */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .text-gray-900,
+[data-theme="dark"] .text-slate-900,
+[data-theme="dark"] .text-gray-800,
+[data-theme="dark"] .text-slate-800,
+[data-theme="dark"] .text-gray-700,
+[data-theme="dark"] .text-slate-700,
+[data-theme="dark"] .text-neutral-800,
+[data-theme="dark"] .text-neutral-900,
+[data-theme="dark"] .text-black {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .text-gray-600,
+[data-theme="dark"] .text-slate-600,
+[data-theme="dark"] .text-gray-500,
+[data-theme="dark"] .text-slate-500,
+[data-theme="dark"] .text-neutral-600,
+[data-theme="dark"] .text-neutral-500 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .bg-emerald-50,
+[data-theme="dark"] .bg-emerald-50\/40,
+[data-theme="dark"] .bg-emerald-50\/80 {
+  background-color: rgba(6, 78, 59, 0.4) !important;
+  color: #6ee7b7 !important;
+}
+
+[data-theme="dark"] .bg-blue-50,
+[data-theme="dark"] .bg-indigo-50 {
+  background-color: rgba(30, 58, 138, 0.4) !important;
+  color: #93c5fd !important;
+}
+
+[data-theme="dark"] .bg-amber-50,
+[data-theme="dark"] .bg-yellow-50 {
+  background-color: rgba(120, 53, 15, 0.4) !important;
+  color: #fde047 !important;
+}
+
+[data-theme="dark"] .bg-purple-50 {
+  background-color: rgba(88, 28, 135, 0.4) !important;
+  color: #e9d5ff !important;
+}
+
+[data-theme="dark"] .bg-rose-50,
+[data-theme="dark"] .bg-red-50 {
+  background-color: rgba(136, 19, 55, 0.4) !important;
+  color: #fca5a5 !important;
+}
+
+/* Custom sleek scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+

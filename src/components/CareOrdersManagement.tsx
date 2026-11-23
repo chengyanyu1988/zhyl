@@ -84,7 +84,7 @@ export const CareOrdersManagement: React.FC<CareOrdersManagementProps> = ({
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center space-x-1.5 text-xs text-emerald-700 bg-emerald-50/80 px-2.5 py-1 rounded-md border border-emerald-200">
               <ArrowUpDown className="w-3 h-3" />
-              <span>按服务派单时间降序 (2026-09-18 至 2026-09-01)</span>
+              <span>按服务派单时间降序 (2026-10-18 至 2026-10-01)</span>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export const CareOrdersManagement: React.FC<CareOrdersManagementProps> = ({
             </thead>
             <tbody className="divide-y divide-gray-50">
               {filteredOrders.map((ord) => {
-                const isYesterday = ord.orderTime.startsWith('2026-09-18');
+                const isYesterday = ord.orderTime.startsWith('2026-10-18');
 
                 return (
                   <tr key={ord.id} className="hover:bg-gray-50/70 transition-colors">

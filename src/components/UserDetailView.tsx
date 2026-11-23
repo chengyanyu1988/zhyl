@@ -117,7 +117,7 @@ export const UserDetailView: React.FC<UserDetailViewProps> = ({
           id: `op-${Date.now()}`,
           action: '修改 个人基础资料与健康备注',
           operator: 'admin (系统管理员)',
-          time: '2026-09-19 16:30:00',
+          time: '2026-10-19 16:30:00',
         },
         ...user.operationLogs,
       ],

@@ -51,9 +51,9 @@ export const FinanceManagement: React.FC<FinanceManagementProps> = ({
       {/* Top 3 Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-          <div className="text-xs text-gray-400 mb-1">2026年9月累计消费流水总额</div>
+          <div className="text-xs text-gray-400 mb-1">2026年10月累计消费流水总额</div>
           <div className="text-2xl font-bold text-gray-800 font-mono">¥{totalRevenue.toLocaleString()} 元</div>
-          <div className="text-[11px] text-emerald-600 mt-1">9月1日 至 9月18日 全量归集</div>
+          <div className="text-[11px] text-emerald-600 mt-1">10月1日 至 10月20日 全量归集</div>
         </div>
 
         <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
@@ -82,10 +82,10 @@ export const FinanceManagement: React.FC<FinanceManagementProps> = ({
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center space-x-1.5 text-xs text-emerald-700 bg-emerald-50/80 px-2.5 py-1 rounded-md border border-emerald-200">
               <ArrowUpDown className="w-3 h-3" />
-              <span>按交易时间降序 (2026-09-18 至 2026-09-01)</span>
+              <span>按交易时间降序 (2026-10-18 至 2026-10-01)</span>
             </div>
             <button
-              onClick={() => onNotice('已导出2026年9月消费结算对账表(Excel)')}
+              onClick={() => onNotice('已导出2026年10月消费结算对账表(Excel)')}
               className="px-3.5 py-1.5 text-xs bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg flex items-center space-x-1.5 font-medium transition-colors border border-emerald-200"
             >
               <Download className="w-3.5 h-3.5" />
@@ -149,7 +149,7 @@ export const FinanceManagement: React.FC<FinanceManagementProps> = ({
             </thead>
             <tbody className="divide-y divide-gray-50">
               {filteredBills.map((b) => {
-                const isYesterday = b.payTime.startsWith('2026-09-18');
+                const isYesterday = b.payTime.startsWith('2026-10-18');
 
                 return (
                   <tr key={b.id} className="hover:bg-gray-50/70 transition-colors">

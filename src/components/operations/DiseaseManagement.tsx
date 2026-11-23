@@ -17,7 +17,7 @@ const INITIAL_DISEASES: DiseaseItem[] = [
     collectsCount: 35,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-17 10:09:09',
+    lastUpdateTime: '2026-10-17 10:09:09',
     intro: '胃粘膜被胃酸和胃蛋白酶消化形成的炎性缺损。',
     symptoms: '胃痛、腹胀、反酸、嗳气、食欲减退。',
     complications: '胃出血、胃穿孔、幽门梗阻。',
@@ -31,7 +31,7 @@ const INITIAL_DISEASES: DiseaseItem[] = [
     collectsCount: 82,
     status: '已发布',
     updater: '陈医生',
-    lastUpdateTime: '2026-09-16 15:20:00',
+    lastUpdateTime: '2026-10-16 15:20:00',
     intro: '以体循环动脉血压增高为主要特征的常见慢性病。',
     symptoms: '头晕、头痛、心悸、耳鸣、后颈部不适。',
     complications: '脑卒中、冠心病、肾功能衰竭。',
@@ -45,7 +45,7 @@ const INITIAL_DISEASES: DiseaseItem[] = [
     collectsCount: 56,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-14 11:10:00',
+    lastUpdateTime: '2026-10-14 11:10:00',
     intro: '骨量减少、骨微结构破坏，导致骨脆性增加易发生骨折。',
     symptoms: '腰背疼痛、身高缩短、驼背、轻微碰撞易发生骨折。',
     complications: '髋部骨折、脊柱压缩性骨折。',
@@ -59,7 +59,7 @@ const INITIAL_DISEASES: DiseaseItem[] = [
     collectsCount: 120,
     status: '已发布',
     updater: '张主任',
-    lastUpdateTime: '2026-09-11 09:30:00',
+    lastUpdateTime: '2026-10-11 09:30:00',
     intro: '胰岛素抵抗和胰岛素分泌相对不足引起的代谢性疾病。',
     symptoms: '多饮、多食、多尿、体重减轻、疲乏无力。',
     complications: '糖尿病视网膜病变、糖尿病足、肾病。',
@@ -73,7 +73,7 @@ const INITIAL_DISEASES: DiseaseItem[] = [
     collectsCount: 45,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-07 14:00:00',
+    lastUpdateTime: '2026-10-07 14:00:00',
     intro: '急性脑血液循环障碍导致的局部脑功能缺陷。',
     symptoms: '肢体偏瘫、口眼歪斜、言语不清、吞咽困难。',
     complications: '肺部感染、下肢静脉血栓、关节挛缩。',
@@ -87,7 +87,7 @@ const INITIAL_DISEASES: DiseaseItem[] = [
     collectsCount: 28,
     status: '草稿',
     updater: '王医师',
-    lastUpdateTime: '2026-09-03 16:15:00',
+    lastUpdateTime: '2026-10-03 16:15:00',
     intro: '一种具有气流受限特征的可以预防和治疗的疾病。',
     symptoms: '慢性咳嗽、咳痰、气短或呼吸困难。',
     complications: '慢性肺源性心脏病、呼吸衰竭。',
@@ -102,7 +102,7 @@ const INITIAL_CATS: DiseaseCategoryItem[] = [
     name: '儿科',
     diseaseCount: 100,
     updater: '李明明',
-    lastUpdateTime: '2026-09-18 10:09:09',
+    lastUpdateTime: '2026-10-18 10:09:09',
     status: '启用',
   },
   {
@@ -111,7 +111,7 @@ const INITIAL_CATS: DiseaseCategoryItem[] = [
     name: '妇产科',
     diseaseCount: 100,
     updater: '李明明',
-    lastUpdateTime: '2026-09-17 16:20:00',
+    lastUpdateTime: '2026-10-17 16:20:00',
     status: '启用',
   },
   {
@@ -120,7 +120,7 @@ const INITIAL_CATS: DiseaseCategoryItem[] = [
     name: '普通内科',
     diseaseCount: 100,
     updater: '李明明',
-    lastUpdateTime: '2026-09-15 14:00:00',
+    lastUpdateTime: '2026-10-15 14:00:00',
     status: '启用',
   },
   {
@@ -129,7 +129,7 @@ const INITIAL_CATS: DiseaseCategoryItem[] = [
     name: '皮肤科',
     diseaseCount: 100,
     updater: '李明明',
-    lastUpdateTime: '2026-09-12 11:30:00',
+    lastUpdateTime: '2026-10-12 11:30:00',
     status: '启用',
   },
   {
@@ -138,7 +138,7 @@ const INITIAL_CATS: DiseaseCategoryItem[] = [
     name: '消化内科',
     diseaseCount: 100,
     updater: '李明明',
-    lastUpdateTime: '2026-09-09 09:15:00',
+    lastUpdateTime: '2026-10-09 09:15:00',
     status: '启用',
   },
   {
@@ -147,7 +147,7 @@ const INITIAL_CATS: DiseaseCategoryItem[] = [
     name: '神经内科',
     diseaseCount: 100,
     updater: '李明明',
-    lastUpdateTime: '2026-09-06 15:40:00',
+    lastUpdateTime: '2026-10-06 15:40:00',
     status: '启用',
   },
   {
@@ -156,7 +156,7 @@ const INITIAL_CATS: DiseaseCategoryItem[] = [
     name: '骨科',
     diseaseCount: 100,
     updater: '李明明',
-    lastUpdateTime: '2026-09-04 10:00:00',
+    lastUpdateTime: '2026-10-04 10:00:00',
     status: '启用',
   },
   {
@@ -165,7 +165,7 @@ const INITIAL_CATS: DiseaseCategoryItem[] = [
     name: '心血管内科',
     diseaseCount: 100,
     updater: '李明明',
-    lastUpdateTime: '2026-09-02 13:20:00',
+    lastUpdateTime: '2026-10-02 13:20:00',
     status: '启用',
   },
 ];
@@ -267,7 +267,7 @@ export const DiseaseManagement: React.FC<DiseaseManagementProps> = ({
         collectsCount: 0,
         status: (diseaseForm.status as any) || '已发布',
         updater: '管理员',
-        lastUpdateTime: '2026-09-19 16:30:00',
+        lastUpdateTime: '2026-10-19 16:30:00',
         intro: diseaseForm.intro,
         symptoms: diseaseForm.symptoms,
         complications: diseaseForm.complications,
@@ -278,7 +278,7 @@ export const DiseaseManagement: React.FC<DiseaseManagementProps> = ({
     } else if (diseaseModal.item) {
       setDiseases(
         diseases.map((d) =>
-          d.id === diseaseModal.item!.id ? { ...d, ...diseaseForm, lastUpdateTime: '2026-09-19 16:30:00' } : d
+          d.id === diseaseModal.item!.id ? { ...d, ...diseaseForm, lastUpdateTime: '2026-10-19 16:30:00' } : d
         )
       );
       onNotice('疾病条目已被修改');
@@ -306,7 +306,7 @@ export const DiseaseManagement: React.FC<DiseaseManagementProps> = ({
         name: catForm.name,
         diseaseCount: 0,
         updater: '管理员',
-        lastUpdateTime: '2026-09-19 16:00:00',
+        lastUpdateTime: '2026-10-19 16:00:00',
         status: catForm.status,
       };
       setCategories([newCat, ...categories]);
@@ -315,7 +315,7 @@ export const DiseaseManagement: React.FC<DiseaseManagementProps> = ({
       setCategories(
         categories.map((c) =>
           c.id === catModal.item!.id
-            ? { ...c, name: catForm.name, sortOrder: catForm.sortOrder, status: catForm.status, lastUpdateTime: '2026-09-19 16:00:00' }
+            ? { ...c, name: catForm.name, sortOrder: catForm.sortOrder, status: catForm.status, lastUpdateTime: '2026-10-19 16:00:00' }
             : c
         )
       );

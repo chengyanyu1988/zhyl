@@ -79,7 +79,7 @@ export const ServiceCommission: React.FC<ServiceCommissionProps> = ({ onNotice }
         ? {
             ...c,
             settlementStatus: '已结算' as const,
-            settledTime: '2026-09-19 17:00:00',
+            settledTime: '2026-10-19 17:00:00',
           }
         : c
     );
@@ -136,8 +136,8 @@ export const ServiceCommission: React.FC<ServiceCommissionProps> = ({ onNotice }
             <div className="flex items-center space-x-2 flex-1">
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={applyStartDate}
                 onChange={(e) => setApplyStartDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -145,8 +145,8 @@ export const ServiceCommission: React.FC<ServiceCommissionProps> = ({ onNotice }
               <span className="text-gray-400">~</span>
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={applyEndDate}
                 onChange={(e) => setApplyEndDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -163,8 +163,8 @@ export const ServiceCommission: React.FC<ServiceCommissionProps> = ({ onNotice }
             <div className="flex items-center space-x-2 flex-1">
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={settleStartDate}
                 onChange={(e) => setSettleStartDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -172,8 +172,8 @@ export const ServiceCommission: React.FC<ServiceCommissionProps> = ({ onNotice }
               <span className="text-gray-400">~</span>
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={settleEndDate}
                 onChange={(e) => setSettleEndDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"

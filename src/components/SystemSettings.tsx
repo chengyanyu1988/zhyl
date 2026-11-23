@@ -45,7 +45,7 @@ interface SystemSettingsProps {
   onConfirmDelete?: (title: string, message: string, onConfirm: () => void) => void;
 }
 
-// ------------------- MOCK DATASETS (2026-09-01 to 2026-09-19 DESCENDING) -------------------
+// ------------------- MOCK DATASETS (2026-10-01 to 2026-10-19 DESCENDING) -------------------
 
 // 1. Staff Members Data
 interface StaffItem {
@@ -70,7 +70,7 @@ const INITIAL_STAFF_LIST: StaffItem[] = [
     phone: '17655558888',
     remark: '系统高级超级管理员，负责全局调度与设置',
     updatedBy: '李明明',
-    updatedTime: '2026-09-19 17:45:10',
+    updatedTime: '2026-10-19 17:45:10',
     status: true,
   },
   {
@@ -81,7 +81,7 @@ const INITIAL_STAFF_LIST: StaffItem[] = [
     phone: '13811223344',
     remark: '负责雨花台区及周边居家护理工单派发',
     updatedBy: '李明明',
-    updatedTime: '2026-09-19 14:20:05',
+    updatedTime: '2026-10-19 14:20:05',
     status: true,
   },
   {
@@ -92,7 +92,7 @@ const INITIAL_STAFF_LIST: StaffItem[] = [
     phone: '15966778899',
     remark: '负责护理人员每日体温与体征巡检督导',
     updatedBy: '王小倩',
-    updatedTime: '2026-09-18 16:15:30',
+    updatedTime: '2026-10-18 16:15:30',
     status: true,
   },
   {
@@ -103,7 +103,7 @@ const INITIAL_STAFF_LIST: StaffItem[] = [
     phone: '18033445566',
     remark: '负责长者护理月度对账与医保结算审核',
     updatedBy: '李明明',
-    updatedTime: '2026-09-17 11:10:45',
+    updatedTime: '2026-10-17 11:10:45',
     status: true,
   },
   {
@@ -114,7 +114,7 @@ const INITIAL_STAFF_LIST: StaffItem[] = [
     phone: '13677889900',
     remark: '负责24小时应急呼叫热线解答与投诉处理',
     updatedBy: '王小倩',
-    updatedTime: '2026-09-15 09:40:22',
+    updatedTime: '2026-10-15 09:40:22',
     status: true,
   },
   {
@@ -125,7 +125,7 @@ const INITIAL_STAFF_LIST: StaffItem[] = [
     phone: '17722334455',
     remark: '负责毫米波雷达及视频跌倒告警硬件调优',
     updatedBy: '李明明',
-    updatedTime: '2026-09-12 15:30:00',
+    updatedTime: '2026-10-12 15:30:00',
     status: true,
   },
   {
@@ -136,7 +136,7 @@ const INITIAL_STAFF_LIST: StaffItem[] = [
     phone: '18944556677',
     remark: '负责养老中心糖尿病及高血压定制食谱审核',
     updatedBy: '张华',
-    updatedTime: '2026-09-08 10:15:18',
+    updatedTime: '2026-10-08 10:15:18',
     status: true,
   },
   {
@@ -147,7 +147,7 @@ const INITIAL_STAFF_LIST: StaffItem[] = [
     phone: '15088991122',
     remark: '负责老年大学义诊活动筹备与推广',
     updatedBy: '李明明',
-    updatedTime: '2026-09-03 13:25:00',
+    updatedTime: '2026-10-03 13:25:00',
     status: true,
   },
 ];
@@ -170,7 +170,7 @@ const INITIAL_ROLE_LIST: RoleItem[] = [
     staffCount: 12,
     remark: '具备智慧养老管理平台全部配置与数据查看权限',
     updatedBy: '李明明',
-    updatedTime: '2026-09-19 18:10:00',
+    updatedTime: '2026-10-19 18:10:00',
     status: true,
   },
   {
@@ -179,7 +179,7 @@ const INITIAL_ROLE_LIST: RoleItem[] = [
     staffCount: 80,
     remark: '负责助餐、助洁、上门理疗工单调度与派发',
     updatedBy: '李明明',
-    updatedTime: '2026-09-19 15:30:22',
+    updatedTime: '2026-10-19 15:30:22',
     status: true,
   },
   {
@@ -188,7 +188,7 @@ const INITIAL_ROLE_LIST: RoleItem[] = [
     staffCount: 24,
     remark: '负责护理人员质检抽查及紧急告警处置响应',
     updatedBy: '王小倩',
-    updatedTime: '2026-09-18 10:45:15',
+    updatedTime: '2026-10-18 10:45:15',
     status: true,
   },
   {
@@ -197,7 +197,7 @@ const INITIAL_ROLE_LIST: RoleItem[] = [
     staffCount: 6,
     remark: '负责服务款项核对、机构提现及明细统计导出',
     updatedBy: '刘建国',
-    updatedTime: '2026-09-16 16:20:00',
+    updatedTime: '2026-10-16 16:20:00',
     status: true,
   },
   {
@@ -206,7 +206,7 @@ const INITIAL_ROLE_LIST: RoleItem[] = [
     staffCount: 15,
     remark: '负责长者咨询接待、服务满意度回访及退款初审',
     updatedBy: '李明明',
-    updatedTime: '2026-09-14 11:05:40',
+    updatedTime: '2026-10-14 11:05:40',
     status: true,
   },
   {
@@ -215,7 +215,7 @@ const INITIAL_ROLE_LIST: RoleItem[] = [
     staffCount: 8,
     remark: '负责摄像头接入、智能床垫及安防感应设备维护',
     updatedBy: '赵雷',
-    updatedTime: '2026-09-11 09:15:30',
+    updatedTime: '2026-10-11 09:15:30',
     status: true,
   },
   {
@@ -224,7 +224,7 @@ const INITIAL_ROLE_LIST: RoleItem[] = [
     staffCount: 18,
     remark: '负责活动信息发布、优惠卷规则及积分商城上架',
     updatedBy: '周强',
-    updatedTime: '2026-09-06 14:00:10',
+    updatedTime: '2026-10-06 14:00:10',
     status: true,
   },
 ];
@@ -241,17 +241,17 @@ interface DrugUnitItem {
 }
 
 const INITIAL_DRUG_UNITS: DrugUnitItem[] = [
-  { id: 'u-08', seq: 8, unitName: '片', relatedCount: 120, updatedBy: '李明明', updatedTime: '2026-09-19 16:50:00', status: true },
-  { id: 'u-07', seq: 7, unitName: '颗', relatedCount: 98, updatedBy: '李明明', updatedTime: '2026-09-18 14:30:12', status: true },
-  { id: 'u-06', seq: 6, unitName: '瓶', relatedCount: 85, updatedBy: '李明明', updatedTime: '2026-09-17 10:15:00', status: true },
-  { id: 'u-05', seq: 5, unitName: '包', relatedCount: 76, updatedBy: '李明明', updatedTime: '2026-09-16 16:00:25', status: true },
-  { id: 'u-04', seq: 4, unitName: '盒', relatedCount: 150, updatedBy: '李明明', updatedTime: '2026-09-14 11:20:10', status: true },
-  { id: 'u-03', seq: 3, unitName: '粒', relatedCount: 64, updatedBy: '李明明', updatedTime: '2026-09-12 09:45:00', status: true },
-  { id: 'u-02', seq: 2, unitName: '支', relatedCount: 42, updatedBy: '李明明', updatedTime: '2026-09-08 15:10:30', status: true },
-  { id: 'u-01', seq: 1, unitName: '枚', relatedCount: 30, updatedBy: '李明明', updatedTime: '2026-09-02 13:00:00', status: true },
+  { id: 'u-08', seq: 8, unitName: '片', relatedCount: 120, updatedBy: '李明明', updatedTime: '2026-10-19 16:50:00', status: true },
+  { id: 'u-07', seq: 7, unitName: '颗', relatedCount: 98, updatedBy: '李明明', updatedTime: '2026-10-18 14:30:12', status: true },
+  { id: 'u-06', seq: 6, unitName: '瓶', relatedCount: 85, updatedBy: '李明明', updatedTime: '2026-10-17 10:15:00', status: true },
+  { id: 'u-05', seq: 5, unitName: '包', relatedCount: 76, updatedBy: '李明明', updatedTime: '2026-10-16 16:00:25', status: true },
+  { id: 'u-04', seq: 4, unitName: '盒', relatedCount: 150, updatedBy: '李明明', updatedTime: '2026-10-14 11:20:10', status: true },
+  { id: 'u-03', seq: 3, unitName: '粒', relatedCount: 64, updatedBy: '李明明', updatedTime: '2026-10-12 09:45:00', status: true },
+  { id: 'u-02', seq: 2, unitName: '支', relatedCount: 42, updatedBy: '李明明', updatedTime: '2026-10-08 15:10:30', status: true },
+  { id: 'u-01', seq: 1, unitName: '枚', relatedCount: 30, updatedBy: '李明明', updatedTime: '2026-10-02 13:00:00', status: true },
 ];
 
-// 4. Operation Logs Data (2026-09-19 to 2026-09-01 DESCENDING)
+// 4. Operation Logs Data (2026-10-19 to 2026-10-01 DESCENDING)
 interface OpLogItem {
   id: string;
   time: string;
@@ -265,7 +265,7 @@ interface OpLogItem {
 const INITIAL_OP_LOGS: OpLogItem[] = [
   {
     id: 'log-01',
-    time: '2026-09-19 18:40:22',
+    time: '2026-10-19 18:40:22',
     operator: '王小倩',
     staffNo: '2024340089',
     ip: '172.19.30.2',
@@ -274,16 +274,16 @@ const INITIAL_OP_LOGS: OpLogItem[] = [
   },
   {
     id: 'log-02',
-    time: '2026-09-19 16:12:05',
+    time: '2026-10-19 16:12:05',
     operator: '李明明',
     staffNo: '2024340090',
     ip: '172.19.30.5',
     module: '订单/售后管理',
-    detail: '审核同意售后退款申请 [售后单号: TK20260919001, 退款金额: ¥180.00]',
+    detail: '审核同意售后退款申请 [售后单号: TK20261019001, 退款金额: ¥180.00]',
   },
   {
     id: 'log-03',
-    time: '2026-09-19 10:25:30',
+    time: '2026-10-19 10:25:30',
     operator: '张华',
     staffNo: '2024340091',
     ip: '172.19.30.12',
@@ -292,7 +292,7 @@ const INITIAL_OP_LOGS: OpLogItem[] = [
   },
   {
     id: 'log-04',
-    time: '2026-09-18 15:30:10',
+    time: '2026-10-18 15:30:10',
     operator: '刘建国',
     staffNo: '2024340092',
     ip: '172.19.30.8',
@@ -301,16 +301,16 @@ const INITIAL_OP_LOGS: OpLogItem[] = [
   },
   {
     id: 'log-05',
-    time: '2026-09-18 09:15:00',
+    time: '2026-10-18 09:15:00',
     operator: '陈芳',
     staffNo: '2024340093',
     ip: '172.19.30.16',
     module: '关怀/服务工单',
-    detail: '指派上门护理工单 #WO2026091802 至服务护理人员李强',
+    detail: '指派上门护理工单 #WO2026101802 至服务护理人员李强',
   },
   {
     id: 'log-06',
-    time: '2026-09-17 14:05:40',
+    time: '2026-10-17 14:05:40',
     operator: '赵雷',
     staffNo: '2024340094',
     ip: '172.19.30.22',
@@ -319,7 +319,7 @@ const INITIAL_OP_LOGS: OpLogItem[] = [
   },
   {
     id: 'log-07',
-    time: '2026-09-16 11:20:15',
+    time: '2026-10-16 11:20:15',
     operator: '孙莉',
     staffNo: '2024340095',
     ip: '172.19.30.31',
@@ -328,7 +328,7 @@ const INITIAL_OP_LOGS: OpLogItem[] = [
   },
   {
     id: 'log-08',
-    time: '2026-09-15 16:00:00',
+    time: '2026-10-15 16:00:00',
     operator: '周强',
     staffNo: '2024340096',
     ip: '172.19.30.10',
@@ -337,7 +337,7 @@ const INITIAL_OP_LOGS: OpLogItem[] = [
   },
   {
     id: 'log-09',
-    time: '2026-09-12 10:40:22',
+    time: '2026-10-12 10:40:22',
     operator: '王小倩',
     staffNo: '2024340089',
     ip: '172.19.30.2',
@@ -346,7 +346,7 @@ const INITIAL_OP_LOGS: OpLogItem[] = [
   },
   {
     id: 'log-10',
-    time: '2026-09-05 08:50:10',
+    time: '2026-10-05 08:50:10',
     operator: '李明明',
     staffNo: '2024340090',
     ip: '172.19.30.5',
@@ -490,7 +490,7 @@ export const SystemSettings: React.FC<SystemSettingsProps> = ({
                 role: staffFormData.role,
                 status: staffFormData.status,
                 remark: staffFormData.remark,
-                updatedTime: '2026-09-19 18:30:00',
+                updatedTime: '2026-10-19 18:30:00',
               }
             : s
         )
@@ -505,7 +505,7 @@ export const SystemSettings: React.FC<SystemSettingsProps> = ({
         phone: staffFormData.phone,
         remark: staffFormData.remark || '新入职服务员工',
         updatedBy: '李明明',
-        updatedTime: '2026-09-19 18:35:00',
+        updatedTime: '2026-10-19 18:35:00',
         status: staffFormData.status,
       };
       setStaffList((prev) => [newItem, ...prev]);
@@ -584,7 +584,7 @@ export const SystemSettings: React.FC<SystemSettingsProps> = ({
                 roleName: roleFormData.roleName,
                 remark: roleFormData.remark,
                 status: roleFormData.status,
-                updatedTime: '2026-09-19 18:25:00',
+                updatedTime: '2026-10-19 18:25:00',
               }
             : r
         )
@@ -597,7 +597,7 @@ export const SystemSettings: React.FC<SystemSettingsProps> = ({
         staffCount: 0,
         remark: roleFormData.remark || '自定义角色权限方案',
         updatedBy: '李明明',
-        updatedTime: '2026-09-19 18:28:00',
+        updatedTime: '2026-10-19 18:28:00',
         status: roleFormData.status,
       };
       setRoleList((prev) => [newRole, ...prev]);
@@ -653,7 +653,7 @@ export const SystemSettings: React.FC<SystemSettingsProps> = ({
                 unitName: drugFormData.unitName,
                 seq: Number(drugFormData.seq),
                 status: drugFormData.status,
-                updatedTime: '2026-09-19 17:50:00',
+                updatedTime: '2026-10-19 17:50:00',
               }
             : d
         )
@@ -666,7 +666,7 @@ export const SystemSettings: React.FC<SystemSettingsProps> = ({
         unitName: drugFormData.unitName,
         relatedCount: 0,
         updatedBy: '李明明',
-        updatedTime: '2026-09-19 17:52:00',
+        updatedTime: '2026-10-19 17:52:00',
         status: drugFormData.status,
       };
       setDrugUnits((prev) => [newUnit, ...prev]);

@@ -22,8 +22,8 @@ interface TipItem {
 
 const INITIAL_TIPS: TipItem[] = [
   {
-    id: 'TIP2026091901',
-    tipTime: '2026-09-19 10:09:09',
+    id: 'TIP2026101901',
+    tipTime: '2026-10-19 10:09:09',
     staffName: '王小倩',
     staffAvatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80',
     staffId: '2024340089',
@@ -31,12 +31,12 @@ const INITIAL_TIPS: TipItem[] = [
     settlementStatus: '已结算',
     userName: '王强',
     userAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80',
-    applyTime: '2026-09-19 10:30:09',
-    settledTime: '2026-09-19 11:15:00',
+    applyTime: '2026-10-19 10:30:09',
+    settledTime: '2026-10-19 11:15:00',
   },
   {
-    id: 'TIP2026091802',
-    tipTime: '2026-09-18 16:45:00',
+    id: 'TIP2026101802',
+    tipTime: '2026-10-18 16:45:00',
     staffName: '钱立峰',
     staffAvatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80',
     staffId: '2024340088',
@@ -44,12 +44,12 @@ const INITIAL_TIPS: TipItem[] = [
     settlementStatus: '已结算',
     userName: '孙阿姨',
     userAvatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80',
-    applyTime: '2026-09-18 17:00:00',
-    settledTime: '2026-09-18 18:30:00',
+    applyTime: '2026-10-18 17:00:00',
+    settledTime: '2026-10-18 18:30:00',
   },
   {
-    id: 'TIP2026091703',
-    tipTime: '2026-09-17 11:30:00',
+    id: 'TIP2026101703',
+    tipTime: '2026-10-17 11:30:00',
     staffName: '陈志远',
     staffAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80',
     staffId: '2024340085',
@@ -57,12 +57,12 @@ const INITIAL_TIPS: TipItem[] = [
     settlementStatus: '已结算',
     userName: '周伯伯',
     userAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80',
-    applyTime: '2026-09-17 12:00:00',
-    settledTime: '2026-09-17 14:00:00',
+    applyTime: '2026-10-17 12:00:00',
+    settledTime: '2026-10-17 14:00:00',
   },
   {
-    id: 'TIP2026091501',
-    tipTime: '2026-09-15 11:20:00',
+    id: 'TIP2026101501',
+    tipTime: '2026-10-15 11:20:00',
     staffName: '张素珍',
     staffAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80',
     staffId: '2024340081',
@@ -70,12 +70,12 @@ const INITIAL_TIPS: TipItem[] = [
     settlementStatus: '已结算',
     userName: '郭老爷子家属',
     userAvatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80',
-    applyTime: '2026-09-15 11:45:00',
-    settledTime: '2026-09-15 15:20:00',
+    applyTime: '2026-10-15 11:45:00',
+    settledTime: '2026-10-15 15:20:00',
   },
   {
-    id: 'TIP2026091202',
-    tipTime: '2026-09-12 15:50:00',
+    id: 'TIP2026101202',
+    tipTime: '2026-10-12 15:50:00',
     staffName: '黄桂芬',
     staffAvatar: 'https://images.unsplash.com/photo-1548142813-c348350df52b?w=120&auto=format&fit=crop&q=80',
     staffId: '2024340078',
@@ -83,12 +83,12 @@ const INITIAL_TIPS: TipItem[] = [
     settlementStatus: '已结算',
     userName: '郑老伯',
     userAvatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&auto=format&fit=crop&q=80',
-    applyTime: '2026-09-12 16:15:00',
-    settledTime: '2026-09-12 17:30:00',
+    applyTime: '2026-10-12 16:15:00',
+    settledTime: '2026-10-12 17:30:00',
   },
   {
-    id: 'TIP2026090801',
-    tipTime: '2026-09-08 11:45:00',
+    id: 'TIP2026100801',
+    tipTime: '2026-10-08 11:45:00',
     staffName: '周德明',
     staffAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80',
     staffId: '2024340072',
@@ -96,12 +96,12 @@ const INITIAL_TIPS: TipItem[] = [
     settlementStatus: '已结算',
     userName: '马阿姨',
     userAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80',
-    applyTime: '2026-09-08 12:10:00',
-    settledTime: '2026-09-08 14:00:00',
+    applyTime: '2026-10-08 12:10:00',
+    settledTime: '2026-10-08 14:00:00',
   },
   {
-    id: 'TIP2026090203',
-    tipTime: '2026-09-02 10:40:00',
+    id: 'TIP2026100203',
+    tipTime: '2026-10-02 10:40:00',
     staffName: '李建国',
     staffAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80',
     staffId: '2024340064',
@@ -109,8 +109,8 @@ const INITIAL_TIPS: TipItem[] = [
     settlementStatus: '已结算',
     userName: '谢老太太家属',
     userAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&auto=format&fit=crop&q=80',
-    applyTime: '2026-09-02 11:00:00',
-    settledTime: '2026-09-02 15:30:00',
+    applyTime: '2026-10-02 11:00:00',
+    settledTime: '2026-10-02 15:30:00',
   },
 ];
 
@@ -364,8 +364,8 @@ export const ServiceTipsAndSettings: React.FC<ServiceTipsAndSettingsProps> = ({ 
             <div className="flex items-center space-x-2 flex-1">
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={tipApplyStartDate}
                 onChange={(e) => setTipApplyStartDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -373,8 +373,8 @@ export const ServiceTipsAndSettings: React.FC<ServiceTipsAndSettingsProps> = ({ 
               <span className="text-gray-400">~</span>
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={tipApplyEndDate}
                 onChange={(e) => setTipApplyEndDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -391,8 +391,8 @@ export const ServiceTipsAndSettings: React.FC<ServiceTipsAndSettingsProps> = ({ 
             <div className="flex items-center space-x-2 flex-1">
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={tipSettleStartDate}
                 onChange={(e) => setTipSettleStartDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -400,8 +400,8 @@ export const ServiceTipsAndSettings: React.FC<ServiceTipsAndSettingsProps> = ({ 
               <span className="text-gray-400">~</span>
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={tipSettleEndDate}
                 onChange={(e) => setTipSettleEndDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"

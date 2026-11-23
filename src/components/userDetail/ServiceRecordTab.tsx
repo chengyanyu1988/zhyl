@@ -23,7 +23,7 @@ export const ServiceRecordTab: React.FC<ServiceRecordTabProps> = ({ user, onNoti
 
   // 改单弹窗状态 (Image 19)
   const [isChangeOrderModalOpen, setIsChangeOrderModalOpen] = useState<boolean>(false);
-  const [changeDate, setChangeDate] = useState<string>('2026-09-19');
+  const [changeDate, setChangeDate] = useState<string>('2026-10-19');
   const [changeTime, setChangeTime] = useState<string>('15:00');
   const [changeDuration, setChangeDuration] = useState<string>('2');
   const [selectedStaffId, setSelectedStaffId] = useState<string>('st-01');
@@ -55,7 +55,7 @@ export const ServiceRecordTab: React.FC<ServiceRecordTabProps> = ({ user, onNoti
 
   const handleOpenChangeOrder = () => {
     if (!viewingDetail) return;
-    setChangeDate(viewingDetail.appointmentTime.split(' ')[0] || '2026-09-19');
+    setChangeDate(viewingDetail.appointmentTime.split(' ')[0] || '2026-10-19');
     setChangeTime(viewingDetail.appointmentTime.split(' ')[1] || '14:30');
     setChangeDuration(viewingDetail.duration.replace('h', '') || '2');
     setIsChangeOrderModalOpen(true);
@@ -305,7 +305,7 @@ export const ServiceRecordTab: React.FC<ServiceRecordTabProps> = ({ user, onNoti
                         <input
                           type="date"
                           value={changeDate}
-                          max="2026-09-19"
+                          max="2026-10-19"
                           onChange={(e) => setChangeDate(e.target.value)}
                           className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#10b981]"
                           required

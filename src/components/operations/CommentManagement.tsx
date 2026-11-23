@@ -11,7 +11,7 @@ interface CommentManagementProps {
 const INITIAL_COMMENTS: CommentItem[] = [
   {
     id: 'CMT_001',
-    publishTime: '2026-09-19 15:20:10',
+    publishTime: '2026-10-19 15:20:10',
     content: '我们也需要关注老年人的心理需求和生活质量，为他们提供更加全面和人性化的关怀和支持。',
     module: '健康资讯',
     targetTitle: '老年人如何控制血糖？',
@@ -22,7 +22,7 @@ const INITIAL_COMMENTS: CommentItem[] = [
   },
   {
     id: 'CMT_002',
-    publishTime: '2026-09-18 11:05:00',
+    publishTime: '2026-10-18 11:05:00',
     content: '这篇文章写得太详细了，对我们家老人的秋季饮食搭配有极大参考价值！感谢专家。',
     module: '健康资讯',
     targetTitle: '秋季老年人防凉防感冒指南',
@@ -33,7 +33,7 @@ const INITIAL_COMMENTS: CommentItem[] = [
   },
   {
     id: 'CMT_003',
-    publishTime: '2026-09-17 16:40:12',
+    publishTime: '2026-10-17 16:40:12',
     content: '视频里教练讲解的太极拳动作呼吸要领非常清晰，每天早晨都跟练一会，身体感觉轻快多了。',
     module: '健康讲堂',
     targetTitle: '太极拳二十四式全套跟练教学',
@@ -44,7 +44,7 @@ const INITIAL_COMMENTS: CommentItem[] = [
   },
   {
     id: 'CMT_004',
-    publishTime: '2026-09-16 09:12:30',
+    publishTime: '2026-10-16 09:12:30',
     content: '请问高血压合并糖尿病患者的低盐食谱，这道虾仁蒸蛋可以作为主菜每周吃几次？',
     module: '食谱管理',
     targetTitle: '虾仁蒸蛋',
@@ -55,7 +55,7 @@ const INITIAL_COMMENTS: CommentItem[] = [
   },
   {
     id: 'CMT_005',
-    publishTime: '2026-09-14 14:15:00',
+    publishTime: '2026-10-14 14:15:00',
     content: '了解到了很多关于胃溃疡的日常调理方法，避免辛辣刺激，感谢平台分享这么实用的知识！',
     module: '疾病宝典',
     targetTitle: '胃溃疡',
@@ -66,7 +66,7 @@ const INITIAL_COMMENTS: CommentItem[] = [
   },
   {
     id: 'CMT_006',
-    publishTime: '2026-09-12 10:30:00',
+    publishTime: '2026-10-12 10:30:00',
     content: '朝阳店的医护与无障碍设施很完善，工作态度也非常好，家里的老人住在那里我们很放心。',
     module: '养老机构',
     targetTitle: '金慧福养老机构（朝阳店）',

@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ActivePage } from './types';
-import { Sidebar } from './components/Sidebar';
-import { Header } from './components/Header';
+import { TopNavigation } from './components/TopNavigation';
+import { Level3Sidebar } from './components/Level3Sidebar';
+import { AppTheme } from './components/Header';
 import { LoginView } from './components/LoginView';
 import { Workbench } from './components/Workbench';
 import { AppointmentKanban } from './components/AppointmentKanban';
@@ -17,6 +18,8 @@ import { DiseaseManagement } from './components/operations/DiseaseManagement';
 import { InstitutionManagement } from './components/operations/InstitutionManagement';
 import { LectureManagement } from './components/operations/LectureManagement';
 import { CommentManagement } from './components/operations/CommentManagement';
+import { FoodManagement } from './components/operations/FoodManagement';
+import { AssessmentManagement } from './components/operations/AssessmentManagement';
 import { CareOrdersManagement } from './components/CareOrdersManagement';
 import { VideoMonitoring } from './components/VideoMonitoring';
 import { FinanceManagement } from './components/FinanceManagement';
@@ -32,8 +35,13 @@ export default function App() {
     role: '系统超级管理员',
     email: 'admin@elderlycare.gov.cn',
   });
-  const [activePage, setActivePage] = useState<ActivePage>('user_list');
+  const [activePage, setActivePage] = useState<ActivePage>('ops_food_list');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [currentTheme, setCurrentTheme] = useState<AppTheme>('teal');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  }, [currentTheme]);
 
   const [confirmModal, setConfirmModal] = useState<{
     isOpen: boolean;
@@ -189,6 +197,25 @@ export default function App() {
           />
         );
 
+      case 'ops_food_list':
+      case 'ops_food_cats':
+        return (
+          <FoodManagement
+            subPageId={activePage}
+            onNotice={showNotice}
+            onConfirmDelete={handleConfirmDelete}
+          />
+        );
+
+      case 'ops_assessment_list':
+        return (
+          <AssessmentManagement
+            subPageId={activePage}
+            onNotice={showNotice}
+            onConfirmDelete={handleConfirmDelete}
+          />
+        );
+
       case 'data_user_overview':
       case 'data_user_age':
       case 'data_user_gender':
@@ -260,56 +287,59 @@ export default function App() {
   }
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-[#f3f6f8] text-gray-800 font-sans antialiased">
-      {/* Navigation Sidebar (Dark column + White sub-menu) */}
-      <Sidebar
+    <div className="flex flex-col h-screen w-screen overflow-hidden bg-[var(--app-bg)] text-[var(--text-main)] font-sans antialiased transition-colors duration-250">
+      {/* Unified Top Navigation */}
+      <TopNavigation
         activePage={activePage}
         onPageChange={(page) => setActivePage(page)}
         onNotice={showNotice}
+        currentUser={currentUser}
+        currentTheme={currentTheme}
+        onThemeChange={(theme) => setCurrentTheme(theme)}
+        onLogout={() => {
+          setIsLoggedIn(false);
+          showNotice('已安全退出控制台');
+        }}
       />
 
-      {/* Main App Content Area */}
-      <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
-        {/* Top Header */}
-        <Header
+      {/* Main Body Area: Level 3 Left Sidebar (三级菜单放左侧) + Dynamic Content Page */}
+      <div className="flex-1 flex overflow-hidden min-h-0">
+        <Level3Sidebar
+          activePage={activePage}
+          onPageChange={(page) => setActivePage(page)}
           onNotice={showNotice}
-          currentUser={currentUser}
-          onLogout={() => {
-            setIsLoggedIn(false);
-            showNotice('已安全退出控制台');
-          }}
         />
 
         {/* Dynamic Page Container */}
-        <main className="flex-1 overflow-y-auto overflow-x-hidden">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden min-w-0 bg-[#eaf4ef]">
           {renderCurrentPage()}
         </main>
       </div>
 
       {/* Confirmation Modal */}
       {confirmModal.isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs">
-          <div className="bg-white rounded-xl w-full max-w-sm overflow-hidden shadow-2xl border border-gray-100 p-5 space-y-4 animate-in fade-in zoom-in-95 duration-150">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-xs">
+          <div className="bg-white rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl border border-slate-200/80 p-5 space-y-4 animate-in fade-in zoom-in-95 duration-150">
             <div className="flex items-start space-x-3">
-              <div className="p-2 bg-red-50 text-red-500 rounded-lg shrink-0">
+              <div className="p-2.5 bg-rose-50 text-rose-600 rounded-xl shrink-0">
                 <AlertTriangle className="w-5 h-5" />
               </div>
               <div className="flex-1">
-                <h3 className="text-sm font-semibold text-gray-800">{confirmModal.title}</h3>
-                <p className="text-xs text-gray-500 mt-1 leading-relaxed">{confirmModal.message}</p>
+                <h3 className="text-sm font-semibold text-slate-900">{confirmModal.title}</h3>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">{confirmModal.message}</p>
               </div>
             </div>
 
-            <div className="flex items-center justify-end space-x-2.5 pt-2 border-t border-gray-100 text-xs">
+            <div className="flex items-center justify-end space-x-2.5 pt-3 border-t border-slate-100 text-xs">
               <button
                 onClick={() => setConfirmModal({ ...confirmModal, isOpen: false })}
-                className="px-3.5 py-1.5 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-md font-medium transition-colors"
+                className="px-3.5 py-1.5 border border-slate-200 hover:bg-slate-50 text-slate-600 rounded-lg font-medium transition-colors"
               >
                 取消
               </button>
               <button
                 onClick={confirmModal.onConfirm}
-                className="px-4 py-1.5 bg-red-500 hover:bg-red-600 text-white rounded-md font-medium transition-colors"
+                className="px-4 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-medium transition-colors shadow-xs"
               >
                 确认删除
               </button>
@@ -320,9 +350,9 @@ export default function App() {
 
       {/* Floating System Notification Toast */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-8 bg-[#0c1527]/90 backdrop-blur-sm text-white px-4 py-2.5 rounded-xl shadow-xl text-xs flex items-center space-x-2.5 z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
-          <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-          <span>{toastMessage}</span>
+        <div className="fixed bottom-6 right-8 bg-slate-900/90 backdrop-blur-md border border-slate-700/50 text-white px-4 py-2.5 rounded-xl shadow-2xl text-xs flex items-center space-x-2.5 z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20"></span>
+          <span className="font-medium">{toastMessage}</span>
         </div>
       )}
     </div>

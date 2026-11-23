@@ -73,6 +73,11 @@ export type SubPageId =
   | 'ops_lecture_videos'
   | 'ops_lecture_tags'
   | 'ops_comments_all'
+  // food management (食物管理)
+  | 'ops_food_list'
+  | 'ops_food_cats'
+  // assessment management (测评管理)
+  | 'ops_assessment_list'
   // data / 数据 (matching screenshots)
   | 'data_user_overview'
   | 'data_user_age'
@@ -196,7 +201,7 @@ export interface ElderlyProfile {
   chronicTags: string[];
   assignedStaff: string;
   assignedDoctor: string;
-  latestUpdateDate: string; // 2026-09-01 to 2026-09-18
+  latestUpdateDate: string; // 2026-10-01 to 2026-10-18
   status: '在护' | '监护中' | '随访中';
   healthScore: number;
 }
@@ -214,7 +219,7 @@ export interface StaffMember {
   monthlyOrders: number;
   satisfactionRate: string;
   status: '服务中' | '空闲接单' | '轮休';
-  latestServiceDate: string; // 2026-09-01 to 2026-09-18
+  latestServiceDate: string; // 2026-10-01 to 2026-10-18
   certificate: string;
 }
 
@@ -230,7 +235,7 @@ export interface CareOrder {
   address: string;
   price: number;
   subsidyAmount: number;
-  orderTime: string; // 2026-09-18 15:30 down to 2026-09-01
+  orderTime: string; // 2026-10-18 15:30 down to 2026-10-01
   status: '已完成' | '服务中' | '待响应';
   rating?: number;
   feedback?: string;
@@ -244,7 +249,7 @@ export interface AlarmEvent {
   elderlyName: string;
   roomLocation: string;
   deviceSource: string;
-  triggerTime: string; // 2026-09-18 16:45 down to 2026-09-01
+  triggerTime: string; // 2026-10-18 16:45 down to 2026-10-01
   severity: '高危' | '中度' | '一般提醒';
   handleStatus: '已处置核实' | '护工处理中' | '待确认';
   handlerStaff: string;
@@ -261,7 +266,7 @@ export interface FinanceBill {
   insuranceCover: number;
   selfPaid: number;
   payChannel: '长护险基金' | '微信支付' | '医保卡' | '社区助老补贴';
-  payTime: string; // 2026-09-18 16:20 down to 2026-09-01
+  payTime: string; // 2026-10-18 16:20 down to 2026-10-01
   status: '支付成功' | '已开票' | '补贴审核中';
 }
 
@@ -273,7 +278,7 @@ export interface AuditLog {
   action: string;
   module: string;
   ipAddress: string;
-  timestamp: string; // 2026-09-18 17:15 down to 2026-09-01
+  timestamp: string; // 2026-10-18 17:15 down to 2026-10-01
   status: '成功' | '警告';
   detail: string;
 }
@@ -283,12 +288,12 @@ export interface UserOperationRecord {
   id: string;
   action: string;
   operator: string;
-  time: string; // strictly between 2026-09-18 and 2026-09-01
+  time: string; // strictly between 2026-10-18 and 2026-10-01
 }
 
 export interface AppUser {
   id: string;
-  userNo: string; // e.g. "202609000001"
+  userNo: string; // e.g. "202610000001"
   name: string;
   avatar: string;
   gender: '男' | '女';
@@ -296,7 +301,7 @@ export interface AppUser {
   realName: string;
   phone: string;
   phoneMasked: string; // e.g. "192****4486"
-  registerTime: string; // e.g. "2026-09-18 10:09:09" (descending)
+  registerTime: string; // e.g. "2026-10-18 10:09:09" (descending)
   registerType: string; // e.g. "PC端注册", "平台系统注册", "社区代办"
   lastLoginTime: string;
   lastBuyTime: string;
@@ -377,7 +382,7 @@ export interface ProductItem {
   servicePeopleCount: number;
   status: '已上架' | '已下架';
   lastUpdater: string;
-  lastUpdateTime: string; // e.g. "2026-09-19 10:09:09"
+  lastUpdateTime: string; // e.g. "2026-10-19 10:09:09"
   remarks?: string;
   scene?: string;
   area?: string;
@@ -398,7 +403,7 @@ export interface ProductCategoryItem {
   icon: string;
   productCount: number;
   lastUpdater: string;
-  lastUpdateTime: string; // strictly 2026-09-01 to 2026-09-19
+  lastUpdateTime: string; // strictly 2026-10-01 to 2026-10-19
   status: '启用' | '禁用';
 }
 
@@ -446,7 +451,7 @@ export interface DynamicPostItem {
   publisherName: string;
   publisherPhone: string;
   publisherAvatar: string;
-  publishTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  publishTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '显示' | '隐藏';
   image: string;
 }
@@ -459,7 +464,7 @@ export interface TopicItem {
   shareCount: number;
   followCount: number;
   lastUpdater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '启用' | '禁用';
 }
 
@@ -470,7 +475,7 @@ export interface BannerItem {
   title: string;
   linkUrl: string;
   lastUpdater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '启用' | '禁用';
 }
 
@@ -490,7 +495,7 @@ export interface ActivityItem {
   publishTime: string;
   remarks: string;
   lastUpdater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
 }
 
 export interface ActivityRegistrationItem {
@@ -504,7 +509,7 @@ export interface ActivityRegistrationItem {
   photographyDuration: string;
   address: string;
   status: '待审核' | '审核通过' | '审核不通过';
-  submitTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  submitTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   remarks?: string;
 }
 
@@ -516,7 +521,7 @@ export interface ActivityFieldItem {
   isRequired: boolean;
   placeholder: string;
   lastUpdater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '启用' | '禁用';
 }
 
@@ -529,7 +534,7 @@ export interface RecipeItem {
   collectsCount: number;
   status: '已发布' | '草稿' | '已下架';
   updater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   coverImage?: string;
   detailHtml?: string;
   publishType?: '立即发布' | '定时发布';
@@ -542,14 +547,14 @@ export interface DietTagItem {
   name: string;
   recipeCount: number;
   updater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '启用' | '禁用';
 }
 
 export interface HealthNewsItem {
   id: string;
   title: string;
-  publishTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  publishTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   likesCount: number;
   collectsCount: number;
   sharesCount: number;
@@ -569,7 +574,7 @@ export interface DiseaseItem {
   collectsCount: number;
   status: '已发布' | '草稿';
   updater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   intro?: string;
   symptoms?: string;
   complications?: string;
@@ -582,7 +587,7 @@ export interface DiseaseCategoryItem {
   name: string;
   diseaseCount: number;
   updater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '启用' | '禁用';
 }
 
@@ -594,7 +599,7 @@ export interface InstitutionItem {
   collectsCount: number;
   status: '已发布' | '草稿';
   updater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   coverImage?: string;
   businessHours?: string;
   address?: string;
@@ -607,7 +612,7 @@ export interface InstitutionTagItem {
   name: string;
   institutionCount: number;
   updater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '启用' | '禁用';
 }
 
@@ -620,7 +625,7 @@ export interface LectureVideoItem {
   sharesCount: number;
   commentsCount: number;
   updater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '已发布' | '草稿';
   coverImage?: string;
   videoUrl?: string;
@@ -632,13 +637,13 @@ export interface LectureTagItem {
   name: string;
   videoCount: number;
   updater: string;
-  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  lastUpdateTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   status: '启用' | '禁用';
 }
 
 export interface CommentItem {
   id: string;
-  publishTime: string; // YYYY-MM-DD HH:mm:ss in 2026-09-01..2026-09-19
+  publishTime: string; // YYYY-MM-DD HH:mm:ss in 2026-10-01..2026-10-19
   content: string;
   module: string; // 健康资讯, 健康讲堂, 食谱管理, 疾病宝典
   targetTitle: string;
@@ -661,7 +666,7 @@ export type TradeOrderStatus =
 export interface TradeOrder {
   id: string;
   orderNo: string;
-  orderTime: string; // strictly 2026-09-01 to 2026-09-19 (descending)
+  orderTime: string; // strictly 2026-10-01 to 2026-10-19 (descending)
   payTime?: string;
   dispatchTime?: string;
   finishTime?: string;
@@ -736,7 +741,7 @@ export interface AfterSalesRecord {
   refundAmount: number;
   reason: string;
   refundExplanation?: string;
-  applyTime: string; // strictly 2026-09-01 to 2026-09-19
+  applyTime: string; // strictly 2026-10-01 to 2026-10-19
   status: '处理中' | '售后完成' | '售后关闭';
   operator?: string;
   payMethod?: '支付宝' | '微信支付' | '银联支付';
@@ -768,7 +773,7 @@ export interface OrderReview {
   orderNo: string;
   content: string;
   staffName: string;
-  reviewTime: string; // strictly 2026-09-01 to 2026-09-19
+  reviewTime: string; // strictly 2026-10-01 to 2026-10-19
   replyContent?: string;
   replyTime?: string;
   status: '显示' | '隐藏';
@@ -788,7 +793,7 @@ export interface WithdrawalRecord {
   bankName: string;
   bankBranch?: string;
   bankCardMasked: string;
-  applyTime: string; // strictly 2026-09-01 to 2026-09-19
+  applyTime: string; // strictly 2026-10-01 to 2026-10-19
   finishTime?: string;
   status: '提现成功' | '审核中' | '已到账' | '提现失败';
 }
@@ -802,7 +807,7 @@ export interface FinancialStatement {
   channel: '微信支付' | '支付宝' | '银联' | '长护险平台' | '招商银行';
   amount: number; // positive or negative
   balance: number;
-  time: string; // strictly 2026-09-01 to 2026-09-19
+  time: string; // strictly 2026-10-01 to 2026-10-19
   remark: string;
 }
 
@@ -812,7 +817,7 @@ export interface RefundReasonSetting {
   reasonText: string;
   relatedOrderCount: number;
   updater: string;
-  lastUpdateTime: string; // strictly 2026-09-01 to 2026-09-19
+  lastUpdateTime: string; // strictly 2026-10-01 to 2026-10-19
   status: '启用' | '禁用';
 }
 
@@ -822,6 +827,98 @@ export interface TradeGeneralSettings {
   afterSalesDeadlineDays: number;
   autoRefundTimeoutHours: number;
   autoApproveRefund: boolean;
+}
+
+export interface FoodItem {
+  id: string;
+  name: string;
+  category: string;
+  calories: number; // 热量（千卡/100克）
+  sharesCount: number; // 分享数
+  favoritesCount: number; // 收藏数
+  status: '已发布' | '未发布' | '已上架' | '已下架';
+  updater: string; // 更新人
+  lastUpdateTime: string; // 最后更新时间, e.g. 2026-10-21 10:09:09
+  protein?: number;
+  fat?: number;
+  carbs?: number;
+  defaultPortion?: number; // 默认份量（克）
+  remark?: string; // 备注
+  publishType?: 'immediate' | 'scheduled'; // 发布时间方式
+  scheduledDate?: string; // 定时发布日期
+  scheduledTime?: string; // 定时发布时间
+  giIndex?: number;
+  tags?: string[];
+  suitableFor?: string[];
+  avoidFor?: string[];
+  coverImage?: string;
+  cookingTips?: string;
+}
+
+export interface FoodCategoryItem {
+  id: string;
+  sortOrder: number;
+  name: string;
+  code: string;
+  foodCount: number;
+  updater: string;
+  lastUpdateTime: string;
+  status: '启用' | '禁用';
+  description?: string;
+}
+
+export interface AssessmentOption {
+  id: string;
+  label: string;
+  score: number;
+}
+
+export interface AssessmentQuestion {
+  id: string;
+  title: string;
+  options: AssessmentOption[];
+  allowSkip?: boolean;
+  selectType?: 'single' | 'multiple';
+}
+
+export interface AssessmentResultTier {
+  id: string;
+  minScore: number;
+  maxScore: number;
+  description: string;
+}
+
+export interface AssessmentItem {
+  id: string;
+  publishTime: string; // 发布时间 e.g. 2026-10-21 10:09:09
+  title: string; // 测评标题 e.g. 2型糖尿病风险筛查
+  questionCount: number; // 题目数量 e.g. 5
+  totalScore: number; // 总分 e.g. 100
+  participantCount: number; // 测试人数 e.g. 5000
+  testCount: number; // 测试次数 e.g. 6000
+  publisher: string; // 发布人 e.g. 李明明
+  status: '已发布' | '未发布' | '已下架'; // 状态
+
+  // Form fields from image_b0bddb01.png & image_ace80a6b.png
+  coverImages?: string[];
+  publishType?: 'immediate' | 'scheduled';
+  scheduledDate?: string;
+  scheduledTime?: string;
+  instructionsHtml?: string;
+  questions?: AssessmentQuestion[];
+  resultTiers?: AssessmentResultTier[];
+
+  // Optional extensions
+  category?: string;
+  targetAudience?: string;
+  estimatedMinutes?: number;
+  description?: string;
+  scoreRules?: string;
+  updater?: string;
+  lastUpdateTime?: string;
+  totalParticipants?: number;
+  avgScore?: number;
+  highRiskCount?: number;
 }
 
 

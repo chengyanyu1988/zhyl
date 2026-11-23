@@ -18,7 +18,7 @@ export interface LevelItem {
   benefits: string; // 2倍积分; 9.8折优惠; 健康测评
   receiver: string; // 张珊, 李明明...
   sendMethod: string; // 系统消息, 短信通知...
-  updateTime: string; // 2026-09-19 16:30:00, descending
+  updateTime: string; // 2026-10-19 16:30:00, descending
   upgradeConditions?: {
     spendAmountEnabled: boolean;
     spendAmount: string;
@@ -45,7 +45,7 @@ const INITIAL_LEVELS: LevelItem[] = [
     benefits: '1倍积分; 新人礼包; 基础健康档案',
     receiver: '张珊',
     sendMethod: '系统消息',
-    updateTime: '2026-09-19 16:30:00',
+    updateTime: '2026-10-19 16:30:00',
     upgradeConditions: {
       spendAmountEnabled: false,
       spendAmount: '',
@@ -70,7 +70,7 @@ const INITIAL_LEVELS: LevelItem[] = [
     benefits: '2倍积分; 9.8折优惠; 健康测评',
     receiver: '张珊',
     sendMethod: '系统消息',
-    updateTime: '2026-09-18 14:20:10',
+    updateTime: '2026-10-18 14:20:10',
     upgradeConditions: {
       spendAmountEnabled: true,
       spendAmount: '500',
@@ -95,7 +95,7 @@ const INITIAL_LEVELS: LevelItem[] = [
     benefits: '2倍积分; 9.8折优惠; 健康测评',
     receiver: '张珊',
     sendMethod: '系统消息',
-    updateTime: '2026-09-17 11:15:30',
+    updateTime: '2026-10-17 11:15:30',
     upgradeConditions: {
       spendAmountEnabled: true,
       spendAmount: '1200',
@@ -120,7 +120,7 @@ const INITIAL_LEVELS: LevelItem[] = [
     benefits: '2倍积分; 9.8折优惠; 健康测评',
     receiver: '张珊',
     sendMethod: '系统消息',
-    updateTime: '2026-09-16 15:40:00',
+    updateTime: '2026-10-16 15:40:00',
     upgradeConditions: {
       spendAmountEnabled: true,
       spendAmount: '3000',
@@ -145,7 +145,7 @@ const INITIAL_LEVELS: LevelItem[] = [
     benefits: '2.5倍积分; 8.8折优惠; 专属管家; 绿色通道',
     receiver: '李明明',
     sendMethod: '短信通知',
-    updateTime: '2026-09-14 09:30:00',
+    updateTime: '2026-10-14 09:30:00',
     upgradeConditions: {
       spendAmountEnabled: true,
       spendAmount: '6000',
@@ -170,7 +170,7 @@ const INITIAL_LEVELS: LevelItem[] = [
     benefits: '3倍积分; 8.5折优惠; 设备免押; 三甲会诊',
     receiver: '运营主管',
     sendMethod: '系统消息',
-    updateTime: '2026-09-10 14:10:00',
+    updateTime: '2026-10-10 14:10:00',
     upgradeConditions: {
       spendAmountEnabled: true,
       spendAmount: '12000',
@@ -195,7 +195,7 @@ const INITIAL_LEVELS: LevelItem[] = [
     benefits: '3.5倍积分; 8.0折优惠; 24h家庭医生; 旅居康养',
     receiver: '会长专线',
     sendMethod: '微信服务号',
-    updateTime: '2026-09-04 10:00:00',
+    updateTime: '2026-10-04 10:00:00',
     upgradeConditions: {
       spendAmountEnabled: true,
       spendAmount: '30000',
@@ -326,7 +326,7 @@ export const LevelManagement: React.FC<LevelManagementProps> = ({ onNotice }) =>
                 status: levelStatus,
                 benefits: benefitsString,
                 description,
-                updateTime: '2026-09-19 17:25:00',
+                updateTime: '2026-10-19 17:25:00',
                 upgradeConditions: {
                   spendAmountEnabled,
                   spendAmount,
@@ -355,7 +355,7 @@ export const LevelManagement: React.FC<LevelManagementProps> = ({ onNotice }) =>
         benefits: benefitsString,
         receiver: '张珊',
         sendMethod: '系统消息',
-        updateTime: '2026-09-19 17:30:00',
+        updateTime: '2026-10-19 17:30:00',
         description,
         upgradeConditions: {
           spendAmountEnabled,

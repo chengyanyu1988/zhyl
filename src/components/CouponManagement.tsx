@@ -27,14 +27,14 @@ export interface CouponItem {
   targetUser: string; // e.g. "全部客户", "新注册长者", "高龄独居长者"
   claimedCount: number;
   totalCount: number;
-  publishTime: string; // 2026-09-19 14:20:00 (descending)
+  publishTime: string; // 2026-10-19 14:20:00 (descending)
   couponType: '公开券' | '私有券';
   remarks?: string;
 }
 
 export interface CouponDailyStat {
   id: string;
-  date: string; // 2026-09-19 down to 2026-09-01
+  date: string; // 2026-10-19 down to 2026-10-01
   availableCount: number;
   claimedCount: number;
   claimedUsers: number;
@@ -55,9 +55,9 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '全部客户',
     claimedCount: 45,
     totalCount: 300,
-    publishTime: '2026-09-19 15:30:10',
+    publishTime: '2026-10-19 15:30:10',
     couponType: '公开券',
-    remarks: '针对2026年9月新入驻社区长者专享，助力适老助浴与初次清洁',
+    remarks: '针对2026年10月新入驻社区长者专享，助力适老助浴与初次清洁',
   },
   {
     id: 'cp-02',
@@ -70,7 +70,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '全部客户',
     claimedCount: 88,
     totalCount: 200,
-    publishTime: '2026-09-19 10:15:22',
+    publishTime: '2026-10-19 10:15:22',
     couponType: '公开券',
     remarks: '重阳节特别关爱补贴券，仅限上门专业助浴及居室防滑施工抵扣',
   },
@@ -85,7 +85,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '高龄独居长者',
     claimedCount: 62,
     totalCount: 150,
-    publishTime: '2026-09-18 16:45:00',
+    publishTime: '2026-10-18 16:45:00',
     couponType: '公开券',
     remarks: '用于高血压心电手环、睡眠体征床垫及紧急拉绳采购补贴',
   },
@@ -100,7 +100,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '全部客户',
     claimedCount: 120,
     totalCount: 500,
-    publishTime: '2026-09-18 10:09:09',
+    publishTime: '2026-10-18 10:09:09',
     couponType: '公开券',
     remarks: '社区长者食堂配餐专用满减优惠',
   },
@@ -115,7 +115,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '长护险定点长者',
     claimedCount: 35,
     totalCount: 100,
-    publishTime: '2026-09-17 14:20:18',
+    publishTime: '2026-10-17 14:20:18',
     couponType: '私有券',
     remarks: '定向发放给长护险评估失能等级三级及以上家庭',
   },
@@ -130,7 +130,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '全部客户',
     claimedCount: 96,
     totalCount: 200,
-    publishTime: '2026-09-16 11:35:40',
+    publishTime: '2026-10-16 11:35:40',
     couponType: '公开券',
     remarks: '用于书画茶艺沙龙、心理关怀及防诈骗科普讲座',
   },
@@ -145,7 +145,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '慢病签约用户',
     claimedCount: 75,
     totalCount: 100,
-    publishTime: '2026-09-15 09:20:00',
+    publishTime: '2026-10-15 09:20:00',
     couponType: '公开券',
     remarks: '专业康复理疗师上门偏瘫肢体运动指导专项满减',
   },
@@ -160,7 +160,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '全部客户',
     claimedCount: 200,
     totalCount: 200,
-    publishTime: '2026-09-14 16:10:00',
+    publishTime: '2026-10-14 16:10:00',
     couponType: '公开券',
     remarks: '卫生间安全扶手与感应小夜灯加装无门槛直减',
   },
@@ -175,7 +175,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '慢病签约用户',
     claimedCount: 42,
     totalCount: 120,
-    publishTime: '2026-09-12 11:00:00',
+    publishTime: '2026-10-12 11:00:00',
     couponType: '公开券',
     remarks: '包含常规生化全套、颈动脉超声及心电图居家采集',
   },
@@ -190,7 +190,7 @@ const INITIAL_COUPONS: CouponItem[] = [
     targetUser: '全部客户',
     claimedCount: 160,
     totalCount: 300,
-    publishTime: '2026-09-08 14:00:00',
+    publishTime: '2026-10-08 14:00:00',
     couponType: '公开券',
     remarks: '中秋佳节送长者健康礼包满减',
   },
@@ -199,7 +199,7 @@ const INITIAL_COUPONS: CouponItem[] = [
 const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   {
     id: 'stat-01',
-    date: '2026-09-19',
+    date: '2026-10-19',
     availableCount: 2000,
     claimedCount: 88,
     claimedUsers: 65,
@@ -209,7 +209,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-02',
-    date: '2026-09-18',
+    date: '2026-10-18',
     availableCount: 2000,
     claimedCount: 75,
     claimedUsers: 54,
@@ -219,7 +219,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-03',
-    date: '2026-09-17',
+    date: '2026-10-17',
     availableCount: 2000,
     claimedCount: 68,
     claimedUsers: 48,
@@ -229,7 +229,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-04',
-    date: '2026-09-16',
+    date: '2026-10-16',
     availableCount: 2000,
     claimedCount: 60,
     claimedUsers: 42,
@@ -239,7 +239,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-05',
-    date: '2026-09-15',
+    date: '2026-10-15',
     availableCount: 2000,
     claimedCount: 52,
     claimedUsers: 38,
@@ -249,7 +249,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-06',
-    date: '2026-09-14',
+    date: '2026-10-14',
     availableCount: 2000,
     claimedCount: 46,
     claimedUsers: 33,
@@ -259,7 +259,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-07',
-    date: '2026-09-13',
+    date: '2026-10-13',
     availableCount: 2000,
     claimedCount: 40,
     claimedUsers: 30,
@@ -269,7 +269,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-08',
-    date: '2026-09-12',
+    date: '2026-10-12',
     availableCount: 2000,
     claimedCount: 38,
     claimedUsers: 28,
@@ -279,7 +279,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-09',
-    date: '2026-09-10',
+    date: '2026-10-10',
     availableCount: 2000,
     claimedCount: 32,
     claimedUsers: 24,
@@ -289,7 +289,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-10',
-    date: '2026-09-08',
+    date: '2026-10-08',
     availableCount: 2000,
     claimedCount: 29,
     claimedUsers: 22,
@@ -299,7 +299,7 @@ const INITIAL_COUPON_STATS: CouponDailyStat[] = [
   },
   {
     id: 'stat-11',
-    date: '2026-09-05',
+    date: '2026-10-05',
     availableCount: 2000,
     claimedCount: 24,
     claimedUsers: 18,
@@ -334,10 +334,10 @@ export const CouponManagement: React.FC<CouponManagementProps> = ({ onNotice }) 
   const [limitType, setLimitType] = useState<'limited' | 'unlimited'>('limited');
   const [maxPerUser, setMaxPerUser] = useState('1');
   const [validityType, setValidityType] = useState<'permanent' | 'fixed' | 'days'>('permanent');
-  const [startDate, setStartDate] = useState('2026-09-18');
+  const [startDate, setStartDate] = useState('2026-10-18');
   const [startHour, setStartHour] = useState('12');
   const [startMinute, setStartMinute] = useState('00');
-  const [endDate, setEndDate] = useState('2026-09-19');
+  const [endDate, setEndDate] = useState('2026-10-19');
   const [endHour, setEndHour] = useState('12');
   const [endMinute, setEndMinute] = useState('00');
   const [validDays, setValidDays] = useState('7');
@@ -347,7 +347,7 @@ export const CouponManagement: React.FC<CouponManagementProps> = ({ onNotice }) 
   const [remarks, setRemarks] = useState('');
 
   // Stats view date filter
-  const [statsDateRange, setStatsDateRange] = useState('2026-09-01 ~ 2026-09-19');
+  const [statsDateRange, setStatsDateRange] = useState('2026-10-01 ~ 2026-10-19');
   const [statsData, setStatsData] = useState<CouponDailyStat[]>(INITIAL_COUPON_STATS);
 
   // Filtered & sorted coupons (strictly descending by publishTime)
@@ -384,10 +384,10 @@ export const CouponManagement: React.FC<CouponManagementProps> = ({ onNotice }) 
     setLimitType('limited');
     setMaxPerUser('1');
     setValidityType('permanent');
-    setStartDate('2026-09-18');
+    setStartDate('2026-10-18');
     setStartHour('12');
     setStartMinute('00');
-    setEndDate('2026-09-19');
+    setEndDate('2026-10-19');
     setEndHour('12');
     setEndMinute('00');
     setValidDays('7');
@@ -459,7 +459,7 @@ export const CouponManagement: React.FC<CouponManagementProps> = ({ onNotice }) 
         targetUser: specifyCustomer ? '指定敬老用户群' : '全部客户',
         claimedCount: 0,
         totalCount: parseInt(formCount, 10) || 200,
-        publishTime: '2026-09-19 16:00:00',
+        publishTime: '2026-10-19 16:00:00',
         couponType,
         remarks: remarks.trim(),
       };
@@ -552,14 +552,14 @@ export const CouponManagement: React.FC<CouponManagementProps> = ({ onNotice }) 
               <div className="flex items-center border border-gray-200 rounded-md px-3 py-1.5 bg-white space-x-2">
                 <input
                   type="text"
-                  value="2026-09-01"
+                  value="2026-10-01"
                   readOnly
                   className="w-20 text-center text-xs text-gray-700 focus:outline-none"
                 />
                 <span className="text-gray-400">~</span>
                 <input
                   type="text"
-                  value="2026-09-19"
+                  value="2026-10-19"
                   readOnly
                   className="w-20 text-center text-xs text-gray-700 focus:outline-none"
                 />
@@ -569,7 +569,7 @@ export const CouponManagement: React.FC<CouponManagementProps> = ({ onNotice }) 
 
             <button
               type="button"
-              onClick={() => onNotice('已成功导出2026年9月优惠券核销数据报表')}
+              onClick={() => onNotice('已成功导出2026年10月优惠券核销数据报表')}
               className="px-4 py-1.5 border border-gray-200 hover:bg-gray-50 text-gray-700 rounded-md font-medium transition-colors flex items-center space-x-1"
             >
               <Download className="w-3.5 h-3.5" />
@@ -577,7 +577,7 @@ export const CouponManagement: React.FC<CouponManagementProps> = ({ onNotice }) 
             </button>
           </div>
 
-          {/* Stats Table (Descending from 2026-09-19 down to 2026-09-01) */}
+          {/* Stats Table (Descending from 2026-10-19 down to 2026-10-01) */}
           <div className="overflow-x-auto border-t border-gray-100 pt-2">
             <table className="w-full text-left border-collapse">
               <thead>

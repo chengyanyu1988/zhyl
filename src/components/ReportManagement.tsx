@@ -18,7 +18,7 @@ import {
 
 export interface ReportItem {
   id: string;
-  uploadTime: string; // 2026-09-19 17:42
+  uploadTime: string; // 2026-10-19 17:42
   user: {
     name: string;
     avatar: string;
@@ -28,13 +28,13 @@ export interface ReportItem {
   source: string; // 后台上传 | 机构检测 | 智能设备同步 | 社区网格录入 | 医院互联
   uploader: string;
   workOrderNo: string;
-  reportDate: string; // 2026-09-19
+  reportDate: string; // 2026-10-19
 }
 
 const INITIAL_REPORTS_DATA: ReportItem[] = [
   {
     id: 'rep-101',
-    uploadTime: '2026-09-19 17:42',
+    uploadTime: '2026-10-19 17:42',
     user: {
       name: '小王',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80',
@@ -43,12 +43,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '体检报告',
     source: '后台上传',
     uploader: '李明明',
-    workOrderNo: 'GD20260919013',
-    reportDate: '2026-09-19',
+    workOrderNo: 'GD20261019013',
+    reportDate: '2026-10-19',
   },
   {
     id: 'rep-102',
-    uploadTime: '2026-09-19 14:15',
+    uploadTime: '2026-10-19 14:15',
     user: {
       name: '高素琴',
       avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80',
@@ -57,12 +57,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '专科筛查',
     source: '智能设备同步',
     uploader: '张主管',
-    workOrderNo: 'GD20260919008',
-    reportDate: '2026-09-19',
+    workOrderNo: 'GD20261019008',
+    reportDate: '2026-10-19',
   },
   {
     id: 'rep-103',
-    uploadTime: '2026-09-19 10:23',
+    uploadTime: '2026-10-19 10:23',
     user: {
       name: '钱宏业',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80',
@@ -71,12 +71,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '评估报告',
     source: '机构检测',
     uploader: '李明明',
-    workOrderNo: 'GD20260918023',
-    reportDate: '2026-09-18',
+    workOrderNo: 'GD20261018023',
+    reportDate: '2026-10-18',
   },
   {
     id: 'rep-104',
-    uploadTime: '2026-09-18 16:30',
+    uploadTime: '2026-10-18 16:30',
     user: {
       name: '周金凤',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80',
@@ -85,12 +85,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '检验报告',
     source: '医院互联',
     uploader: '陈医生',
-    workOrderNo: 'GD20260918015',
-    reportDate: '2026-09-18',
+    workOrderNo: 'GD20261018015',
+    reportDate: '2026-10-18',
   },
   {
     id: 'rep-105',
-    uploadTime: '2026-09-18 11:05',
+    uploadTime: '2026-10-18 11:05',
     user: {
       name: '何国栋',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80',
@@ -99,12 +99,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '影像报告',
     source: '后台上传',
     uploader: '赵护师',
-    workOrderNo: 'GD20260917042',
-    reportDate: '2026-09-17',
+    workOrderNo: 'GD20261017042',
+    reportDate: '2026-10-17',
   },
   {
     id: 'rep-106',
-    uploadTime: '2026-09-17 15:20',
+    uploadTime: '2026-10-17 15:20',
     user: {
       name: '许桂兰',
       avatar: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=120&q=80',
@@ -113,12 +113,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '评估报告',
     source: '智能设备同步',
     uploader: '孙助理',
-    workOrderNo: 'GD20260916021',
-    reportDate: '2026-09-16',
+    workOrderNo: 'GD20261016021',
+    reportDate: '2026-10-16',
   },
   {
     id: 'rep-107',
-    uploadTime: '2026-09-16 14:40',
+    uploadTime: '2026-10-16 14:40',
     user: {
       name: '孙建华',
       avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=120&q=80',
@@ -127,12 +127,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '专科筛查',
     source: '机构检测',
     uploader: '王芳',
-    workOrderNo: 'GD20260915019',
-    reportDate: '2026-09-15',
+    workOrderNo: 'GD20261015019',
+    reportDate: '2026-10-15',
   },
   {
     id: 'rep-108',
-    uploadTime: '2026-09-15 09:50',
+    uploadTime: '2026-10-15 09:50',
     user: {
       name: '赵立诚',
       avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80',
@@ -141,12 +141,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '影像报告',
     source: '后台上传',
     uploader: '李明明',
-    workOrderNo: 'GD20260914006',
-    reportDate: '2026-09-14',
+    workOrderNo: 'GD20261014006',
+    reportDate: '2026-10-14',
   },
   {
     id: 'rep-109',
-    uploadTime: '2026-09-14 16:10',
+    uploadTime: '2026-10-14 16:10',
     user: {
       name: '张伯伯',
       avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80',
@@ -155,12 +155,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '评估报告',
     source: '机构检测',
     uploader: '刘主管',
-    workOrderNo: 'GD20260913018',
-    reportDate: '2026-09-13',
+    workOrderNo: 'GD20261013018',
+    reportDate: '2026-10-13',
   },
   {
     id: 'rep-110',
-    uploadTime: '2026-09-12 11:30',
+    uploadTime: '2026-10-12 11:30',
     user: {
       name: '郑秀荣',
       avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80',
@@ -169,12 +169,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '随访报告',
     source: '后台上传',
     uploader: '赵护师',
-    workOrderNo: 'GD20260911027',
-    reportDate: '2026-09-11',
+    workOrderNo: 'GD20261011027',
+    reportDate: '2026-10-11',
   },
   {
     id: 'rep-111',
-    uploadTime: '2026-09-10 10:00',
+    uploadTime: '2026-10-10 10:00',
     user: {
       name: '陈培元',
       avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80',
@@ -183,12 +183,12 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '检验报告',
     source: '医院互联',
     uploader: '陈医生',
-    workOrderNo: 'GD20260909003',
-    reportDate: '2026-09-09',
+    workOrderNo: 'GD20261009003',
+    reportDate: '2026-10-09',
   },
   {
     id: 'rep-112',
-    uploadTime: '2026-09-08 15:45',
+    uploadTime: '2026-10-08 15:45',
     user: {
       name: '冯桂香',
       avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80',
@@ -197,8 +197,8 @@ const INITIAL_REPORTS_DATA: ReportItem[] = [
     type: '评估报告',
     source: '社区网格录入',
     uploader: '王芳',
-    workOrderNo: 'GD20260907011',
-    reportDate: '2026-09-07',
+    workOrderNo: 'GD20261007011',
+    reportDate: '2026-10-07',
   },
 ];
 
@@ -219,7 +219,7 @@ export const ReportManagement: React.FC<ReportManagementProps> = ({ onNotice }) 
   // Upload Modal State
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [formName, setFormName] = useState('');
-  const [formDate, setFormDate] = useState('2026-09-19');
+  const [formDate, setFormDate] = useState('2026-10-19');
   const [formType, setFormType] = useState('');
   const [formUser, setFormUser] = useState('');
   const [formWorkOrder, setFormWorkOrder] = useState('');
@@ -236,11 +236,11 @@ export const ReportManagement: React.FC<ReportManagementProps> = ({ onNotice }) 
   ];
 
   const mockWorkOrders = [
-    'GD20260919013 (常规生化巡查工单)',
-    'GD20260919008 (心电动态跟踪工单)',
-    'GD20260918023 (防跌倒上门评估工单)',
-    'GD20260918015 (慢病血糖专访工单)',
-    'GD20260917042 (影像会诊专案工单)',
+    'GD20261019013 (常规生化巡查工单)',
+    'GD20261019008 (心电动态跟踪工单)',
+    'GD20261018023 (防跌倒上门评估工单)',
+    'GD20261018015 (慢病血糖专访工单)',
+    'GD20261017042 (影像会诊专案工单)',
   ];
 
   // Filtered reports, strictly descending by uploadTime
@@ -323,7 +323,7 @@ export const ReportManagement: React.FC<ReportManagementProps> = ({ onNotice }) 
     const selectedUserObj = mockUsersList.find((u) => u.name === formUser) || mockUsersList[0];
     const newRep: ReportItem = {
       id: `rep-${Date.now()}`,
-      uploadTime: '2026-09-19 17:50',
+      uploadTime: '2026-10-19 17:50',
       user: {
         name: selectedUserObj.name,
         avatar: selectedUserObj.avatar,
@@ -332,8 +332,8 @@ export const ReportManagement: React.FC<ReportManagementProps> = ({ onNotice }) 
       type: formType,
       source: '后台上传',
       uploader: '李明明',
-      workOrderNo: formWorkOrder.split(' ')[0] || 'GD20260919099',
-      reportDate: formDate || '2026-09-19',
+      workOrderNo: formWorkOrder.split(' ')[0] || 'GD20261019099',
+      reportDate: formDate || '2026-10-19',
     };
 
     setReports((prev) => [newRep, ...prev]);
@@ -419,10 +419,10 @@ export const ReportManagement: React.FC<ReportManagementProps> = ({ onNotice }) 
             type="button"
             onClick={() => {
               setFormName('');
-              setFormDate('2026-09-19');
+              setFormDate('2026-10-19');
               setFormType('');
               setFormUser('小王');
-              setFormWorkOrder('GD20260919013');
+              setFormWorkOrder('GD20261019013');
               setShowUploadModal(true);
             }}
             className="px-4 py-1.5 bg-[#10b981] hover:bg-[#059669] text-white rounded-md font-medium transition-colors"

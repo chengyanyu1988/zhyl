@@ -30,8 +30,8 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
   // View mode: kanban or table
   const [viewMode, setViewMode] = useState<'kanban' | 'table'>('kanban');
 
-  // Date selection: 2026-09-01 至 2026-09-18
-  const [selectedDate, setSelectedDate] = useState<string>('2026-09-18');
+  // Date selection: 2026-10-01 至 2026-10-20
+  const [selectedDate, setSelectedDate] = useState<string>('2026-10-18');
   const [selectedStaff, setSelectedStaff] = useState<string>('all');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
@@ -45,7 +45,7 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
 
   // New appointment form state
   const [newTitle, setNewTitle] = useState('适老化居家跌倒风险评估与巡检');
-  const [newDate, setNewDate] = useState('2026-09-18');
+  const [newDate, setNewDate] = useState('2026-10-18');
   const [newHour, setNewHour] = useState(11);
   const [newTimeRange, setNewTimeRange] = useState('11:00-12:00');
   const [newCategory, setNewCategory] = useState<'康复理疗' | '家政护理' | '上门体检'>('家政护理');
@@ -253,7 +253,7 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
             {/* Sort order badge indicator */}
             <div className="hidden md:flex items-center space-x-1.5 text-xs text-emerald-700 bg-emerald-50/80 px-2.5 py-1 rounded-md border border-emerald-200">
               <ArrowUpDown className="w-3 h-3" />
-              <span>按服务时间降序 (2026-09-18 至 2026-09-01)</span>
+              <span>按服务时间降序 (2026-10-20 至 2026-10-01)</span>
             </div>
 
             <button
@@ -279,17 +279,17 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
             >
               <span className="font-mono text-gray-800">
                 {dateFilterScope === 'all' && viewMode === 'table'
-                  ? '全部 (9月1日-18日)'
+                  ? '全部 (10月1日-20日)'
                   : `${selectedDate}`}
               </span>
               <CalendarIcon className="w-4 h-4 text-gray-400 shrink-0" />
             </div>
 
-            {/* Date Picker Popover restricted to 2026-09-01 to 2026-09-18 */}
+            {/* Date Picker Popover restricted to 2026-10-01 to 2026-10-18 */}
             {showDatePicker && (
               <div className="absolute top-11 left-0 w-72 bg-white rounded-xl shadow-xl border border-gray-100 p-3 z-50 animate-in fade-in">
                 <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100 font-semibold text-gray-800 text-xs">
-                  <span>2026年9月</span>
+                  <span>2026年10月</span>
                   <button
                     onClick={() => setShowDatePicker(false)}
                     className="text-gray-400 hover:text-gray-600"
@@ -298,7 +298,7 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
                   </button>
                 </div>
                 <div className="text-[11px] text-gray-400 mb-2">
-                  系统范围：2026-09-01 至 2026-09-18
+                  系统范围：2026-10-01 至 2026-10-20
                 </div>
 
                 {viewMode === 'table' && (
@@ -306,7 +306,7 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
                     onClick={() => {
                       setDateFilterScope('all');
                       setShowDatePicker(false);
-                      onNotice('已切换为显示 2026年9月全部日期 (降序排列)');
+                      onNotice('已切换为显示 2026年10月全部日期 (降序排列)');
                     }}
                     className={`w-full mb-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
                       dateFilterScope === 'all'
@@ -314,14 +314,14 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
                         : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
                     }`}
                   >
-                    查看全部日期 (2026-09-01 至 2026-09-18)
+                    查看全部日期 (2026-10-01 至 2026-10-20)
                   </button>
                 )}
 
                 <div className="grid grid-cols-6 gap-1 text-center">
-                  {Array.from({ length: 18 }, (_, i) => {
+                  {Array.from({ length: 20 }, (_, i) => {
                     const dayNum = i + 1;
-                    const dateStr = `2026-09-${dayNum < 10 ? '0' + dayNum : dayNum}`;
+                    const dateStr = `2026-10-${dayNum < 10 ? '0' + dayNum : dayNum}`;
                     const isSelected = dateFilterScope === 'specific' && selectedDate === dateStr;
 
                     return (
@@ -555,7 +555,7 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
                 <Filter className="w-3.5 h-3.5 text-emerald-600" />
                 <span>
                   共筛选出 <strong className="text-emerald-700">{filteredAppointments.length}</strong> 条服务记录
-                  （2026年9月18日 至 2026年9月1日，表格每条数据均真实唯一，严格按时间降序排列）
+                  （2026年10月20日 至 2026年10月1日，表格每条数据均真实唯一，严格按时间降序排列）
                 </span>
               </div>
               <div className="text-[11px] text-gray-400">
@@ -865,7 +865,7 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
               <div className="flex items-center space-x-2">
                 <span className="w-2 h-4 bg-[#10b981] rounded-full"></span>
                 <span className="text-sm font-bold text-gray-800">
-                  新建预约工单 (2026年9月)
+                  新建预约工单 (2026年10月)
                 </span>
               </div>
               <button
@@ -922,16 +922,16 @@ export const AppointmentKanban: React.FC<AppointmentKanbanProps> = ({
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block text-gray-500 font-medium mb-1">
-                    预约日期 (2026-09-01 至 2026-09-18)
+                    预约日期 (2026-10-01 至 2026-10-20)
                   </label>
                   <select
                     value={newDate}
                     onChange={(e) => setNewDate(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#10b981]"
                   >
-                    {Array.from({ length: 18 }, (_, i) => {
+                    {Array.from({ length: 20 }, (_, i) => {
                       const day = 18 - i; // descending from 18 to 1
-                      const d = `2026-09-${day < 10 ? '0' + day : day}`;
+                      const d = `2026-10-${day < 10 ? '0' + day : day}`;
                       return (
                         <option key={d} value={d}>
                           {d}

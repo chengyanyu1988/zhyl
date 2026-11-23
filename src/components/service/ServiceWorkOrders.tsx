@@ -108,7 +108,7 @@ export const ServiceWorkOrders: React.FC<ServiceWorkOrdersProps> = ({ onNotice }
 
   const openModifyModal = (order: ServiceWorkOrderItem) => {
     setModifyingOrder(order);
-    const datePart = order.appointmentTime.split(' ')[0] || '2026-09-19';
+    const datePart = order.appointmentTime.split(' ')[0] || '2026-10-19';
     const timePart = order.appointmentTime.split(' ')[1] || '12:00';
     setModifyDate(datePart);
     setModifyTimeSlot(timePart);
@@ -467,7 +467,7 @@ export const ServiceWorkOrders: React.FC<ServiceWorkOrdersProps> = ({ onNotice }
               <div>
                 <div className="font-semibold text-gray-800 text-sm">{detailOrder.customerName || '王强'}</div>
                 <div className="text-gray-400 font-mono text-[11px]">
-                  ID: {detailOrder.customerId || '202609000001'}
+                  ID: {detailOrder.customerId || '202610000001'}
                 </div>
               </div>
             </div>
@@ -505,13 +505,13 @@ export const ServiceWorkOrders: React.FC<ServiceWorkOrdersProps> = ({ onNotice }
             <div>
               <span className="text-gray-400 block mb-0.5">最近登录时间</span>
               <span className="text-gray-800 font-mono">
-                {detailOrder.customerLastLogin || '2026-09-18 10:09:09'}
+                {detailOrder.customerLastLogin || '2026-10-18 10:09:09'}
               </span>
             </div>
             <div>
               <span className="text-gray-400 block mb-0.5">最近购买时间</span>
               <span className="text-gray-800 font-mono">
-                {detailOrder.customerLastPurchase || '2026-09-18 11:09:09'}
+                {detailOrder.customerLastPurchase || '2026-10-18 11:09:09'}
               </span>
             </div>
             <div>
@@ -655,7 +655,7 @@ export const ServiceWorkOrders: React.FC<ServiceWorkOrdersProps> = ({ onNotice }
                   <div className="grid grid-cols-3 gap-2">
                     <span className="text-gray-400">取消时间:</span>
                     <span className="col-span-2 font-mono text-rose-600">
-                      {detailOrder.cancelTime || '2026-09-19 14:12:07'}
+                      {detailOrder.cancelTime || '2026-10-19 14:12:07'}
                     </span>
                   </div>
                   <div className="grid grid-cols-3 gap-2">
@@ -783,8 +783,8 @@ export const ServiceWorkOrders: React.FC<ServiceWorkOrdersProps> = ({ onNotice }
             <div className="flex items-center space-x-2 flex-1">
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={dispatchStartDate}
                 onChange={(e) => setDispatchStartDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -792,8 +792,8 @@ export const ServiceWorkOrders: React.FC<ServiceWorkOrdersProps> = ({ onNotice }
               <span className="text-gray-400">~</span>
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={dispatchEndDate}
                 onChange={(e) => setDispatchEndDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -809,8 +809,8 @@ export const ServiceWorkOrders: React.FC<ServiceWorkOrdersProps> = ({ onNotice }
             <div className="flex items-center space-x-2 flex-1">
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={appointStartDate}
                 onChange={(e) => setAppointStartDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -818,8 +818,8 @@ export const ServiceWorkOrders: React.FC<ServiceWorkOrdersProps> = ({ onNotice }
               <span className="text-gray-400">~</span>
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={appointEndDate}
                 onChange={(e) => setAppointEndDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"

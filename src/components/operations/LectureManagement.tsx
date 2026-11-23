@@ -18,7 +18,7 @@ const INITIAL_VIDEOS: LectureVideoItem[] = [
     sharesCount: 100,
     commentsCount: 6,
     updater: '李明明',
-    lastUpdateTime: '2026-09-15 10:09:09',
+    lastUpdateTime: '2026-10-15 10:09:09',
     status: '已发布',
     coverImage: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=200&auto=format&fit=crop&q=80',
     videoUrl: 'https://example.com/video/vitamin.mp4',
@@ -33,7 +33,7 @@ const INITIAL_VIDEOS: LectureVideoItem[] = [
     sharesCount: 85,
     commentsCount: 12,
     updater: '张教练',
-    lastUpdateTime: '2026-09-13 14:20:00',
+    lastUpdateTime: '2026-10-13 14:20:00',
     status: '已发布',
     coverImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=200&auto=format&fit=crop&q=80',
     videoUrl: 'https://example.com/video/taichi.mp4',
@@ -48,7 +48,7 @@ const INITIAL_VIDEOS: LectureVideoItem[] = [
     sharesCount: 70,
     commentsCount: 8,
     updater: '陈医师',
-    lastUpdateTime: '2026-09-10 09:30:00',
+    lastUpdateTime: '2026-10-10 09:30:00',
     status: '已发布',
     coverImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&auto=format&fit=crop&q=80',
     videoUrl: 'https://example.com/video/bp.mp4',
@@ -63,7 +63,7 @@ const INITIAL_VIDEOS: LectureVideoItem[] = [
     sharesCount: 180,
     commentsCount: 24,
     updater: '李明明',
-    lastUpdateTime: '2026-09-07 16:00:00',
+    lastUpdateTime: '2026-10-07 16:00:00',
     status: '已发布',
     coverImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=200&auto=format&fit=crop&q=80',
     videoUrl: 'https://example.com/video/baduanjin.mp4',
@@ -78,7 +78,7 @@ const INITIAL_VIDEOS: LectureVideoItem[] = [
     sharesCount: 45,
     commentsCount: 5,
     updater: '赵医生',
-    lastUpdateTime: '2026-09-03 11:10:00',
+    lastUpdateTime: '2026-10-03 11:10:00',
     status: '已发布',
     coverImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&auto=format&fit=crop&q=80',
     videoUrl: 'https://example.com/video/knee.mp4',
@@ -92,7 +92,7 @@ const INITIAL_TAGS: LectureTagItem[] = [
     name: '健康饮食',
     videoCount: 500,
     updater: '李明明',
-    lastUpdateTime: '2026-09-18 10:09:09',
+    lastUpdateTime: '2026-10-18 10:09:09',
     status: '启用',
   },
   {
@@ -100,7 +100,7 @@ const INITIAL_TAGS: LectureTagItem[] = [
     name: '老年健康',
     videoCount: 450,
     updater: '李明明',
-    lastUpdateTime: '2026-09-16 15:20:00',
+    lastUpdateTime: '2026-10-16 15:20:00',
     status: '启用',
   },
   {
@@ -108,7 +108,7 @@ const INITIAL_TAGS: LectureTagItem[] = [
     name: '中医养生',
     videoCount: 380,
     updater: '李明明',
-    lastUpdateTime: '2026-09-13 09:40:00',
+    lastUpdateTime: '2026-10-13 09:40:00',
     status: '启用',
   },
   {
@@ -116,7 +116,7 @@ const INITIAL_TAGS: LectureTagItem[] = [
     name: '健身运动',
     videoCount: 310,
     updater: '李明明',
-    lastUpdateTime: '2026-09-09 11:15:00',
+    lastUpdateTime: '2026-10-09 11:15:00',
     status: '启用',
   },
   {
@@ -124,7 +124,7 @@ const INITIAL_TAGS: LectureTagItem[] = [
     name: '慢病管理',
     videoCount: 280,
     updater: '李明明',
-    lastUpdateTime: '2026-09-05 14:00:00',
+    lastUpdateTime: '2026-10-05 14:00:00',
     status: '启用',
   },
 ];
@@ -195,9 +195,10 @@ export const LectureManagement: React.FC<LectureManagementProps> = ({
     } else {
       setVideoForm({
         title: '',
-        tags: ['老年健康', '健康饮食'],
+        tags: [],
         status: '已发布',
-        coverImage: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=200&auto=format&fit=crop&q=80',
+        coverImage: '',
+        videoUrl: '',
         intro: '',
       });
       setVideoModal({ isOpen: true, item: null, isCreate: true });
@@ -220,7 +221,7 @@ export const LectureManagement: React.FC<LectureManagementProps> = ({
         sharesCount: 0,
         commentsCount: 0,
         updater: '管理员',
-        lastUpdateTime: '2026-09-19 16:30:00',
+        lastUpdateTime: '2026-10-19 16:30:00',
         status: (videoForm.status as any) || '已发布',
         coverImage: videoForm.coverImage,
         intro: videoForm.intro,
@@ -230,7 +231,7 @@ export const LectureManagement: React.FC<LectureManagementProps> = ({
     } else if (videoModal.item) {
       setVideos(
         videos.map((v) =>
-          v.id === videoModal.item!.id ? { ...v, ...videoForm, lastUpdateTime: '2026-09-19 16:30:00' } : v
+          v.id === videoModal.item!.id ? { ...v, ...videoForm, lastUpdateTime: '2026-10-19 16:30:00' } : v
         )
       );
       onNotice('讲堂视频已被更新');
@@ -257,7 +258,7 @@ export const LectureManagement: React.FC<LectureManagementProps> = ({
         name: tagForm.name,
         videoCount: 0,
         updater: '管理员',
-        lastUpdateTime: '2026-09-19 16:00:00',
+        lastUpdateTime: '2026-10-19 16:00:00',
         status: tagForm.status,
       };
       setTags([newTag, ...tags]);
@@ -266,7 +267,7 @@ export const LectureManagement: React.FC<LectureManagementProps> = ({
       setTags(
         tags.map((t) =>
           t.id === tagModal.item!.id
-            ? { ...t, name: tagForm.name, status: tagForm.status, lastUpdateTime: '2026-09-19 16:00:00' }
+            ? { ...t, name: tagForm.name, status: tagForm.status, lastUpdateTime: '2026-10-19 16:00:00' }
             : t
         )
       );
@@ -442,14 +443,17 @@ export const LectureManagement: React.FC<LectureManagementProps> = ({
           </div>
         </div>
 
-        {/* Modal for Video */}
+        {/* Modal for Video matching screenshot */}
         {videoModal.isOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs">
-            <div className="bg-white rounded-xl w-full max-w-lg overflow-hidden shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-150">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs overflow-y-auto py-10">
+            <div className="bg-white rounded-xl w-full max-w-3xl overflow-hidden shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-150 my-auto">
               <div className="px-6 py-4 flex items-center justify-between border-b border-gray-100">
-                <h3 className="text-sm font-semibold text-gray-800">
-                  {videoModal.isCreate ? '新增讲堂视频' : '编辑讲堂视频'}
-                </h3>
+                <div className="flex items-center space-x-2.5">
+                  <span className="w-1 h-4 bg-[#10b981] rounded-full"></span>
+                  <h3 className="text-sm font-semibold text-gray-800">
+                    {videoModal.isCreate ? '新增视频' : '编辑视频'}
+                  </h3>
+                </div>
                 <button
                   onClick={() => setVideoModal({ isOpen: false, item: null, isCreate: false })}
                   className="text-gray-400 hover:text-gray-600 p-1"
@@ -458,50 +462,201 @@ export const LectureManagement: React.FC<LectureManagementProps> = ({
                 </button>
               </div>
 
-              <form onSubmit={handleSaveVideo} className="p-6 space-y-4 text-xs">
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">视频标题 <span className="text-red-500">*</span></label>
-                  <input
-                    type="text"
-                    required
-                    value={videoForm.title || ''}
-                    onChange={(e) => setVideoForm({ ...videoForm, title: e.target.value })}
-                    placeholder="请输入视频标题"
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
+              <form onSubmit={handleSaveVideo} className="p-6 space-y-6 text-xs max-h-[80vh] overflow-y-auto">
+                {/* 视频名称 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    视频名称 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10">
+                    <input
+                      type="text"
+                      required
+                      value={videoForm.title || ''}
+                      onChange={(e) => setVideoForm({ ...videoForm, title: e.target.value })}
+                      placeholder="请输入"
+                      className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981] text-gray-800 placeholder-gray-400"
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">封面图片 URL</label>
-                  <input
-                    type="text"
-                    value={videoForm.coverImage || ''}
-                    onChange={(e) => setVideoForm({ ...videoForm, coverImage: e.target.value })}
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
+                {/* 视频封面 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    视频封面 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10 space-y-2">
+                    <div className="flex items-center space-x-3">
+                      {videoForm.coverImage ? (
+                        <div className="relative w-28 h-28 border border-gray-200 rounded-lg overflow-hidden group">
+                          <img src={videoForm.coverImage} alt="封面预览" className="w-full h-full object-cover" />
+                          <button
+                            type="button"
+                            onClick={() => setVideoForm({ ...videoForm, coverImage: '' })}
+                            className="absolute inset-0 bg-black/40 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity"
+                          >
+                            更换图片
+                          </button>
+                        </div>
+                      ) : (
+                        <label className="w-28 h-28 border-2 border-dashed border-gray-200 hover:border-[#10b981] rounded-lg flex flex-col items-center justify-center cursor-pointer bg-gray-50/50 hover:bg-emerald-50/30 transition-colors text-gray-400 hover:text-[#10b981]">
+                          <Plus className="w-6 h-6 mb-1" />
+                          <span className="text-xs font-medium">上传图片</span>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            onChange={(e) => {
+                              if (e.target.files && e.target.files[0]) {
+                                const url = URL.createObjectURL(e.target.files[0]);
+                                setVideoForm({ ...videoForm, coverImage: url });
+                                onNotice('视频封面上传成功');
+                              }
+                            }}
+                          />
+                        </label>
+                      )}
+                    </div>
+                    <p className="text-gray-400 text-[11px]">
+                      支持jpg, png等格式文件上传，文件大小不超过10MB
+                    </p>
+                  </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">视频介绍</label>
-                  <textarea
-                    rows={3}
-                    value={videoForm.intro || ''}
-                    onChange={(e) => setVideoForm({ ...videoForm, intro: e.target.value })}
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
+                {/* 视频 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    视频 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10 space-y-2">
+                    <div className="flex items-center space-x-3">
+                      {videoForm.videoUrl ? (
+                        <div className="relative w-40 h-28 border border-gray-200 rounded-lg overflow-hidden bg-black flex items-center justify-center group">
+                          <span className="text-white text-xs font-medium">已上传视频</span>
+                          <button
+                            type="button"
+                            onClick={() => setVideoForm({ ...videoForm, videoUrl: '' })}
+                            className="absolute inset-0 bg-black/60 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity"
+                          >
+                            更换视频
+                          </button>
+                        </div>
+                      ) : (
+                        <label className="w-40 h-28 border-2 border-dashed border-gray-200 hover:border-[#10b981] rounded-lg flex flex-col items-center justify-center cursor-pointer bg-gray-50/50 hover:bg-emerald-50/30 transition-colors text-gray-400 hover:text-[#10b981]">
+                          <Plus className="w-6 h-6 mb-1" />
+                          <span className="text-xs font-medium">上传视频</span>
+                          <input
+                            type="file"
+                            accept="video/*"
+                            className="hidden"
+                            onChange={(e) => {
+                              if (e.target.files && e.target.files[0]) {
+                                const url = URL.createObjectURL(e.target.files[0]);
+                                setVideoForm({ ...videoForm, videoUrl: url });
+                                onNotice('视频上传成功');
+                              }
+                            }}
+                          />
+                        </label>
+                      )}
+                    </div>
+                    <p className="text-gray-400 text-[11px]">
+                      视频支持: wmv、avi、mov、mp4、flv、f4v、m4v、m2t、mts、rmvb格式，大小限制在8G以内。
+                    </p>
+                  </div>
                 </div>
 
+                {/* 视频标签 */}
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  <label className="col-span-2 text-right text-gray-700 font-medium">
+                    视频标签 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10">
+                    <select
+                      className="w-full px-3 py-2 border border-gray-200 rounded-md bg-white text-gray-700 focus:outline-none focus:border-[#10b981]"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>请选择</option>
+                      <option value="老年健康">老年健康</option>
+                      <option value="健康饮食">健康饮食</option>
+                      <option value="康复理疗">康复理疗</option>
+                      <option value="心理疏导">心理疏导</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* 视频介绍 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    视频介绍 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10">
+                    <textarea
+                      rows={4}
+                      required
+                      value={videoForm.intro || ''}
+                      onChange={(e) => setVideoForm({ ...videoForm, intro: e.target.value })}
+                      placeholder="请输入"
+                      className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981] text-gray-800 placeholder-gray-400 text-xs resize-y"
+                    />
+                  </div>
+                </div>
+
+                {/* 发布时间 */}
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  <label className="col-span-2 text-right text-gray-700 font-medium">发布时间</label>
+                  <div className="col-span-10 space-y-3">
+                    <div className="flex items-center space-x-6">
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="videoPublishRadio"
+                          defaultChecked
+                          className="text-[#10b981] focus:ring-[#10b981]"
+                        />
+                        <span className="text-gray-800 font-medium">立即发布</span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="videoPublishRadio"
+                          className="text-[#10b981] focus:ring-[#10b981]"
+                        />
+                        <span className="text-gray-800">定时发布</span>
+                      </label>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-2 border border-gray-200 rounded-md px-3 py-1.5 bg-white w-48">
+                        <input
+                          type="date"
+                          className="w-full focus:outline-none text-gray-700 text-xs"
+                          placeholder="请选择日期"
+                        />
+                        <Calendar className="w-4 h-4 text-gray-400 shrink-0" />
+                      </div>
+                      <div className="flex items-center space-x-2 border border-gray-200 rounded-md px-3 py-1.5 bg-white w-32">
+                        <input
+                          type="text"
+                          defaultValue="12 : 00"
+                          className="w-full focus:outline-none text-gray-700 text-xs text-center font-mono"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer buttons */}
                 <div className="pt-4 flex items-center justify-end space-x-3 border-t border-gray-100">
                   <button
                     type="button"
                     onClick={() => setVideoModal({ isOpen: false, item: null, isCreate: false })}
-                    className="px-4 py-1.5 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-md"
+                    className="px-4 py-2 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-md font-medium"
                   >
                     取消
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-1.5 bg-[#10b981] hover:bg-[#059669] text-white rounded-md font-medium"
+                    className="px-6 py-2 bg-[#10b981] hover:bg-[#059669] text-white rounded-md font-medium transition-colors shadow-sm"
                   >
                     确定
                   </button>

@@ -36,6 +36,7 @@ import {
   INITIAL_HEARTRATE,
 } from '../../data/healthData';
 import { SmoothCurveChart } from './SmoothCurveChart';
+import { TimeSlotGlucoseBarChart } from './TimeSlotGlucoseBarChart';
 
 interface HealthMetricsTabProps {
   user: AppUser;
@@ -56,7 +57,7 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
   onNotice,
 }) => {
   const [activeSubTab, setActiveSubTab] = useState<MetricSubTab>('体重');
-  const [dateRange, setDateRange] = useState('2026-09-12 ~ 2026-09-19');
+  const [dateRange, setDateRange] = useState('2026-10-12 ~ 2026-10-19');
   const [chartViewMode, setChartViewMode] = useState<'curve' | 'bar'>('curve');
 
   // Sub-records state
@@ -76,11 +77,11 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
   const [editItem, setEditItem] = useState<any | null>(null);
 
   // Generic form fields
-  const [formTime, setFormTime] = useState('2026-09-19 08:00:00');
+  const [formTime, setFormTime] = useState('2026-10-19 08:00:00');
   const [formWeight, setFormWeight] = useState('70.0');
   const [formSteps, setFormSteps] = useState('7000');
-  const [formSleepStart, setFormSleepStart] = useState('2026-09-18 22:30');
-  const [formSleepEnd, setFormSleepEnd] = useState('2026-09-19 06:45');
+  const [formSleepStart, setFormSleepStart] = useState('2026-10-18 22:30');
+  const [formSleepEnd, setFormSleepEnd] = useState('2026-10-19 06:45');
   const [formDeepHours, setFormDeepHours] = useState('2');
   const [formDeepMins, setFormDeepMins] = useState('15');
   const [formLightHours, setFormLightHours] = useState('4');
@@ -107,11 +108,11 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
   // Open Add Modal
   const handleOpenAdd = () => {
     setEditItem(null);
-    setFormTime('2026-09-19 08:30:00');
+    setFormTime('2026-10-19 08:30:00');
     setFormWeight('70.0');
     setFormSteps('7200');
-    setFormSleepStart('2026-09-18 22:30');
-    setFormSleepEnd('2026-09-19 06:45');
+    setFormSleepStart('2026-10-18 22:30');
+    setFormSleepEnd('2026-10-19 06:45');
     setFormDeepHours('2');
     setFormDeepMins('15');
     setFormLightHours('4');
@@ -130,7 +131,7 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
   // Open Edit Modal
   const handleOpenEdit = (item: any) => {
     setEditItem(item);
-    setFormTime(item.time || '2026-09-18 08:00:00');
+    setFormTime(item.time || '2026-10-18 08:00:00');
     if (activeSubTab === '体重') {
       setFormWeight(String(item.weight));
     } else if (activeSubTab === '步数') {
@@ -433,14 +434,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
                 title="体重连续走势平滑曲线 (kg)"
                 subtitle="标准参考: 60 ~ 75 kg"
                 data={[
-                  { date: '09-12', weight: 71.2 },
-                  { date: '09-13', weight: 71.0 },
-                  { date: '09-14', weight: 70.8 },
-                  { date: '09-15', weight: 70.5 },
-                  { date: '09-16', weight: 70.2 },
-                  { date: '09-17', weight: 70.0 },
-                  { date: '09-18', weight: 69.8 },
-                  { date: '09-19', weight: 69.7 },
+                  { date: '10-13', weight: 71.2 },
+                  { date: '10-14', weight: 71.0 },
+                  { date: '10-15', weight: 70.8 },
+                  { date: '10-16', weight: 70.5 },
+                  { date: '10-17', weight: 70.2 },
+                  { date: '10-18', weight: 70.0 },
+                  { date: '10-19', weight: 69.8 },
+                  { date: '10-20', weight: 69.7 },
                 ]}
                 series={[
                   {
@@ -467,14 +468,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
                 title="BMI 指数平滑走势曲线"
                 subtitle="中国成人标准: 18.5 ~ 23.9"
                 data={[
-                  { date: '09-12', bmi: 24.1 },
-                  { date: '09-13', bmi: 24.0 },
-                  { date: '09-14', bmi: 23.9 },
-                  { date: '09-15', bmi: 23.8 },
-                  { date: '09-16', bmi: 23.7 },
-                  { date: '09-17', bmi: 23.7 },
-                  { date: '09-18', bmi: 23.6 },
-                  { date: '09-19', bmi: 23.5 },
+                  { date: '10-13', bmi: 24.1 },
+                  { date: '10-14', bmi: 24.0 },
+                  { date: '10-15', bmi: 23.9 },
+                  { date: '10-16', bmi: 23.8 },
+                  { date: '10-17', bmi: 23.7 },
+                  { date: '10-18', bmi: 23.7 },
+                  { date: '10-19', bmi: 23.6 },
+                  { date: '10-20', bmi: 23.5 },
                 ]}
                 series={[
                   {
@@ -508,14 +509,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
                 </div>
                 <div className="h-44 flex items-end justify-between space-x-2 pt-6 px-3 border-b border-gray-200 pb-2">
                   {[
-                    { d: '09-12', v: 71.2 },
-                    { d: '09-13', v: 71.0 },
-                    { d: '09-14', v: 70.8 },
-                    { d: '09-15', v: 70.5 },
-                    { d: '09-16', v: 70.2 },
-                    { d: '09-17', v: 70.0 },
-                    { d: '09-18', v: 69.8 },
-                    { d: '09-19', v: 69.7 },
+                    { d: '10-13', v: 71.2 },
+                    { d: '10-14', v: 71.0 },
+                    { d: '10-15', v: 70.8 },
+                    { d: '10-16', v: 70.5 },
+                    { d: '10-17', v: 70.2 },
+                    { d: '10-18', v: 70.0 },
+                    { d: '10-19', v: 69.8 },
+                    { d: '10-20', v: 69.7 },
                   ].map((item, idx) => {
                     const heightPercent = ((item.v - 65) / 10) * 100;
                     return (
@@ -543,14 +544,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
                 </div>
                 <div className="h-44 flex items-end justify-between space-x-2 pt-6 px-3 border-b border-gray-200 pb-2">
                   {[
-                    { d: '09-12', v: 24.1 },
-                    { d: '09-13', v: 24.0 },
-                    { d: '09-14', v: 23.9 },
-                    { d: '09-15', v: 23.8 },
-                    { d: '09-16', v: 23.7 },
-                    { d: '09-17', v: 23.7 },
-                    { d: '09-18', v: 23.6 },
-                    { d: '09-19', v: 23.5 },
+                    { d: '10-13', v: 24.1 },
+                    { d: '10-14', v: 24.0 },
+                    { d: '10-15', v: 23.9 },
+                    { d: '10-16', v: 23.8 },
+                    { d: '10-17', v: 23.7 },
+                    { d: '10-18', v: 23.7 },
+                    { d: '10-19', v: 23.6 },
+                    { d: '10-20', v: 23.5 },
                   ].map((item, idx) => {
                     const heightPercent = ((item.v - 20) / 6) * 100;
                     return (
@@ -580,14 +581,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               title="每日步数平滑曲线走势"
               subtitle="健康活动目标: 6000 步/日"
               data={[
-                { date: '09-12', steps: 6540 },
-                { date: '09-13', steps: 7800 },
-                { date: '09-14', steps: 6180 },
-                { date: '09-15', steps: 8360 },
-                { date: '09-16', steps: 5930 },
-                { date: '09-17', steps: 7420 },
-                { date: '09-18', steps: 6850 },
-                { date: '09-19', steps: 7210 },
+                { date: '10-13', steps: 6540 },
+                { date: '10-14', steps: 7800 },
+                { date: '10-15', steps: 6180 },
+                { date: '10-16', steps: 8360 },
+                { date: '10-17', steps: 5930 },
+                { date: '10-18', steps: 7420 },
+                { date: '10-19', steps: 6850 },
+                { date: '10-20', steps: 7210 },
               ]}
               series={[
                 {
@@ -617,14 +618,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               </div>
               <div className="h-44 flex items-end justify-between space-x-3 pt-6 px-4 border-b border-gray-200 pb-2">
                 {[
-                  { d: '09-12', s: 6540 },
-                  { d: '09-13', s: 7800 },
-                  { d: '09-14', s: 6180 },
-                  { d: '09-15', s: 8360 },
-                  { d: '09-16', s: 5930 },
-                  { d: '09-17', s: 7420 },
-                  { d: '09-18', s: 6850 },
-                  { d: '09-19', s: 7210 },
+                  { d: '10-13', s: 6540 },
+                  { d: '10-14', s: 7800 },
+                  { d: '10-15', s: 6180 },
+                  { d: '10-16', s: 8360 },
+                  { d: '10-17', s: 5930 },
+                  { d: '10-18', s: 7420 },
+                  { d: '10-19', s: 6850 },
+                  { d: '10-20', s: 7210 },
                 ].map((item, idx) => {
                   const heightPercent = (item.s / 9500) * 100;
                   return (
@@ -664,14 +665,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
                 title="睡眠时长与深睡连续走势曲线 (小时)"
                 subtitle="深睡占比约 28%"
                 data={[
-                  { date: '09-12', tot: 7.8, deep: 2.1 },
-                  { date: '09-13', tot: 8.0, deep: 2.3 },
-                  { date: '09-14', tot: 8.3, deep: 2.5 },
-                  { date: '09-15', tot: 7.7, deep: 1.8 },
-                  { date: '09-16', tot: 7.9, deep: 2.3 },
-                  { date: '09-17', tot: 7.7, deep: 2.0 },
-                  { date: '09-18', tot: 8.0, deep: 2.2 },
-                  { date: '09-19', tot: 8.1, deep: 2.3 },
+                  { date: '10-13', tot: 7.8, deep: 2.1 },
+                  { date: '10-14', tot: 8.0, deep: 2.3 },
+                  { date: '10-15', tot: 8.3, deep: 2.5 },
+                  { date: '10-16', tot: 7.7, deep: 1.8 },
+                  { date: '10-17', tot: 7.9, deep: 2.3 },
+                  { date: '10-18', tot: 7.7, deep: 2.0 },
+                  { date: '10-19', tot: 8.0, deep: 2.2 },
+                  { date: '10-20', tot: 8.1, deep: 2.3 },
                 ]}
                 series={[
                   {
@@ -714,14 +715,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
                 </div>
                 <div className="h-44 flex items-end justify-between space-x-2 pt-6 px-3 border-b border-gray-200 pb-2">
                   {[
-                    { d: '09-12', deep: 2.1, light: 4.4, rem: 1.3, tot: 7.8 },
-                    { d: '09-13', deep: 2.3, light: 4.2, rem: 1.5, tot: 8.0 },
-                    { d: '09-14', deep: 2.5, light: 4.3, rem: 1.5, tot: 8.3 },
-                    { d: '09-15', deep: 1.8, light: 4.7, rem: 1.2, tot: 7.7 },
-                    { d: '09-16', deep: 2.3, light: 4.2, rem: 1.4, tot: 7.9 },
-                    { d: '09-17', deep: 2.0, light: 4.5, rem: 1.2, tot: 7.7 },
-                    { d: '09-18', deep: 2.2, light: 4.3, rem: 1.5, tot: 8.0 },
-                    { d: '09-19', deep: 2.3, light: 4.3, rem: 1.5, tot: 8.1 },
+                    { d: '10-13', deep: 2.1, light: 4.4, rem: 1.3, tot: 7.8 },
+                    { d: '10-14', deep: 2.3, light: 4.2, rem: 1.5, tot: 8.0 },
+                    { d: '10-15', deep: 2.5, light: 4.3, rem: 1.5, tot: 8.3 },
+                    { d: '10-16', deep: 1.8, light: 4.7, rem: 1.2, tot: 7.7 },
+                    { d: '10-17', deep: 2.3, light: 4.2, rem: 1.4, tot: 7.9 },
+                    { d: '10-18', deep: 2.0, light: 4.5, rem: 1.2, tot: 7.7 },
+                    { d: '10-19', deep: 2.2, light: 4.3, rem: 1.5, tot: 8.0 },
+                    { d: '10-20', deep: 2.3, light: 4.3, rem: 1.5, tot: 8.1 },
                   ].map((item, idx) => {
                     return (
                       <div key={idx} className="flex-1 flex flex-col items-center space-y-1">
@@ -752,11 +753,11 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               </div>
               <div className="space-y-2.5 pt-2">
                 {[
-                  { d: '09-19', s: '22:35', w: '06:40', dur: '8小时05分', pct: '83%' },
-                  { d: '09-18', s: '22:40', w: '06:45', dur: '8小时05分', pct: '82%' },
-                  { d: '09-17', s: '23:05', w: '06:50', dur: '7小时45分', pct: '78%' },
-                  { d: '09-16', s: '22:30', w: '06:30', dur: '8小时00分', pct: '80%' },
-                  { d: '09-15', s: '23:20', w: '07:00', dur: '7小时40分', pct: '76%' },
+                  { d: '10-20', s: '22:35', w: '06:40', dur: '8小时05分', pct: '83%' },
+                  { d: '10-19', s: '22:40', w: '06:45', dur: '8小时05分', pct: '82%' },
+                  { d: '10-18', s: '23:05', w: '06:50', dur: '7小时45分', pct: '78%' },
+                  { d: '10-17', s: '22:30', w: '06:30', dur: '8小时00分', pct: '80%' },
+                  { d: '10-16', s: '23:20', w: '07:00', dur: '7小时40分', pct: '76%' },
                 ].map((row, i) => (
                   <div key={i} className="flex items-center justify-between text-[11px]">
                     <span className="w-12 font-mono text-gray-500">{row.d}</span>
@@ -788,14 +789,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
                 title="血糖波动平滑曲线 (空腹 vs 餐后 mmol/L)"
                 subtitle="空腹参考 3.9~6.1 / 餐后 <7.8"
                 data={[
-                  { date: '09-12', f: 5.9, p: 7.6 },
-                  { date: '09-13', f: 5.7, p: 7.3 },
-                  { date: '09-14', f: 6.0, p: 7.9 },
-                  { date: '09-15', f: 6.4, p: 8.4 },
-                  { date: '09-16', f: 5.8, p: 7.5 },
-                  { date: '09-17', f: 6.2, p: 8.6 },
-                  { date: '09-18', f: 5.9, p: 7.4 },
-                  { date: '09-19', f: 5.8, p: 7.2 },
+                  { date: '10-13', f: 5.9, p: 7.6 },
+                  { date: '10-14', f: 5.7, p: 7.3 },
+                  { date: '10-15', f: 6.0, p: 7.9 },
+                  { date: '10-16', f: 6.4, p: 8.4 },
+                  { date: '10-17', f: 5.8, p: 7.5 },
+                  { date: '10-18', f: 6.2, p: 8.6 },
+                  { date: '10-19', f: 5.9, p: 7.4 },
+                  { date: '10-20', f: 5.8, p: 7.2 },
                 ]}
                 series={[
                   {
@@ -838,14 +839,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
                 </div>
                 <div className="h-44 flex items-end justify-between space-x-2 pt-6 px-3 border-b border-gray-200 pb-2">
                   {[
-                    { d: '09-12', f: 5.9, p: 7.6 },
-                    { d: '09-13', f: 5.7, p: 7.3 },
-                    { d: '09-14', f: 6.0, p: 7.9 },
-                    { d: '09-15', f: 6.4, p: 8.4 },
-                    { d: '09-16', f: 5.8, p: 7.5 },
-                    { d: '09-17', f: 6.2, p: 8.6 },
-                    { d: '09-18', f: 5.9, p: 7.4 },
-                    { d: '09-19', f: 5.8, p: 7.2 },
+                    { d: '10-13', f: 5.9, p: 7.6 },
+                    { d: '10-14', f: 5.7, p: 7.3 },
+                    { d: '10-15', f: 6.0, p: 7.9 },
+                    { d: '10-16', f: 6.4, p: 8.4 },
+                    { d: '10-17', f: 5.8, p: 7.5 },
+                    { d: '10-18', f: 6.2, p: 8.6 },
+                    { d: '10-19', f: 5.9, p: 7.4 },
+                    { d: '10-20', f: 5.8, p: 7.2 },
                   ].map((item, idx) => {
                     return (
                       <div key={idx} className="flex-1 flex flex-col items-center space-y-1">
@@ -868,40 +869,45 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               </div>
             )}
 
-            {/* 餐次平均值柱状图 */}
-            <div className="bg-gray-50/70 p-4 rounded-xl border border-gray-100">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-semibold text-gray-700">各时段平均血糖 (mmol/L)</span>
-                <span className="text-[11px] text-gray-400">近期 16 次测量汇总</span>
-              </div>
-              <div className="h-44 flex items-end justify-between space-x-2 pt-6 px-3 border-b border-gray-200 pb-2">
-                {[
-                  { p: '早餐前', v: 5.9, st: '正常' },
-                  { p: '早餐后', v: 7.5, st: '正常' },
-                  { p: '午餐前', v: 5.7, st: '正常' },
-                  { p: '午餐后', v: 7.8, st: '正常' },
-                  { p: '晚餐前', v: 5.8, st: '正常' },
-                  { p: '晚餐后', v: 8.0, st: '偏高' },
-                ].map((item, idx) => {
-                  return (
-                    <div key={idx} className="flex-1 flex flex-col items-center space-y-1">
-                      <span className={`text-[10px] font-mono font-bold ${item.st === '偏高' ? 'text-amber-600' : 'text-emerald-700'}`}>
-                        {item.v}
-                      </span>
-                      <div
-                        className={`w-4 rounded-t-sm ${item.st === '偏高' ? 'bg-amber-400' : 'bg-emerald-500'}`}
-                        style={{ height: `${(item.v / 10) * 100}%` }}
-                      />
-                      <span className="text-[10px] text-gray-500">{item.p}</span>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="text-[11px] text-gray-500 mt-3 pt-1 flex justify-between">
-                <span>晚餐后稍有轻度波动偏高</span>
-                <span className="text-amber-600 font-medium">建议晚餐减少升糖主食摄入</span>
-              </div>
-            </div>
+            {/* 各时段平均血糖图表展示 (曲线图走势 / 柱状对比与分布) */}
+            {chartViewMode === 'curve' ? (
+              <SmoothCurveChart
+                title="各时段平均血糖走势 (mmol/L)"
+                subtitle="全天 8 个关键时段昼夜节律走势"
+                data={[
+                  { date: '凌晨', v: 5.4 },
+                  { date: '早餐前', v: 5.9 },
+                  { date: '早餐后', v: 7.5 },
+                  { date: '午餐前', v: 5.7 },
+                  { date: '午餐后', v: 7.8 },
+                  { date: '晚餐前', v: 5.8 },
+                  { date: '晚餐后', v: 8.0 },
+                  { date: '睡前', v: 6.2 },
+                ]}
+                series={[
+                  {
+                    key: 'v',
+                    name: '时段均值',
+                    stroke: '#00b074',
+                    fill: '#00b074',
+                    gradientId: 'grad-timeslot-glucose-curve',
+                    unit: 'mmol/L',
+                  },
+                ]}
+                minY={3.5}
+                maxY={9.5}
+                referenceLine={{ value: 7.8, label: '警戒线 7.8', color: '#f59e0b' }}
+                normalBand={{ min: 3.9, max: 7.8, label: '正常区间' }}
+                footerInfo={
+                  <>
+                    <span>时段综合均值: 6.5 mmol/L · 偏高时段: 晚餐后 (8.0)</span>
+                    <span className="text-amber-600 font-medium">建议晚餐减少高升糖主食并配合餐后轻运动</span>
+                  </>
+                }
+              />
+            ) : (
+              <TimeSlotGlucoseBarChart />
+            )}
           </div>
         )}
 
@@ -912,14 +918,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               title="血压高低压双平滑曲线走势 (mmHg)"
               subtitle="理想目标: 收缩压 <130 / 舒张压 <80 mmHg"
               data={[
-                { date: '09-12', sys: 133, dia: 82 },
-                { date: '09-13', sys: 128, dia: 78 },
-                { date: '09-14', sys: 133, dia: 82 },
-                { date: '09-15', sys: 142, dia: 88 },
-                { date: '09-16', sys: 130, dia: 80 },
-                { date: '09-17', sys: 138, dia: 86 },
-                { date: '09-18', sys: 132, dia: 82 },
-                { date: '09-19', sys: 130, dia: 80 },
+                { date: '10-13', sys: 133, dia: 82 },
+                { date: '10-14', sys: 128, dia: 78 },
+                { date: '10-15', sys: 133, dia: 82 },
+                { date: '10-16', sys: 142, dia: 88 },
+                { date: '10-17', sys: 130, dia: 80 },
+                { date: '10-18', sys: 138, dia: 86 },
+                { date: '10-19', sys: 132, dia: 82 },
+                { date: '10-20', sys: 130, dia: 80 },
               ]}
               series={[
                 {
@@ -958,14 +964,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               </div>
               <div className="h-44 flex items-end justify-between space-x-3 pt-6 px-4 border-b border-gray-200 pb-2">
                 {[
-                  { d: '09-12', sys: 133, dia: 82, st: '正常' },
-                  { d: '09-13', sys: 128, dia: 78, st: '正常' },
-                  { d: '09-14', sys: 133, dia: 82, st: '正常' },
-                  { d: '09-15', sys: 142, dia: 88, st: '偏高' },
-                  { d: '09-16', sys: 130, dia: 80, st: '正常' },
-                  { d: '09-17', sys: 138, dia: 86, st: '偏高' },
-                  { d: '09-18', sys: 132, dia: 82, st: '正常' },
-                  { d: '09-19', sys: 130, dia: 80, st: '正常' },
+                  { d: '10-13', sys: 133, dia: 82, st: '正常' },
+                  { d: '10-14', sys: 128, dia: 78, st: '正常' },
+                  { d: '10-15', sys: 133, dia: 82, st: '正常' },
+                  { d: '10-16', sys: 142, dia: 88, st: '偏高' },
+                  { d: '10-17', sys: 130, dia: 80, st: '正常' },
+                  { d: '10-18', sys: 138, dia: 86, st: '偏高' },
+                  { d: '10-19', sys: 132, dia: 82, st: '正常' },
+                  { d: '10-20', sys: 130, dia: 80, st: '正常' },
                 ].map((item, idx) => {
                   return (
                     <div key={idx} className="flex-1 flex flex-col items-center space-y-1">
@@ -1001,14 +1007,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               title="血氧饱和度平滑走势曲线 (SpO2 %)"
               subtitle="安全参考: 95% ~ 100%"
               data={[
-                { date: '09-12', v: 98 },
-                { date: '09-13', v: 97 },
-                { date: '09-14', v: 96 },
-                { date: '09-15', v: 98 },
-                { date: '09-16', v: 99 },
-                { date: '09-17', v: 97 },
-                { date: '09-18', v: 98 },
-                { date: '09-19', v: 99 },
+                { date: '10-13', v: 98 },
+                { date: '10-14', v: 97 },
+                { date: '10-15', v: 96 },
+                { date: '10-16', v: 98 },
+                { date: '10-17', v: 99 },
+                { date: '10-18', v: 97 },
+                { date: '10-19', v: 98 },
+                { date: '10-20', v: 99 },
               ]}
               series={[
                 {
@@ -1039,14 +1045,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               </div>
               <div className="h-44 flex items-end justify-between space-x-3 pt-6 px-4 border-b border-gray-200 pb-2">
                 {[
-                  { d: '09-12', v: 98 },
-                  { d: '09-13', v: 97 },
-                  { d: '09-14', v: 96 },
-                  { d: '09-15', v: 98 },
-                  { d: '09-16', v: 99 },
-                  { d: '09-17', v: 97 },
-                  { d: '09-18', v: 98 },
-                  { d: '09-19', v: 99 },
+                  { d: '10-13', v: 98 },
+                  { d: '10-14', v: 97 },
+                  { d: '10-15', v: 96 },
+                  { d: '10-16', v: 98 },
+                  { d: '10-17', v: 99 },
+                  { d: '10-18', v: 97 },
+                  { d: '10-19', v: 98 },
+                  { d: '10-20', v: 99 },
                 ].map((item, idx) => (
                   <div key={idx} className="flex-1 flex flex-col items-center space-y-1">
                     <span className="text-[10px] font-mono text-emerald-700 font-bold">{item.v}%</span>
@@ -1068,14 +1074,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               title="心率动态平滑走势曲线 (bpm)"
               subtitle="静息常态参考: 60 ~ 85 bpm"
               data={[
-                { date: '09-12', v: 74 },
-                { date: '09-13', v: 76 },
-                { date: '09-14', v: 68 },
-                { date: '09-15', v: 78 },
-                { date: '09-16', v: 70 },
-                { date: '09-17', v: 76 },
-                { date: '09-18', v: 72 },
-                { date: '09-19', v: 74 },
+                { date: '10-13', v: 74 },
+                { date: '10-14', v: 76 },
+                { date: '10-15', v: 68 },
+                { date: '10-16', v: 78 },
+                { date: '10-17', v: 70 },
+                { date: '10-18', v: 76 },
+                { date: '10-19', v: 72 },
+                { date: '10-20', v: 74 },
               ]}
               series={[
                 {
@@ -1105,14 +1111,14 @@ export const HealthMetricsTab: React.FC<HealthMetricsTabProps> = ({
               </div>
               <div className="h-44 flex items-end justify-between space-x-3 pt-6 px-4 border-b border-gray-200 pb-2">
                 {[
-                  { d: '09-12', v: 74 },
-                  { d: '09-13', v: 76 },
-                  { d: '09-14', v: 68 },
-                  { d: '09-15', v: 78 },
-                  { d: '09-16', v: 70 },
-                  { d: '09-17', v: 76 },
-                  { d: '09-18', v: 72 },
-                  { d: '09-19', v: 74 },
+                  { d: '10-13', v: 74 },
+                  { d: '10-14', v: 76 },
+                  { d: '10-15', v: 68 },
+                  { d: '10-16', v: 78 },
+                  { d: '10-17', v: 70 },
+                  { d: '10-18', v: 76 },
+                  { d: '10-19', v: 72 },
+                  { d: '10-20', v: 74 },
                 ].map((item, idx) => (
                   <div key={idx} className="flex-1 flex flex-col items-center space-y-1">
                     <span className="text-[10px] font-mono text-emerald-700 font-bold">{item.v}</span>

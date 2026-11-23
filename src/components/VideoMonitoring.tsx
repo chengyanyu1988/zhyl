@@ -170,7 +170,7 @@ export const VideoMonitoring: React.FC<VideoMonitoringProps> = ({
         </div>
       </div>
 
-      {/* Alarms Table (Descending from 2026-09-18 down to 2026-09-01) */}
+      {/* Alarms Table (Descending from 2026-10-18 down to 2026-10-01) */}
       <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] min-h-[500px]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-gray-100 gap-4">
           <div className="flex items-center space-x-3">
@@ -179,14 +179,14 @@ export const VideoMonitoring: React.FC<VideoMonitoringProps> = ({
               安防与健康告警事件处置记录
             </h2>
             <span className="text-xs text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200 font-medium">
-              共 {filteredAlarms.length} 项告警流水 (2026年9月)
+              共 {filteredAlarms.length} 项告警流水 (2026年10月)
             </span>
           </div>
 
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center space-x-1.5 text-xs text-emerald-700 bg-emerald-50/80 px-2.5 py-1 rounded-md border border-emerald-200">
               <ArrowUpDown className="w-3 h-3" />
-              <span>按告警触发时间降序 (2026-09-18 至 2026-09-01)</span>
+              <span>按告警触发时间降序 (2026-10-18 至 2026-10-01)</span>
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ export const VideoMonitoring: React.FC<VideoMonitoringProps> = ({
             </thead>
             <tbody className="divide-y divide-gray-50">
               {filteredAlarms.map((alm) => {
-                const isYesterday = alm.triggerTime.startsWith('2026-09-18');
+                const isYesterday = alm.triggerTime.startsWith('2026-10-18');
 
                 return (
                   <tr key={alm.id} className="hover:bg-gray-50/70 transition-colors">

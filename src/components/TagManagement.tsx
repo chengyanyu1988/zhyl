@@ -43,7 +43,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '自动标签',
     userCount: 320,
     updater: '李明明',
-    updateTime: '2026-09-19 16:35:20',
+    updateTime: '2026-10-19 16:35:20',
     status: true,
   },
   {
@@ -52,7 +52,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '自动标签',
     userCount: 268,
     updater: '王芳',
-    updateTime: '2026-09-19 14:12:08',
+    updateTime: '2026-10-19 14:12:08',
     status: true,
   },
   {
@@ -61,7 +61,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '自动标签',
     userCount: 215,
     updater: '张建国',
-    updateTime: '2026-09-19 10:09:09',
+    updateTime: '2026-10-19 10:09:09',
     status: true,
   },
   {
@@ -70,7 +70,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '手动标签',
     userCount: 184,
     updater: '陈晓华',
-    updateTime: '2026-09-18 17:45:30',
+    updateTime: '2026-10-18 17:45:30',
     status: true,
   },
   {
@@ -79,7 +79,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '自动标签',
     userCount: 156,
     updater: '赵云',
-    updateTime: '2026-09-18 11:20:15',
+    updateTime: '2026-10-18 11:20:15',
     status: true,
   },
   {
@@ -88,7 +88,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '手动标签',
     userCount: 142,
     updater: '孙倩',
-    updateTime: '2026-09-17 15:30:40',
+    updateTime: '2026-10-17 15:30:40',
     status: true,
   },
   {
@@ -97,7 +97,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '手动标签',
     userCount: 128,
     updater: '刘洋',
-    updateTime: '2026-09-16 09:18:22',
+    updateTime: '2026-10-16 09:18:22',
     status: true,
   },
   {
@@ -106,7 +106,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '自动标签',
     userCount: 95,
     updater: '周伟',
-    updateTime: '2026-09-15 14:05:10',
+    updateTime: '2026-10-15 14:05:10',
     status: true,
   },
   {
@@ -115,7 +115,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '手动标签',
     userCount: 84,
     updater: '钱佳',
-    updateTime: '2026-09-14 11:42:00',
+    updateTime: '2026-10-14 11:42:00',
     status: true,
   },
   {
@@ -124,7 +124,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '自动标签',
     userCount: 76,
     updater: '吴敏',
-    updateTime: '2026-09-13 16:20:00',
+    updateTime: '2026-10-13 16:20:00',
     status: true,
   },
   {
@@ -133,7 +133,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '手动标签',
     userCount: 68,
     updater: '李明明',
-    updateTime: '2026-09-11 10:15:30',
+    updateTime: '2026-10-11 10:15:30',
     status: true,
   },
   {
@@ -142,7 +142,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '手动标签',
     userCount: 52,
     updater: '王芳',
-    updateTime: '2026-09-08 14:50:12',
+    updateTime: '2026-10-08 14:50:12',
     status: true,
   },
   {
@@ -151,7 +151,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '手动标签',
     userCount: 45,
     updater: '张建国',
-    updateTime: '2026-09-05 09:30:00',
+    updateTime: '2026-10-05 09:30:00',
     status: false,
   },
   {
@@ -160,7 +160,7 @@ const INITIAL_TAGS: TagItem[] = [
     type: '自动标签',
     userCount: 38,
     updater: '陈晓华',
-    updateTime: '2026-09-02 11:00:00',
+    updateTime: '2026-10-02 11:00:00',
     status: true,
   },
 ];
@@ -274,7 +274,7 @@ export const TagManagement: React.FC<TagManagementProps> = ({ onNotice }) => {
                 status: tagStatus,
                 type: tagType,
                 updater: '李明明',
-                updateTime: '2026-09-19 17:10:00',
+                updateTime: '2026-10-19 17:10:00',
                 conditionRule: {
                   matchType,
                   buyCountEnabled,
@@ -298,7 +298,7 @@ export const TagManagement: React.FC<TagManagementProps> = ({ onNotice }) => {
         type: tagType,
         userCount: 0,
         updater: '李明明',
-        updateTime: '2026-09-19 17:15:00',
+        updateTime: '2026-10-19 17:15:00',
         status: tagStatus,
         conditionRule: {
           matchType,

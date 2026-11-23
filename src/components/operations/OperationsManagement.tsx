@@ -27,7 +27,7 @@ interface OperationsManagementProps {
   onNotice: (msg: string) => void;
 }
 
-// Initial Mock Data (All dates in 2026-09-01 .. 2026-09-19, sorted DESCENDING)
+// Initial Mock Data (All dates in 2026-10-01 .. 2026-10-19, sorted DESCENDING)
 const INITIAL_DYNAMICS: DynamicPostItem[] = [
   {
     id: 'DYN_001',
@@ -40,7 +40,7 @@ const INITIAL_DYNAMICS: DynamicPostItem[] = [
     publisherName: '笑看人生',
     publisherPhone: '192****4488',
     publisherAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
-    publishTime: '2026-09-19 16:45:10',
+    publishTime: '2026-10-19 16:45:10',
     status: '显示',
     image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=160&auto=format&fit=crop&q=80',
   },
@@ -55,7 +55,7 @@ const INITIAL_DYNAMICS: DynamicPostItem[] = [
     publisherName: '张建国',
     publisherPhone: '138****9012',
     publisherAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
-    publishTime: '2026-09-18 14:20:00',
+    publishTime: '2026-10-18 14:20:00',
     status: '显示',
     image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=160&auto=format&fit=crop&q=80',
   },
@@ -70,7 +70,7 @@ const INITIAL_DYNAMICS: DynamicPostItem[] = [
     publisherName: '秋水长天',
     publisherPhone: '159****3341',
     publisherAvatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80',
-    publishTime: '2026-09-17 08:30:15',
+    publishTime: '2026-10-17 08:30:15',
     status: '显示',
     image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=160&auto=format&fit=crop&q=80',
   },
@@ -85,7 +85,7 @@ const INITIAL_DYNAMICS: DynamicPostItem[] = [
     publisherName: '陈阿姨厨艺',
     publisherPhone: '136****8899',
     publisherAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
-    publishTime: '2026-09-15 18:10:00',
+    publishTime: '2026-10-15 18:10:00',
     status: '显示',
     image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=160&auto=format&fit=crop&q=80',
   },
@@ -100,7 +100,7 @@ const INITIAL_DYNAMICS: DynamicPostItem[] = [
     publisherName: '老刘头',
     publisherPhone: '177****5521',
     publisherAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
-    publishTime: '2026-09-12 15:00:22',
+    publishTime: '2026-10-12 15:00:22',
     status: '显示',
     image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=160&auto=format&fit=crop&q=80',
   },
@@ -115,7 +115,7 @@ const INITIAL_DYNAMICS: DynamicPostItem[] = [
     publisherName: '幸福安康',
     publisherPhone: '180****6677',
     publisherAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80',
-    publishTime: '2026-09-08 10:45:00',
+    publishTime: '2026-10-08 10:45:00',
     status: '显示',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=160&auto=format&fit=crop&q=80',
   },
@@ -130,7 +130,7 @@ const INITIAL_DYNAMICS: DynamicPostItem[] = [
     publisherName: '阳光护工小李',
     publisherPhone: '135****1122',
     publisherAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=80',
-    publishTime: '2026-09-03 16:30:00',
+    publishTime: '2026-10-03 16:30:00',
     status: '隐藏',
     image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=160&auto=format&fit=crop&q=80',
   },
@@ -145,7 +145,7 @@ const INITIAL_TOPICS: TopicItem[] = [
     shareCount: 8200,
     followCount: 450,
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-19 10:09:09',
+    lastUpdateTime: '2026-10-19 10:09:09',
     status: '启用',
   },
   {
@@ -156,7 +156,7 @@ const INITIAL_TOPICS: TopicItem[] = [
     shareCount: 5100,
     followCount: 320,
     lastUpdater: '王强',
-    lastUpdateTime: '2026-09-18 16:30:00',
+    lastUpdateTime: '2026-10-18 16:30:00',
     status: '启用',
   },
   {
@@ -167,7 +167,7 @@ const INITIAL_TOPICS: TopicItem[] = [
     shareCount: 12400,
     followCount: 890,
     lastUpdater: '刘雪',
-    lastUpdateTime: '2026-09-16 11:20:15',
+    lastUpdateTime: '2026-10-16 11:20:15',
     status: '启用',
   },
   {
@@ -178,7 +178,7 @@ const INITIAL_TOPICS: TopicItem[] = [
     shareCount: 3800,
     followCount: 210,
     lastUpdater: '陈管理',
-    lastUpdateTime: '2026-09-14 09:15:00',
+    lastUpdateTime: '2026-10-14 09:15:00',
     status: '启用',
   },
   {
@@ -189,7 +189,7 @@ const INITIAL_TOPICS: TopicItem[] = [
     shareCount: 2900,
     followCount: 175,
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-10 14:00:00',
+    lastUpdateTime: '2026-10-10 14:00:00',
     status: '启用',
   },
   {
@@ -200,7 +200,7 @@ const INITIAL_TOPICS: TopicItem[] = [
     shareCount: 1900,
     followCount: 130,
     lastUpdater: '张三峰',
-    lastUpdateTime: '2026-09-05 17:40:00',
+    lastUpdateTime: '2026-10-05 17:40:00',
     status: '禁用',
   },
 ];
@@ -213,7 +213,7 @@ const INITIAL_BANNERS: BannerItem[] = [
     title: '2026年摄影比赛宣传',
     linkUrl: 'https://example.com/activity/photo2026',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-18 10:09:09',
+    lastUpdateTime: '2026-10-18 10:09:09',
     status: '启用',
   },
   {
@@ -223,7 +223,7 @@ const INITIAL_BANNERS: BannerItem[] = [
     title: '秋季老年健康体检优惠月',
     linkUrl: 'https://example.com/checkup/autumn',
     lastUpdater: '王强',
-    lastUpdateTime: '2026-09-16 14:30:00',
+    lastUpdateTime: '2026-10-16 14:30:00',
     status: '启用',
   },
   {
@@ -233,7 +233,7 @@ const INITIAL_BANNERS: BannerItem[] = [
     title: '社区日照中心重阳节特别活动',
     linkUrl: 'https://example.com/activity/chongyang',
     lastUpdater: '张丽华',
-    lastUpdateTime: '2026-09-12 09:10:00',
+    lastUpdateTime: '2026-10-12 09:10:00',
     status: '启用',
   },
   {
@@ -243,7 +243,7 @@ const INITIAL_BANNERS: BannerItem[] = [
     title: '智慧居家养老服务平台上线指南',
     linkUrl: 'https://example.com/guide/homecare',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-04 11:25:00',
+    lastUpdateTime: '2026-10-04 11:25:00',
     status: '启用',
   },
 ];
@@ -254,72 +254,72 @@ const INITIAL_ACTIVITIES: ActivityItem[] = [
     title: '桂花小区老年摄影大赛火热进行中',
     status: '进行中',
     category: '文化娱乐',
-    startDate: '2026-09-10',
-    endDate: '2026-09-25',
+    startDate: '2026-10-10',
+    endDate: '2026-10-25',
     location: '桂花小区',
     imageUrl: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=200&auto=format&fit=crop&q=80',
-    registrationDeadline: '2026-09-22',
+    registrationDeadline: '2026-10-22',
     description: '欢迎广大老年摄影爱好者捕捉金秋时节的美好生活光影。作品将通过专业评委评分并颁发丰厚奖品。',
     enableRegistration: true,
     publishType: '立即发布',
-    publishTime: '2026-09-09 10:00:00',
+    publishTime: '2026-10-09 10:00:00',
     remarks: '需要自带摄影设备',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-18 10:09:09',
+    lastUpdateTime: '2026-10-18 10:09:09',
   },
   {
     id: 'ACT_002',
     title: '社区金秋健步走与健康讲座',
     status: '进行中',
     category: '体育健身',
-    startDate: '2026-09-15',
-    endDate: '2026-09-28',
+    startDate: '2026-10-15',
+    endDate: '2026-10-28',
     location: '滨江森林公园',
     imageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=200&auto=format&fit=crop&q=80',
-    registrationDeadline: '2026-09-24',
+    registrationDeadline: '2026-10-24',
     description: '结伴同行，呼吸清新空气，听心血管专家现场解答老年秋季保健知识。',
     enableRegistration: true,
     publishType: '立即发布',
-    publishTime: '2026-09-14 08:30:00',
+    publishTime: '2026-10-14 08:30:00',
     remarks: '免费提供饮用水与健康手册',
     lastUpdater: '张丽华',
-    lastUpdateTime: '2026-09-17 15:20:00',
+    lastUpdateTime: '2026-10-17 15:20:00',
   },
   {
     id: 'ACT_003',
     title: '书画交流与中秋名家作品展',
     status: '已结束',
     category: '文化娱乐',
-    startDate: '2026-09-02',
-    endDate: '2026-09-08',
+    startDate: '2026-10-02',
+    endDate: '2026-10-08',
     location: '社区活动中心大厅',
     imageUrl: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=200&auto=format&fit=crop&q=80',
-    registrationDeadline: '2026-09-01',
+    registrationDeadline: '2026-10-01',
     description: '展示社区老同志现场临摹与创作的优秀书法作品，弘扬传统美德。',
     enableRegistration: false,
     publishType: '立即发布',
-    publishTime: '2026-09-01 09:00:00',
+    publishTime: '2026-10-01 09:00:00',
     remarks: '已顺利闭幕',
     lastUpdater: '王强',
-    lastUpdateTime: '2026-09-09 09:00:00',
+    lastUpdateTime: '2026-10-09 09:00:00',
   },
   {
     id: 'ACT_004',
     title: '智能手机应用全能培训班',
     status: '未开始',
     category: '教育培训',
-    startDate: '2026-09-22',
+    startDate: '2026-10-22',
     endDate: '2026-10-10',
     location: '日照中心多媒体教室',
     imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=200&auto=format&fit=crop&q=80',
-    registrationDeadline: '2026-09-21',
+    registrationDeadline: '2026-10-21',
     description: '一步步教授使用微信支付、网约车、网上挂号及防诈骗知识。',
     enableRegistration: true,
     publishType: '立即发布',
-    publishTime: '2026-09-12 11:00:00',
+    publishTime: '2026-10-12 11:00:00',
     remarks: '需自备智能手机',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-12 11:30:00',
+    lastUpdateTime: '2026-10-12 11:30:00',
   },
 ];
 
@@ -335,7 +335,7 @@ const INITIAL_REGISTRATIONS: ActivityRegistrationItem[] = [
     photographyDuration: '2年',
     address: '徐汇区黎梅花园88栋3单元101',
     status: '待审核',
-    submitTime: '2026-09-19 14:20:00',
+    submitTime: '2026-10-19 14:20:00',
     remarks: '热爱风光摄影',
   },
   {
@@ -349,7 +349,7 @@ const INITIAL_REGISTRATIONS: ActivityRegistrationItem[] = [
     photographyDuration: '5年',
     address: '静安区绿地新城12号202',
     status: '待审核',
-    submitTime: '2026-09-18 10:09:09',
+    submitTime: '2026-10-18 10:09:09',
     remarks: '自带单反相机',
   },
   {
@@ -363,7 +363,7 @@ const INITIAL_REGISTRATIONS: ActivityRegistrationItem[] = [
     photographyDuration: '1年',
     address: '普陀区长寿路500号804',
     status: '审核通过',
-    submitTime: '2026-09-16 16:45:00',
+    submitTime: '2026-10-16 16:45:00',
     remarks: '合规准入',
   },
   {
@@ -377,7 +377,7 @@ const INITIAL_REGISTRATIONS: ActivityRegistrationItem[] = [
     photographyDuration: '3年',
     address: '长宁区天山路120弄',
     status: '审核通过',
-    submitTime: '2026-09-14 11:30:00',
+    submitTime: '2026-10-14 11:30:00',
     remarks: '符合要求',
   },
   {
@@ -391,7 +391,7 @@ const INITIAL_REGISTRATIONS: ActivityRegistrationItem[] = [
     photographyDuration: '零基础',
     address: '虹口区四川北路1880号',
     status: '审核不通过',
-    submitTime: '2026-09-10 09:15:00',
+    submitTime: '2026-10-10 09:15:00',
     remarks: '未在服务区域内',
   },
 ];
@@ -405,7 +405,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '请输入QQ号码',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-19 10:09:09',
+    lastUpdateTime: '2026-10-19 10:09:09',
     status: '启用',
   },
   {
@@ -416,7 +416,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '如：已退休5年',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-18 15:20:00',
+    lastUpdateTime: '2026-10-18 15:20:00',
     status: '启用',
   },
   {
@@ -427,7 +427,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '如：书法、太极、摄影',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-17 11:40:00',
+    lastUpdateTime: '2026-10-17 11:40:00',
     status: '启用',
   },
   {
@@ -438,7 +438,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '如：周一至周五上午',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-16 09:05:00',
+    lastUpdateTime: '2026-10-16 09:05:00',
     status: '启用',
   },
   {
@@ -449,7 +449,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '如：2年',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-14 14:10:00',
+    lastUpdateTime: '2026-10-14 14:10:00',
     status: '启用',
   },
   {
@@ -460,7 +460,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '请输入详细家庭住址',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-12 16:30:00',
+    lastUpdateTime: '2026-10-12 16:30:00',
     status: '启用',
   },
   {
@@ -471,7 +471,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '请输入微信号码',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-10 10:00:00',
+    lastUpdateTime: '2026-10-10 10:00:00',
     status: '启用',
   },
   {
@@ -482,7 +482,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '请输入手机号码',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-08 11:15:00',
+    lastUpdateTime: '2026-10-08 11:15:00',
     status: '启用',
   },
   {
@@ -493,7 +493,7 @@ const INITIAL_FIELDS: ActivityFieldItem[] = [
     isRequired: true,
     placeholder: '请输入年龄',
     lastUpdater: '李明明',
-    lastUpdateTime: '2026-09-05 13:40:00',
+    lastUpdateTime: '2026-10-05 13:40:00',
     status: '启用',
   },
 ];
@@ -598,7 +598,7 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
         shareCount: 0,
         followCount: 0,
         lastUpdater: '系统管理员',
-        lastUpdateTime: '2026-09-19 18:00:00',
+        lastUpdateTime: '2026-10-19 18:00:00',
         status: topicForm.status,
       };
       setTopics([newT, ...topics]);
@@ -611,7 +611,7 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
                 ...t,
                 topicName: topicForm.topicName,
                 status: topicForm.status,
-                lastUpdateTime: '2026-09-19 18:10:00',
+                lastUpdateTime: '2026-10-19 18:10:00',
                 lastUpdater: '编辑管理员',
               }
             : t
@@ -675,7 +675,7 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
         title: editingBanner.title,
         linkUrl: editingBanner.linkUrl || '',
         lastUpdater: '系统管理员',
-        lastUpdateTime: '2026-09-19 17:30:00',
+        lastUpdateTime: '2026-10-19 17:30:00',
         status: (editingBanner.status as '启用' | '禁用') || '启用',
       };
       setBanners([newB, ...banners]);
@@ -688,7 +688,7 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
                 ...b,
                 ...editingBanner,
                 sortOrder: Number(editingBanner.sortOrder),
-                lastUpdateTime: '2026-09-19 17:40:00',
+                lastUpdateTime: '2026-10-19 17:40:00',
               }
             : b
         )
@@ -723,11 +723,11 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
   const [activityForm, setActivityForm] = useState<Partial<ActivityItem>>({
     title: '',
     category: '文化娱乐',
-    startDate: '2026-09-20',
-    endDate: '2026-09-30',
+    startDate: '2026-10-20',
+    endDate: '2026-10-30',
     location: '',
     imageUrl: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=200&auto=format&fit=crop&q=80',
-    registrationDeadline: '2026-09-25',
+    registrationDeadline: '2026-10-25',
     description: '',
     enableRegistration: true,
     publishType: '立即发布',
@@ -763,7 +763,7 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
             ? {
                 ...a,
                 ...activityForm,
-                lastUpdateTime: '2026-09-19 16:50:00',
+                lastUpdateTime: '2026-10-19 16:50:00',
               }
             : a
         )
@@ -775,18 +775,18 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
         title: activityForm.title,
         status: (activityForm.status as any) || '进行中',
         category: activityForm.category || '文化娱乐',
-        startDate: activityForm.startDate || '2026-09-20',
-        endDate: activityForm.endDate || '2026-09-30',
+        startDate: activityForm.startDate || '2026-10-20',
+        endDate: activityForm.endDate || '2026-10-30',
         location: activityForm.location || '社区中心',
         imageUrl: activityForm.imageUrl || 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=200&auto=format&fit=crop&q=80',
-        registrationDeadline: activityForm.registrationDeadline || '2026-09-25',
+        registrationDeadline: activityForm.registrationDeadline || '2026-10-25',
         description: activityForm.description || '',
         enableRegistration: activityForm.enableRegistration ?? true,
         publishType: activityForm.publishType || '立即发布',
-        publishTime: '2026-09-19 16:50:00',
+        publishTime: '2026-10-19 16:50:00',
         remarks: activityForm.remarks || '',
         lastUpdater: '系统管理员',
-        lastUpdateTime: '2026-09-19 16:50:00',
+        lastUpdateTime: '2026-10-19 16:50:00',
       };
       setActivities([newA, ...activities]);
       onNotice(`已成功新增活动“${newA.title}”`);
@@ -847,7 +847,7 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
               ...r,
               ...reviewForm,
               status: targetStatus,
-              submitTime: '2026-09-19 17:00:00',
+              submitTime: '2026-10-19 17:00:00',
             }
           : r
       )
@@ -926,7 +926,7 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
         isRequired: fieldForm.isRequired ?? true,
         placeholder: fieldForm.placeholder || '',
         lastUpdater: '李明明',
-        lastUpdateTime: '2026-09-19 17:15:00',
+        lastUpdateTime: '2026-10-19 17:15:00',
         status: (fieldForm.status as any) || '启用',
       };
       setFields([newF, ...fields]);
@@ -939,7 +939,7 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
                 ...f,
                 ...fieldForm,
                 sortOrder: Number(fieldForm.sortOrder),
-                lastUpdateTime: '2026-09-19 17:20:00',
+                lastUpdateTime: '2026-10-19 17:20:00',
               }
             : f
         )
@@ -1841,11 +1841,11 @@ export const OperationsManagement: React.FC<OperationsManagementProps> = ({
                 setActivityForm({
                   title: '',
                   category: '文化娱乐',
-                  startDate: '2026-09-20',
-                  endDate: '2026-09-30',
+                  startDate: '2026-10-20',
+                  endDate: '2026-10-30',
                   location: '社区中心',
                   imageUrl: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=200&auto=format&fit=crop&q=80',
-                  registrationDeadline: '2026-09-25',
+                  registrationDeadline: '2026-10-25',
                   description: '',
                   enableRegistration: true,
                   publishType: '立即发布',

@@ -17,7 +17,7 @@ const INITIAL_INSTITUTIONS: InstitutionItem[] = [
     collectsCount: 35,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-19 10:09:09',
+    lastUpdateTime: '2026-10-19 10:09:09',
     coverImage: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=200&auto=format&fit=crop&q=80',
     businessHours: '08:00 - 20:00',
     address: '北京市朝阳区北苑路88号院',
@@ -32,7 +32,7 @@ const INITIAL_INSTITUTIONS: InstitutionItem[] = [
     collectsCount: 62,
     status: '已发布',
     updater: '张主管',
-    lastUpdateTime: '2026-09-17 15:30:00',
+    lastUpdateTime: '2026-10-17 15:30:00',
     coverImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200&auto=format&fit=crop&q=80',
     businessHours: '24小时全天候',
     address: '北京市昌平区南头村泰康路1号',
@@ -47,7 +47,7 @@ const INITIAL_INSTITUTIONS: InstitutionItem[] = [
     collectsCount: 41,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-14 09:40:00',
+    lastUpdateTime: '2026-10-14 09:40:00',
     coverImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=200&auto=format&fit=crop&q=80',
     businessHours: '08:00 - 18:00',
     address: '上海市浦东新区秀浦路2555号',
@@ -62,7 +62,7 @@ const INITIAL_INSTITUTIONS: InstitutionItem[] = [
     collectsCount: 28,
     status: '已发布',
     updater: '王主管',
-    lastUpdateTime: '2026-09-10 11:15:00',
+    lastUpdateTime: '2026-10-10 11:15:00',
     coverImage: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=200&auto=format&fit=crop&q=80',
     businessHours: '24小时全天候',
     address: '北京市朝阳区管庄东里',
@@ -77,7 +77,7 @@ const INITIAL_INSTITUTIONS: InstitutionItem[] = [
     collectsCount: 55,
     status: '已发布',
     updater: '李明明',
-    lastUpdateTime: '2026-09-05 16:00:00',
+    lastUpdateTime: '2026-10-05 16:00:00',
     coverImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=200&auto=format&fit=crop&q=80',
     businessHours: '24小时全天候',
     address: '北京市朝阳区双井广渠门外大街1号',
@@ -92,7 +92,7 @@ const INITIAL_TAGS: InstitutionTagItem[] = [
     name: '24小时监护',
     institutionCount: 500,
     updater: '李明明',
-    lastUpdateTime: '2026-09-18 10:09:09',
+    lastUpdateTime: '2026-10-18 10:09:09',
     status: '启用',
   },
   {
@@ -100,7 +100,7 @@ const INITIAL_TAGS: InstitutionTagItem[] = [
     name: '特殊护理',
     institutionCount: 380,
     updater: '李明明',
-    lastUpdateTime: '2026-09-16 14:30:00',
+    lastUpdateTime: '2026-10-16 14:30:00',
     status: '启用',
   },
   {
@@ -108,7 +108,7 @@ const INITIAL_TAGS: InstitutionTagItem[] = [
     name: '康复训练',
     institutionCount: 290,
     updater: '李明明',
-    lastUpdateTime: '2026-09-14 11:00:00',
+    lastUpdateTime: '2026-10-14 11:00:00',
     status: '启用',
   },
   {
@@ -116,7 +116,7 @@ const INITIAL_TAGS: InstitutionTagItem[] = [
     name: '临终关怀',
     institutionCount: 150,
     updater: '李明明',
-    lastUpdateTime: '2026-09-11 09:20:00',
+    lastUpdateTime: '2026-10-11 09:20:00',
     status: '启用',
   },
   {
@@ -124,7 +124,7 @@ const INITIAL_TAGS: InstitutionTagItem[] = [
     name: '认知症照护',
     institutionCount: 220,
     updater: '李明明',
-    lastUpdateTime: '2026-09-08 16:45:00',
+    lastUpdateTime: '2026-10-08 16:45:00',
     status: '启用',
   },
   {
@@ -132,7 +132,7 @@ const INITIAL_TAGS: InstitutionTagItem[] = [
     name: '日间照料',
     institutionCount: 310,
     updater: '李明明',
-    lastUpdateTime: '2026-09-04 10:15:00',
+    lastUpdateTime: '2026-10-04 10:15:00',
     status: '启用',
   },
 ];
@@ -209,10 +209,11 @@ export const InstitutionManagement: React.FC<InstitutionManagementProps> = ({
         name: '',
         phone: '',
         address: '',
-        businessHours: '08:00 - 20:00',
+        businessHours: '',
         status: '已发布',
-        coverImage: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=200&auto=format&fit=crop&q=80',
-        featureTags: ['24h监护', '特殊护理'],
+        coverImage: '',
+        featureTags: [],
+        detailHtml: '',
       });
       setInstModal({ isOpen: true, item: null, isCreate: true });
     }
@@ -233,7 +234,7 @@ export const InstitutionManagement: React.FC<InstitutionManagementProps> = ({
         collectsCount: 0,
         status: (instForm.status as any) || '已发布',
         updater: '管理员',
-        lastUpdateTime: '2026-09-19 16:30:00',
+        lastUpdateTime: '2026-10-19 16:30:00',
         coverImage: instForm.coverImage,
         businessHours: instForm.businessHours,
         address: instForm.address,
@@ -244,7 +245,7 @@ export const InstitutionManagement: React.FC<InstitutionManagementProps> = ({
     } else if (instModal.item) {
       setInstitutions(
         institutions.map((i) =>
-          i.id === instModal.item!.id ? { ...i, ...instForm, lastUpdateTime: '2026-09-19 16:30:00' } : i
+          i.id === instModal.item!.id ? { ...i, ...instForm, lastUpdateTime: '2026-10-19 16:30:00' } : i
         )
       );
       onNotice('机构数据已被修改');
@@ -271,7 +272,7 @@ export const InstitutionManagement: React.FC<InstitutionManagementProps> = ({
         name: tagForm.name,
         institutionCount: 0,
         updater: '管理员',
-        lastUpdateTime: '2026-09-19 16:00:00',
+        lastUpdateTime: '2026-10-19 16:00:00',
         status: tagForm.status,
       };
       setTags([newTag, ...tags]);
@@ -280,7 +281,7 @@ export const InstitutionManagement: React.FC<InstitutionManagementProps> = ({
       setTags(
         tags.map((t) =>
           t.id === tagModal.item!.id
-            ? { ...t, name: tagForm.name, status: tagForm.status, lastUpdateTime: '2026-09-19 16:00:00' }
+            ? { ...t, name: tagForm.name, status: tagForm.status, lastUpdateTime: '2026-10-19 16:00:00' }
             : t
         )
       );
@@ -463,14 +464,17 @@ export const InstitutionManagement: React.FC<InstitutionManagementProps> = ({
           </div>
         </div>
 
-        {/* Modal for Inst */}
+        {/* Modal for Inst matching screenshot */}
         {instModal.isOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs">
-            <div className="bg-white rounded-xl w-full max-w-lg overflow-hidden shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-150">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs overflow-y-auto py-10">
+            <div className="bg-white rounded-xl w-full max-w-3xl overflow-hidden shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-150 my-auto">
               <div className="px-6 py-4 flex items-center justify-between border-b border-gray-100">
-                <h3 className="text-sm font-semibold text-gray-800">
-                  {instModal.isCreate ? '新增养老机构' : '编辑养老机构'}
-                </h3>
+                <div className="flex items-center space-x-2.5">
+                  <span className="w-1 h-4 bg-[#10b981] rounded-full"></span>
+                  <h3 className="text-sm font-semibold text-gray-800">
+                    {instModal.isCreate ? '新增机构' : '编辑机构'}
+                  </h3>
+                </div>
                 <button
                   onClick={() => setInstModal({ isOpen: false, item: null, isCreate: false })}
                   className="text-gray-400 hover:text-gray-600 p-1"
@@ -479,75 +483,227 @@ export const InstitutionManagement: React.FC<InstitutionManagementProps> = ({
                 </button>
               </div>
 
-              <form onSubmit={handleSaveInst} className="p-6 space-y-4 text-xs">
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">机构名称 <span className="text-red-500">*</span></label>
-                  <input
-                    type="text"
-                    required
-                    value={instForm.name || ''}
-                    onChange={(e) => setInstForm({ ...instForm, name: e.target.value })}
-                    placeholder="请输入机构名称"
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <label className="text-gray-600 font-medium">联系电话</label>
+              <form onSubmit={handleSaveInst} className="p-6 space-y-6 text-xs max-h-[80vh] overflow-y-auto">
+                {/* 机构名称 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    机构名称 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10">
                     <input
                       type="text"
-                      value={instForm.phone || ''}
-                      onChange={(e) => setInstForm({ ...instForm, phone: e.target.value })}
-                      placeholder="010-88886666"
-                      className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
+                      required
+                      value={instForm.name || ''}
+                      onChange={(e) => setInstForm({ ...instForm, name: e.target.value })}
+                      placeholder="请输入"
+                      className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981] text-gray-800 placeholder-gray-400"
                     />
                   </div>
+                </div>
 
-                  <div className="space-y-1">
-                    <label className="text-gray-600 font-medium">营业时间</label>
+                {/* 机构封面 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    机构封面 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10 space-y-2">
+                    <div className="flex items-center space-x-3">
+                      {instForm.coverImage ? (
+                        <div className="relative w-28 h-28 border border-gray-200 rounded-lg overflow-hidden group">
+                          <img src={instForm.coverImage} alt="封面预览" className="w-full h-full object-cover" />
+                          <button
+                            type="button"
+                            onClick={() => setInstForm({ ...instForm, coverImage: '' })}
+                            className="absolute inset-0 bg-black/40 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity"
+                          >
+                            更换图片
+                          </button>
+                        </div>
+                      ) : (
+                        <label className="w-28 h-28 border-2 border-dashed border-gray-200 hover:border-[#10b981] rounded-lg flex flex-col items-center justify-center cursor-pointer bg-gray-50/50 hover:bg-emerald-50/30 transition-colors text-gray-400 hover:text-[#10b981]">
+                          <Plus className="w-6 h-6 mb-1" />
+                          <span className="text-xs font-medium">上传图片</span>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            onChange={(e) => {
+                              if (e.target.files && e.target.files[0]) {
+                                const url = URL.createObjectURL(e.target.files[0]);
+                                setInstForm({ ...instForm, coverImage: url });
+                                onNotice('封面图片上传成功');
+                              }
+                            }}
+                          />
+                        </label>
+                      )}
+                    </div>
+                    <p className="text-gray-400 text-[11px]">
+                      支持jpg, png等格式文件上传，文件大小不超过10MB
+                    </p>
+                  </div>
+                </div>
+
+                {/* 特色服务 & 营业时间 */}
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  <label className="col-span-2 text-right text-gray-700 font-medium">
+                    特色服务 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-4">
+                    <select
+                      className="w-full px-3 py-2 border border-gray-200 rounded-md bg-white text-gray-700 focus:outline-none focus:border-[#10b981]"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>请选择</option>
+                      <option value="24h监护">24h监护</option>
+                      <option value="特殊护理">特殊护理</option>
+                      <option value="日间照料">日间照料</option>
+                      <option value="康复理疗">康复理疗</option>
+                    </select>
+                  </div>
+
+                  <label className="col-span-2 text-right text-gray-700 font-medium">营业时间</label>
+                  <div className="col-span-4">
                     <input
                       type="text"
                       value={instForm.businessHours || ''}
                       onChange={(e) => setInstForm({ ...instForm, businessHours: e.target.value })}
-                      placeholder="08:00 - 20:00"
-                      className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
+                      placeholder="请输入"
+                      className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981] text-gray-800 placeholder-gray-400"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">机构地址</label>
-                  <input
-                    type="text"
-                    value={instForm.address || ''}
-                    onChange={(e) => setInstForm({ ...instForm, address: e.target.value })}
-                    placeholder="请输入详细地址"
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
+                {/* 机构地址 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    机构地址 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10">
+                    <input
+                      type="text"
+                      required
+                      value={instForm.address || ''}
+                      onChange={(e) => setInstForm({ ...instForm, address: e.target.value })}
+                      placeholder="请输入"
+                      className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981] text-gray-800 placeholder-gray-400"
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">封面图片 URL</label>
-                  <input
-                    type="text"
-                    value={instForm.coverImage || ''}
-                    onChange={(e) => setInstForm({ ...instForm, coverImage: e.target.value })}
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                  />
+                {/* 联系电话 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    联系电话 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10">
+                    <input
+                      type="text"
+                      required
+                      value={instForm.phone || ''}
+                      onChange={(e) => setInstForm({ ...instForm, phone: e.target.value })}
+                      placeholder="请输入"
+                      className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981] text-gray-800 placeholder-gray-400"
+                    />
+                  </div>
                 </div>
 
+                {/* 发布时间 */}
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  <label className="col-span-2 text-right text-gray-700 font-medium">发布时间</label>
+                  <div className="col-span-10 space-y-3">
+                    <div className="flex items-center space-x-6">
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="instPublishRadio"
+                          defaultChecked
+                          className="text-[#10b981] focus:ring-[#10b981]"
+                        />
+                        <span className="text-gray-800 font-medium">立即发布</span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="instPublishRadio"
+                          className="text-[#10b981] focus:ring-[#10b981]"
+                        />
+                        <span className="text-gray-800">定时发布</span>
+                      </label>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-2 border border-gray-200 rounded-md px-3 py-1.5 bg-white w-48">
+                        <input
+                          type="date"
+                          className="w-full focus:outline-none text-gray-700 text-xs"
+                          placeholder="请选择日期"
+                        />
+                        <Calendar className="w-4 h-4 text-gray-400 shrink-0" />
+                      </div>
+                      <div className="flex items-center space-x-2 border border-gray-200 rounded-md px-3 py-1.5 bg-white w-32">
+                        <input
+                          type="text"
+                          defaultValue="12 : 00"
+                          className="w-full focus:outline-none text-gray-700 text-xs text-center font-mono"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 机构详情 */}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                    机构详情 <span className="text-red-500">*</span>
+                  </label>
+                  <div className="col-span-10 border border-gray-200 rounded-lg overflow-hidden bg-white">
+                    {/* Rich Text Toolbar */}
+                    <div className="flex flex-wrap items-center gap-1.5 px-3 py-2 bg-gray-50 border-b border-gray-200 text-gray-600">
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded font-bold text-xs" title="标题">H</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded font-bold" title="加粗">B</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded font-medium" title="正文样式">T</button>
+                      <span className="w-px h-4 bg-gray-300 mx-1"></span>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="删除线"><s>S</s></button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded italic" title="斜体">I</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded underline" title="下划线">U</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="文本颜色">A</button>
+                      <span className="w-px h-4 bg-gray-300 mx-1"></span>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="链接">🔗</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="列表">≡</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="对齐">☰</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="引用">“</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="表情">😊</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="图片">🖼️</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="表格">⊞</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="视频">▶</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded font-mono" title="代码块">&gt;_</button>
+                      <span className="w-px h-4 bg-gray-300 mx-1"></span>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="撤销">↩</button>
+                      <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="重做">↪</button>
+                    </div>
+                    <textarea
+                      rows={8}
+                      required
+                      value={instForm.detailHtml || ''}
+                      onChange={(e) => setInstForm({ ...instForm, detailHtml: e.target.value })}
+                      placeholder="请输入机构详细介绍与服务内容..."
+                      className="w-full p-3 focus:outline-none text-gray-800 text-xs resize-y"
+                    />
+                  </div>
+                </div>
+
+                {/* Footer buttons */}
                 <div className="pt-4 flex items-center justify-end space-x-3 border-t border-gray-100">
                   <button
                     type="button"
                     onClick={() => setInstModal({ isOpen: false, item: null, isCreate: false })}
-                    className="px-4 py-1.5 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-md"
+                    className="px-4 py-2 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-md font-medium"
                   >
                     取消
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-1.5 bg-[#10b981] hover:bg-[#059669] text-white rounded-md font-medium"
+                    className="px-6 py-2 bg-[#10b981] hover:bg-[#059669] text-white rounded-md font-medium transition-colors shadow-sm"
                   >
                     确定
                   </button>

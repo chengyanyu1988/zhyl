@@ -39,7 +39,7 @@ export const MedicationTab: React.FC<MedicationTabProps> = ({
   const [formUnit, setFormUnit] = useState('片');
   const [formQuantity, setFormQuantity] = useState('1');
   const [formReminder, setFormReminder] = useState(true);
-  const [formFirstReminderDate, setFormFirstReminderDate] = useState('2026-09-19');
+  const [formFirstReminderDate, setFormFirstReminderDate] = useState('2026-10-19');
 
   // Delete Confirm Modal State (matching Image 6)
   const [deleteTargetId, setDeleteTargetId] = useState<string | null>(null);
@@ -70,7 +70,7 @@ export const MedicationTab: React.FC<MedicationTabProps> = ({
     setFormUnit('片');
     setFormQuantity('1');
     setFormReminder(true);
-    setFormFirstReminderDate('2026-09-19');
+    setFormFirstReminderDate('2026-10-19');
     setShowEditModal(true);
   };
 
@@ -83,7 +83,7 @@ export const MedicationTab: React.FC<MedicationTabProps> = ({
     setFormUnit(med.unit || '片');
     setFormQuantity(med.quantity || '1');
     setFormReminder(med.reminderEnabled);
-    setFormFirstReminderDate(med.firstReminderDate || '2026-09-19');
+    setFormFirstReminderDate(med.firstReminderDate || '2026-10-19');
     setShowEditModal(true);
   };
 
@@ -128,7 +128,7 @@ export const MedicationTab: React.FC<MedicationTabProps> = ({
         firstReminderDate: formFirstReminderDate,
         source: '自主录入',
         addedBy: '照护主管',
-        addTime: '2026-09-19 16:30:00',
+        addTime: '2026-10-19 16:30:00',
       };
       setMedications((prev) => [newMed, ...prev]);
       onNotice(`已成功新增用药方案：${formName}`);

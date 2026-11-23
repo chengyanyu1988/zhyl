@@ -89,7 +89,7 @@ export const ServiceStaffAudit: React.FC<ServiceStaffAuditProps> = ({ onNotice }
             ...a,
             auditStatus: '审核通过' as const,
             auditor: '当前管理员',
-            auditTime: '2026-09-19 16:45:00',
+            auditTime: '2026-10-19 16:45:00',
           }
         : a
     );
@@ -98,7 +98,7 @@ export const ServiceStaffAudit: React.FC<ServiceStaffAuditProps> = ({ onNotice }
       ...item,
       auditStatus: '审核通过',
       auditor: '当前管理员',
-      auditTime: '2026-09-19 16:45:00',
+      auditTime: '2026-10-19 16:45:00',
     });
     onNotice(`已通过【${item.name}】的服务人员资质审核`);
   };
@@ -118,7 +118,7 @@ export const ServiceStaffAudit: React.FC<ServiceStaffAuditProps> = ({ onNotice }
             ...a,
             auditStatus: '已驳回' as const,
             auditor: '当前管理员',
-            auditTime: '2026-09-19 16:45:00',
+            auditTime: '2026-10-19 16:45:00',
             intro: `${a.intro} [驳回原因: ${reason}]`,
           }
         : a
@@ -128,7 +128,7 @@ export const ServiceStaffAudit: React.FC<ServiceStaffAuditProps> = ({ onNotice }
       ...activeAudit,
       auditStatus: '已驳回',
       auditor: '当前管理员',
-      auditTime: '2026-09-19 16:45:00',
+      auditTime: '2026-10-19 16:45:00',
     });
     setRejectModalOpen(false);
     onNotice(`已驳回【${activeAudit.name}】的审核申请: ${reason}`);
@@ -416,8 +416,8 @@ export const ServiceStaffAudit: React.FC<ServiceStaffAuditProps> = ({ onNotice }
             <div className="flex items-center space-x-2 flex-1">
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"
@@ -425,8 +425,8 @@ export const ServiceStaffAudit: React.FC<ServiceStaffAuditProps> = ({ onNotice }
               <span className="text-gray-400">~</span>
               <input
                 type="date"
-                min="2026-09-01"
-                max="2026-09-19"
+                min="2026-10-01"
+                max="2026-10-19"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
                 className="flex-1 px-2.5 py-1.5 border border-gray-200 rounded-md text-gray-700 text-xs focus:outline-none focus:border-[#10b981]"

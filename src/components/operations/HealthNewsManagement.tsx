@@ -12,7 +12,7 @@ const INITIAL_NEWS: HealthNewsItem[] = [
   {
     id: 'NEWS_001',
     title: '老年人秋季如何科学平稳控制血糖？专家给您提个醒',
-    publishTime: '2026-09-18 10:09:09',
+    publishTime: '2026-10-18 10:09:09',
     likesCount: 1001,
     collectsCount: 210,
     sharesCount: 100,
@@ -25,7 +25,7 @@ const INITIAL_NEWS: HealthNewsItem[] = [
   {
     id: 'NEWS_002',
     title: '秋季防凉防感冒全攻略：老年人必看的六大保健细节',
-    publishTime: '2026-09-17 14:30:00',
+    publishTime: '2026-10-17 14:30:00',
     likesCount: 856,
     collectsCount: 180,
     sharesCount: 85,
@@ -38,7 +38,7 @@ const INITIAL_NEWS: HealthNewsItem[] = [
   {
     id: 'NEWS_003',
     title: '预防骨质疏松的科学饮食之道：高钙与维生素D搭配',
-    publishTime: '2026-09-15 11:15:20',
+    publishTime: '2026-10-15 11:15:20',
     likesCount: 620,
     collectsCount: 145,
     sharesCount: 92,
@@ -51,7 +51,7 @@ const INITIAL_NEWS: HealthNewsItem[] = [
   {
     id: 'NEWS_004',
     title: '老年人睡眠障碍的自我调理策略与心理抚慰指南',
-    publishTime: '2026-09-12 09:40:00',
+    publishTime: '2026-10-12 09:40:00',
     likesCount: 1240,
     collectsCount: 310,
     sharesCount: 150,
@@ -64,7 +64,7 @@ const INITIAL_NEWS: HealthNewsItem[] = [
   {
     id: 'NEWS_005',
     title: '高血压患者晨起“三不要”：避开血压骤升的高危时段',
-    publishTime: '2026-09-08 16:20:10',
+    publishTime: '2026-10-08 16:20:10',
     likesCount: 930,
     collectsCount: 225,
     sharesCount: 110,
@@ -77,7 +77,7 @@ const INITIAL_NEWS: HealthNewsItem[] = [
   {
     id: 'NEWS_006',
     title: '社区开展金秋送健康义诊讲座：免费测血压血糖',
-    publishTime: '2026-09-03 10:00:00',
+    publishTime: '2026-10-03 10:00:00',
     likesCount: 450,
     collectsCount: 95,
     sharesCount: 40,
@@ -150,7 +150,7 @@ export const HealthNewsManagement: React.FC<HealthNewsManagementProps> = ({
       const newItem: HealthNewsItem = {
         id: 'NEWS_' + Date.now(),
         title: newsForm.title || '',
-        publishTime: '2026-09-19 16:20:00',
+        publishTime: '2026-10-19 16:20:00',
         likesCount: 0,
         collectsCount: 0,
         sharesCount: 0,
@@ -165,7 +165,7 @@ export const HealthNewsManagement: React.FC<HealthNewsManagementProps> = ({
     } else if (newsModal.item) {
       setNewsList(
         newsList.map((n) =>
-          n.id === newsModal.item!.id ? { ...n, ...newsForm, publishTime: '2026-09-19 16:20:00' } : n
+          n.id === newsModal.item!.id ? { ...n, ...newsForm, publishTime: '2026-10-19 16:20:00' } : n
         )
       );
       onNotice('健康资讯已保存');
@@ -327,14 +327,17 @@ export const HealthNewsManagement: React.FC<HealthNewsManagementProps> = ({
         </div>
       </div>
 
-      {/* News Modal */}
+      {/* News Modal / Form View matching screenshot */}
       {newsModal.isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs">
-          <div className="bg-white rounded-xl w-full max-w-lg overflow-hidden shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-150">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs overflow-y-auto py-10">
+          <div className="bg-white rounded-xl w-full max-w-3xl overflow-hidden shadow-2xl border border-gray-100 animate-in fade-in zoom-in-95 duration-150 my-auto">
             <div className="px-6 py-4 flex items-center justify-between border-b border-gray-100">
-              <h3 className="text-sm font-semibold text-gray-800">
-                {newsModal.isCreate ? '新增健康资讯' : '编辑健康资讯'}
-              </h3>
+              <div className="flex items-center space-x-2.5">
+                <span className="w-1 h-4 bg-[#10b981] rounded-full"></span>
+                <h3 className="text-sm font-semibold text-gray-800">
+                  {newsModal.isCreate ? '新增资讯信息' : '编辑资讯信息'}
+                </h3>
+              </div>
               <button
                 onClick={() => setNewsModal({ isOpen: false, item: null, isCreate: false })}
                 className="text-gray-400 hover:text-gray-600 p-1"
@@ -343,76 +346,163 @@ export const HealthNewsManagement: React.FC<HealthNewsManagementProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleSaveNews} className="p-6 space-y-4 text-xs">
-              <div className="space-y-1">
-                <label className="text-gray-600 font-medium">资讯标题 <span className="text-red-500">*</span></label>
-                <input
-                  type="text"
-                  required
-                  value={newsForm.title || ''}
-                  onChange={(e) => setNewsForm({ ...newsForm, title: e.target.value })}
-                  placeholder="请输入资讯标题"
-                  className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">发布人</label>
+            <form onSubmit={handleSaveNews} className="p-6 space-y-6 text-xs max-h-[80vh] overflow-y-auto">
+              {/* 资讯标题 */}
+              <div className="grid grid-cols-12 gap-4 items-start">
+                <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                  资讯标题 <span className="text-red-500">*</span>
+                </label>
+                <div className="col-span-10">
                   <input
                     type="text"
-                    value={newsForm.publisher || '管理员'}
-                    onChange={(e) => setNewsForm({ ...newsForm, publisher: e.target.value })}
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
+                    required
+                    value={newsForm.title || ''}
+                    onChange={(e) => setNewsForm({ ...newsForm, title: e.target.value })}
+                    placeholder="请输入"
+                    className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981] text-gray-800 placeholder-gray-400"
                   />
                 </div>
+              </div>
 
-                <div className="space-y-1">
-                  <label className="text-gray-600 font-medium">状态</label>
-                  <select
-                    value={newsForm.status || '已发布'}
-                    onChange={(e) => setNewsForm({ ...newsForm, status: e.target.value as any })}
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded-md bg-white focus:outline-none focus:border-[#10b981]"
-                  >
-                    <option value="已发布">已发布</option>
-                    <option value="草稿">草稿</option>
-                    <option value="已下架">已下架</option>
-                  </select>
+              {/* 封面图片 */}
+              <div className="grid grid-cols-12 gap-4 items-start">
+                <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                  封面图片 <span className="text-red-500">*</span>
+                </label>
+                <div className="col-span-10 space-y-2">
+                  <div className="flex items-center space-x-3">
+                    {newsForm.coverImage ? (
+                      <div className="relative w-28 h-28 border border-gray-200 rounded-lg overflow-hidden group">
+                        <img src={newsForm.coverImage} alt="封面预览" className="w-full h-full object-cover" />
+                        <button
+                          type="button"
+                          onClick={() => setNewsForm({ ...newsForm, coverImage: '' })}
+                          className="absolute inset-0 bg-black/40 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity"
+                        >
+                          更换图片
+                        </button>
+                      </div>
+                    ) : (
+                      <label className="w-28 h-28 border-2 border-dashed border-gray-200 hover:border-[#10b981] rounded-lg flex flex-col items-center justify-center cursor-pointer bg-gray-50/50 hover:bg-emerald-50/30 transition-colors text-gray-400 hover:text-[#10b981]">
+                        <Plus className="w-6 h-6 mb-1" />
+                        <span className="text-xs font-medium">上传图片</span>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={(e) => {
+                            if (e.target.files && e.target.files[0]) {
+                              const url = URL.createObjectURL(e.target.files[0]);
+                              setNewsForm({ ...newsForm, coverImage: url });
+                              onNotice('封面图片上传成功');
+                            }
+                          }}
+                        />
+                      </label>
+                    )}
+                  </div>
+                  <p className="text-gray-400 text-[11px]">
+                    支持jpg, png等格式文件上传，文件大小不超过10MB, 最多可上传3张
+                  </p>
                 </div>
               </div>
 
-              <div className="space-y-1">
-                <label className="text-gray-600 font-medium">封面图片 URL</label>
-                <input
-                  type="text"
-                  value={newsForm.coverImage || ''}
-                  onChange={(e) => setNewsForm({ ...newsForm, coverImage: e.target.value })}
-                  className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                />
+              {/* 发布时间 */}
+              <div className="grid grid-cols-12 gap-4 items-center">
+                <label className="col-span-2 text-right text-gray-700 font-medium">发布时间</label>
+                <div className="col-span-10 space-y-3">
+                  <div className="flex items-center space-x-6">
+                    <label className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="publishTypeRadio"
+                        defaultChecked
+                        className="text-[#10b981] focus:ring-[#10b981]"
+                      />
+                      <span className="text-gray-800 font-medium">立即发布</span>
+                    </label>
+                    <label className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="publishTypeRadio"
+                        className="text-[#10b981] focus:ring-[#10b981]"
+                      />
+                      <span className="text-gray-800">定时发布</span>
+                    </label>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2 border border-gray-200 rounded-md px-3 py-1.5 bg-white w-48">
+                      <input
+                        type="date"
+                        className="w-full focus:outline-none text-gray-700 text-xs"
+                        placeholder="请选择日期"
+                      />
+                      <Calendar className="w-4 h-4 text-gray-400 shrink-0" />
+                    </div>
+                    <div className="flex items-center space-x-2 border border-gray-200 rounded-md px-3 py-1.5 bg-white w-32">
+                      <input
+                        type="text"
+                        defaultValue="12 : 00"
+                        className="w-full focus:outline-none text-gray-700 text-xs text-center font-mono"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-1">
-                <label className="text-gray-600 font-medium">正文内容</label>
-                <textarea
-                  rows={4}
-                  value={newsForm.detailHtml || ''}
-                  onChange={(e) => setNewsForm({ ...newsForm, detailHtml: e.target.value })}
-                  placeholder="输入资讯正文内容"
-                  className="w-full px-3 py-1.5 border border-gray-200 rounded-md focus:outline-none focus:border-[#10b981]"
-                />
+              {/* 资讯详情 */}
+              <div className="grid grid-cols-12 gap-4 items-start">
+                <label className="col-span-2 text-right pt-2 text-gray-700 font-medium">
+                  资讯详情 <span className="text-red-500">*</span>
+                </label>
+                <div className="col-span-10 border border-gray-200 rounded-lg overflow-hidden bg-white">
+                  {/* Rich Text Toolbar */}
+                  <div className="flex flex-wrap items-center gap-1.5 px-3 py-2 bg-gray-50 border-b border-gray-200 text-gray-600">
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded font-bold text-xs" title="标题">H</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded font-bold" title="加粗">B</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded font-medium" title="正文样式">T</button>
+                    <span className="w-px h-4 bg-gray-300 mx-1"></span>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="删除线"><s>S</s></button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded italic" title="斜体">I</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded underline" title="下划线">U</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="文本颜色">A</button>
+                    <span className="w-px h-4 bg-gray-300 mx-1"></span>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="链接">🔗</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="列表">≡</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="对齐">☰</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="引用">“</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="表情">😊</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="图片">🖼️</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="表格">⊞</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="视频">▶</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded font-mono" title="代码块">&gt;_</button>
+                    <span className="w-px h-4 bg-gray-300 mx-1"></span>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="撤销">↩</button>
+                    <button type="button" className="p-1.5 hover:bg-gray-200 rounded" title="重做">↪</button>
+                  </div>
+                  <textarea
+                    rows={8}
+                    required
+                    value={newsForm.detailHtml || ''}
+                    onChange={(e) => setNewsForm({ ...newsForm, detailHtml: e.target.value })}
+                    placeholder="请输入资讯正文详细内容..."
+                    className="w-full p-3 focus:outline-none text-gray-800 text-xs resize-y"
+                  />
+                </div>
               </div>
 
+              {/* Footer buttons */}
               <div className="pt-4 flex items-center justify-end space-x-3 border-t border-gray-100">
                 <button
                   type="button"
                   onClick={() => setNewsModal({ isOpen: false, item: null, isCreate: false })}
-                  className="px-4 py-1.5 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-md"
+                  className="px-4 py-2 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-md font-medium"
                 >
                   取消
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-1.5 bg-[#10b981] hover:bg-[#059669] text-white rounded-md font-medium"
+                  className="px-6 py-2 bg-[#10b981] hover:bg-[#059669] text-white rounded-md font-medium transition-colors shadow-sm"
                 >
                   确定
                 </button>

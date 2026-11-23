@@ -18,9 +18,9 @@ export const ReportInfoTab: React.FC<ReportInfoTabProps> = ({ user, onNotice }) 
 
   // 上传表单状态
   const [formName, setFormName] = useState('');
-  const [formDate, setFormDate] = useState('2026-09-19');
+  const [formDate, setFormDate] = useState('2026-10-19');
   const [formType, setFormType] = useState('体检报告');
-  const [formWorkOrder, setFormWorkOrder] = useState('GD2026091900018');
+  const [formWorkOrder, setFormWorkOrder] = useState('GD2026101900018');
 
   const filteredReports = useMemo(() => {
     return reports
@@ -75,13 +75,13 @@ export const ReportInfoTab: React.FC<ReportInfoTabProps> = ({ user, onNotice }) 
 
     const newReport: ReportRecord = {
       id: `rep-${Date.now()}`,
-      uploadTime: '2026-09-19 16:30',
+      uploadTime: '2026-10-19 16:30',
       name: formName.trim(),
       type: formType,
       source: '后台上传',
       uploader: '李明明',
-      workOrderNo: formWorkOrder || 'GD2026091900026',
-      reportDate: formDate || '2026-09-19',
+      workOrderNo: formWorkOrder || 'GD2026101900026',
+      reportDate: formDate || '2026-10-19',
     };
 
     setReports((prev) => [newReport, ...prev]);
@@ -321,7 +321,7 @@ export const ReportInfoTab: React.FC<ReportInfoTabProps> = ({ user, onNotice }) 
                   <input
                     type="date"
                     value={formDate}
-                    max="2026-09-19"
+                    max="2026-10-19"
                     onChange={(e) => setFormDate(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#10b981]"
                   />
@@ -353,10 +353,10 @@ export const ReportInfoTab: React.FC<ReportInfoTabProps> = ({ user, onNotice }) 
                   onChange={(e) => setFormWorkOrder(e.target.value)}
                   className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-[#10b981]"
                 >
-                  <option value="GD2026091900018">GD2026091900018 (脑中风术后康复理疗)</option>
-                  <option value="GD2026091800013">GD2026091800013 (日常清洁急速清洁全程质保)</option>
-                  <option value="GD2026091600025">GD2026091600025 (专业上门助浴)</option>
-                  <option value="GD2026091400031">GD2026091400031 (防滑安全扶手改造)</option>
+                  <option value="GD2026101900018">GD2026101900018 (脑中风术后康复理疗)</option>
+                  <option value="GD2026101800013">GD2026101800013 (日常清洁急速清洁全程质保)</option>
+                  <option value="GD2026101600025">GD2026101600025 (专业上门助浴)</option>
+                  <option value="GD2026101400031">GD2026101400031 (防滑安全扶手改造)</option>
                 </select>
               </div>
 
